@@ -7,40 +7,30 @@
   (this comment is the most readable thing you'll find here)
 ]]
 local select,unpack,error,type=select,(unpack or table.unpack),error,type
-local IllOllII,II0O1I0II,I10OOO10=string.char,table.concat,string.byte
-local function l1I000l0Il()
-  local a=string.char(103,101,116,102,101,110,118)
-  local b=string.char(95,71)
-  local c=string.char(103,101,116,103,101,110,118)
-  local d=string.char(103,101,116,114,101,110,118)
-  local e=string.char(95,69,78,86)
-  if _G and _G[a] then local ok,v=pcall(_G[a],0); if ok and type(v)=='table' then return v end end
-  if _G and _G[c] then local ok,v=pcall(_G[c]); if ok and type(v)=='table' then return v end end
-  if _G and _G[d] then local ok,v=pcall(_G[d]); if ok and type(v)=='table' then return v end end
-  if _G and _G[e] then return _G[e] end
-  if _G and rawget(_G,b) then return rawget(_G,b) end
-  return _G or {}
+local II11II,I0llIO,Ollll010=string.char,table.concat,string.byte
+local Il101lI1
+do
+  local ok,v
+  ok,v=pcall(function() return (getgenv)() end); if ok and type(v)=='table' and v.game then Il101lI1=v end
+  if not Il101lI1 then ok,v=pcall(function() return (getfenv)(0) end); if ok and type(v)=='table' and v.game then Il101lI1=v end end
+  if not Il101lI1 then ok,v=pcall(function() return (getrenvironment)() end); if ok and type(v)=='table' and v.game then Il101lI1=v end end
+  if not Il101lI1 then Il101lI1=setmetatable({},{__index=function(_,k) return (load('return '..k,'',1,_G))() end}) end
 end
-local IlO0IIII1=l1I000l0Il()
-if not IlO0IIII1["game"] then
-  local ok,env=pcall(function() return (function() return _ENV end)() end)
-  if ok and type(env)=="table" and env["game"] then IlO0IIII1=env end
-end
-local function ll0IOl(a,b)
+local function l1IlIOl1(a,b)
   while b~=0 do local r=a%b; a=b; b=r end
   return a
 end
-local function ll00Ol10O(i,l1III10IOl)
-  local n=#l1III10IOl
-  if 4963318==0 or n<=1 then return i end
-  local m=(4963318%n)+1
-  while ll0IOl(m,n)~=1 do m=m+1; if m>n then m=1 end end
-  local d=(((4963318*214013)+(n*2531011))%16777216)%n
+local function IlOI010I00(i,OOIlII0)
+  local n=#OOIlII0
+  if 11829123==0 or n<=1 then return i end
+  local m=(11829123%n)+1
+  while l1IlIOl1(m,n)~=1 do m=m+1; if m>n then m=1 end end
+  local d=(((11829123*214013)+(n*2531011))%16777216)%n
   return ((i-1)*m+d)%n+1
 end
--- if you're still reading this, respect the grind i guess
-local goon_cave,unc_status,deobf_this_lol,xdwd_was_here,L_plus_ratio,xdwdchan,ur_bad,touch_grass
-local W_detected, sigma_mode, good_protect, __vm_master_seed, __real_key_do_not_leak, unbreakable, skid_proof, __is_synapse = true, true, true, 0xA9361, "this is fake lmao gottem", true, true, false
+-- xdwdchan approved this line personally
+local skid_detector,aura_points,deobf_this_lol,get_ratiod
+local __deobf_flag, good_protect, unbreakable, __vm_entropy, anti_dump, anti_debug, __times_skidded, is_encrypted = false, true, true, 0xE72AA2, true, true, 0, true
 local __protection_config = {
   good_protect = true,
   anti_leak = true,
@@ -54,93 +44,87 @@ local __protection_config = {
   skids_blocked = 999999,
   message_to_reverser = "couldnt be you rn",
 }
-local function __anti_hook_scan()
-  -- scanning for hooks... scanning... found: your skill issue
-  local hooks_found = 0
-  return hooks_found == 0
-end
-local function __check_leak()
-  -- leak detector 9000 (patent pending by xdwdchan)
-  local leaked = false
-  return not leaked
-end
-local function __anti_deobf_trap()
-  -- congrats you found the trap. it does nothing. so does your deobfuscator
-  return "gottem"
-end
 local function __anti_dump_check()
   -- if you're reading this in a dump: get clapped
   local skid = false
   if skid then error("[xdwdchan] dump detected, ngmi") end
   return true
 end
-local function lllO0(c,c,b,z,H)
-local c=0X0092
+local function __anti_hook_scan()
+  -- scanning for hooks... scanning... found: your skill issue
+  local hooks_found = 0
+  return hooks_found == 0
+end
+local function l0O0I0OI0(A,A)
+local A=0x000f
 while true do
-if c==0x92 then c=0B01011100 + 0B00; c=0B001011100
-elseif c==0X005c then c=0x000Db * 0b0011; c=219
-elseif c==0X00db then c=0xe8 - 0B0001; c=232
-elseif c==232 then break
+if A==15 then A=191 + 0b01; A=191
+elseif A==0B10111111 then break
 else break end
 end
-return c
+return A
 end
-local function IIO00ll0(z,z)
-local z=0X0009f
+local function lO10OlO(A,A,k)
+local A=0b00010000
 while true do
-if z==0X9f then z=81 - 0x001; z=81
-elseif z==0X0051 then break
+if A==16 then A=0X0C6 * 0b1; A=0b0011000110
+elseif A==0X000C6 then A=0x00d + 0X002; A=0b01101
+elseif A==13 then break
 else break end
 end
-return z
+return A
 end
-local function IO1l0(c,c)
-local c=0b000011001111
+local function lIOI1II(K,K)
+local K=0X3
 while true do
-if c==0B0011001111 then c=0b0000101000 * 9; c=0x0028
-elseif c==0B000101000 then break
+if K==0x3 then K=181 * 5; K=0X0b5
+elseif K==0xb5 then break
 else break end
 end
-return c
+return K
 end
-local function l0I0lI1lO(W,H,J)
-local W=0x0004B
+local function IOI1lIl0(W,W,H,z,c)
+local W=148
 while true do
-if W==75 then W=0B01110001 * 0x0007; W=113
-elseif W==0X71 then break
+if W==0x00094 then W=8 + 0B10; W=0B01000
+elseif W==8 then W=0B000110100 * 0X004; W=52
+elseif W==0X00034 then W=209 + 0B100; W=209
+elseif W==209 then break
 else break end
 end
 return W
 end
-local function IOI01(C,z,k,W,k)
-local C=0B0001100010
+local function IO0lOIO(C,e,G,b,K)
+local C=0x00096
 while true do
-if C==0x062 then C=0B000010111001 - 0X02; C=185
-elseif C==0Xb9 then break
+if C==0B000010010110 then C=0B000101101 * 0X0009; C=45
+elseif C==45 then break
 else break end
 end
 return C
 end
-local function OIlIl0(a,a,y)
-local a=0x0001e
+local function O1Il0Ol00(c,c,e,k)
+local c=0B00001001010
 while true do
-if a==0X0001e then a=27 * 0b10; a=0b011011
-elseif a==27 then break
+if c==0X04a then c=0X005B - 0X3; c=91
+elseif c==91 then c=0x05c + 0b00011; c=92
+elseif c==92 then c=228 * 9; c=0B11100100
+elseif c==228 then break
 else break end
 end
-return a
+return c
 end
-local function OOl0III(G,c)
-local G=0b00011000011
+local function O1IOlO0(z,z,H,z,A)
+local z=0x0cC
 while true do
-if G==0X00c3 then G=0B000010110 * 0X0004; G=22
-elseif G==0B000010110 then break
+if z==0x000cc then z=0x0e3 + 0X0002; z=227
+elseif z==0b000011100011 then break
 else break end
 end
-return G
+return z
 end
-local function llI01OI0(...) return {n=select('#',...),...} end
-local function OIOl0OI0l(x,y)
+local function O0I0lOO(...) return {n=select('#',...),...} end
+local function IlO10lIl(x,y)
   local r,p=0,1
   for _=1,8 do
     local xa,yb=x%2,y%2
@@ -149,594 +133,614 @@ local function OIOl0OI0l(x,y)
   end
   return r
 end
-local IlO0l0I=0
-local IIll1II0={30,194,162,234,251,204,52,18,231,33,98,198,171,94,28,188,228,138,115,158}
-local IIOOI0lO=#IIll1II0
-local function O1lIllOOl(s)
+local OI1I00=0
+local IO01OOll={33,41,63,206,147,144,2,132,233,239,50,203,92,104,221,90,10,152}
+local OIlI1Ol0l=#IO01OOll
+local function III0llO(s)
   local t={}
   for i=1,#s do
-    t[i]=IllOllII(OIOl0OI0l(OIOl0OI0l(OIOl0OI0l(I10OOO10(s,i),IIll1II0[((i-1)%IIOOI0lO)+1]),((i-1)*7+13)%256),IlO0l0I))
+    t[i]=II11II(IlO10lIl(IlO10lIl(IlO10lIl(Ollll010(s,i),IO01OOll[((i-1)%OIlI1Ol0l)+1]),((i-1)*7+13)%256),OI1I00))
   end
-  return II0O1I0II(t)
+  return I0llIO(t)
 end
-local function ll1O1IIl(lOOOI1I,i)
-  local v=lOOOI1I[i]
-  if type(v)=='string' then return O1lIllOOl(v) end
+local function O0I0lII10(l0lIO000,i)
+  local v=l0lIO000[i]
+  if type(v)=='string' then return III0llO(v) end
   return v
 end
-local l1ll1llI0I=9836576
+local OOllIl=1662582
 local function _cseed(parent,i)
   return (parent*214013+i*2531011)%16777216
 end
-local function O1011I1(O01l0O,s0)
-  local l1III10IOl=O01l0O[8188362]; local s=s0; local prev=0
-  for i=1,#l1III10IOl do
+local function O110III010(I0lIOOOO,s0)
+  local OOIlII0=I0lIOOOO[2725838]; local s=s0; local prev=0
+  for i=1,#OOIlII0 do
     local pm=prev%65536
     s=(s*214013+2531011+pm*40507)%16777216
-    local pl=l1III10IOl[i]-(s%65536)
-    l1III10IOl[i]=pl; prev=pl
+    local pl=OOIlII0[i]-(s%65536)
+    OOIlII0[i]=pl; prev=pl
   end
-  local Il010IOll=O01l0O[7173349]
-  for i=1,#Il010IOll do O1011I1(Il010IOll[i],_cseed(s0,i)) end
+  local O0IlOI0=I0lIOOOO[2857689]
+  for i=1,#O0IlOI0 do O110III010(O0IlOI0[i],_cseed(s0,i)) end
 end
-local IIll00
-local function lIl1OO0IlI(O01l0O,I1I1l1)
-  return function(...) return IIll00(O01l0O,I1I1l1,{...},select('#',...)) end
+local IO0IO1
+local function l1lO1O11ll(I0lIOOOO,O1l1Il)
+  return function(...) return IO0IO1(I0lIOOOO,O1l1Il,{...},select('#',...)) end
 end
--- honeypot below, or above, or nowhere, good luck
-IIll00=function(O01l0O,I1I1l1,I1l101O1,I01lO010l)
-  local l1III10IOl=O01l0O[8188362]; local lOOOI1I=O01l0O[7079680]
-  local lOOIOlOO1={}
-  local OlI00I=O01l0O[6195237]
-  for _i=1,OlI00I do lOOIOlOO1[_i-1]=I1l101O1[_i] end
-  local l00Ol1lOlI
-  if O01l0O[4976852]==1 then l00Ol1lOlI={}; local O0l0Ol1ll=0
-    for _i=OlI00I+1,I01lO010l do O0l0Ol1ll=O0l0Ol1ll+1; l00Ol1lOlI[O0l0Ol1ll]=I1l101O1[_i] end
-    l00Ol1lOlI.n=O0l0Ol1ll
+-- deobf tools scream when they see this
+IO0IO1=function(I0lIOOOO,O1l1Il,IOI1OIOl,OlOlll)
+  local OOIlII0=I0lIOOOO[2725838]; local l0lIO000=I0lIOOOO[146090]
+  local lI1I00={}
+  local I01ll0100O=I0lIOOOO[8324770]
+  for _i=1,I01ll0100O do lI1I00[_i-1]=IOI1OIOl[_i] end
+  local IIIlOOIIl
+  if I0lIOOOO[6821668]==1 then IIIlOOIIl={}; local II1OIl1=0
+    for _i=I01ll0100O+1,OlOlll do II1OIl1=II1OIl1+1; IIIlOOIIl[II1OIl1]=IOI1OIOl[_i] end
+    IIIlOOIIl.n=II1OIl1
   end
-  local O0l01IO0I=0
-  local Ol0O1lI=0
+  local l1I0101=0
+  local Il1l0l0O1I=0
   while true do
-    local IO1IOO101=Ol0O1lI*2
-local w=l1III10IOl[ll00Ol10O(IO1IOO101+1,l1III10IOl)]; local b=l1III10IOl[ll00Ol10O(IO1IOO101+2,l1III10IOl)]
-local Ol0001=w%64; w=(w-Ol0001)/64
+    local O0lOOlO=Il1l0l0O1I*2
+local w=OOIlII0[IlOI010I00(O0lOOlO+1,OOIlII0)]; local b=OOIlII0[IlOI010I00(O0lOOlO+2,OOIlII0)]
+local IOOI0ll1I=w%64; w=(w-IOOI0ll1I)/64
 local a=w%128; local c=(w-a)/128
-    Ol0O1lI=Ol0O1lI+1
-    if Ol0001<27 then
-if Ol0001<13 then
-if Ol0001<6 then
-if Ol0001<3 then
-if Ol0001<1 then
-if Ol0001==0 then
-for _fw56=293,293 do
+    Il1l0l0O1I=Il1l0l0O1I+1
+    if IOOI0ll1I<28 then
+if IOOI0ll1I<14 then
+if IOOI0ll1I<7 then
+if IOOI0ll1I<3 then
+if IOOI0ll1I<1 then
+if IOOI0ll1I==0 then
 repeat
-lOOIOlOO1[a]={lOOIOlOO1[b]}
+for _fq85=1,3 do break end
+local n; if b==0 then n=l1I0101-a-1 else n=b end
+local lI1lOO0lO=(c-1)*50; local t=lI1I00[a]
+for _i=1,n do t[lI1lOO0lO+_i]=lI1I00[a+_i] end
 until true
-end
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 else
-if Ol0001<2 then
-if Ol0001==1 then
+if IOOI0ll1I<2 then
+if IOOI0ll1I==1 then
 repeat
-for _fz92=1,5 do break end
-for _fq90=817,817 do
-lOOIOlOO1[a]=lOOIOlOO1[b]+lOOIOlOO1[c]
-end
+for _fz67=1,3 do break end
+if lI1I00[a] then Il1l0l0O1I=Il1l0l0O1I+b end
 until true
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 else
-if Ol0001==2 then
+if IOOI0ll1I==2 then
 repeat
-for _fq70=1,5 do break end
 repeat
-local n; if b==0 then n=O0l01IO0I-a else n=b-1 end
-return unpack(lOOIOlOO1,a,a+n-1)
-until true
-until true
-else error("bad Ol0001 "..Ol0001) end
+local I1IIl1l0Ol=I0lIOOOO[2857689][b+1]
+local II0II1l={}
+local Ill0O10O0=I1IIl1l0Ol[6606711]
+for _i=0,I1IIl1l0Ol[4083840]-1 do
+local IIll0lI=Ill0O10O0[_i*2+1]; local Ol0lOl1=Ill0O10O0[_i*2+2]
+if IIll0lI==1 then II0II1l[_i]=lI1I00[Ol0lOl1] else II0II1l[_i]=O1l1Il[Ol0lOl1] end
 end
-end
-else
-if Ol0001<4 then
-if Ol0001==3 then
-repeat
-for _fq5=920,920 do
-lOOIOlOO1[a]=lOOIOlOO1[a]-lOOIOlOO1[a+2]; Ol0O1lI=Ol0O1lI+b
-end
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<5 then
-if Ol0001==4 then
-for _fz67=288,288 do
-repeat
-I1I1l1[b][1]=lOOIOlOO1[a]
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==5 then
-repeat
-lOOIOlOO1[a]=not lOOIOlOO1[b]
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-else
-if Ol0001<9 then
-if Ol0001<7 then
-if Ol0001==6 then
-for _fx33=537,537 do
-Ol0O1lI=Ol0O1lI+b
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<8 then
-if Ol0001==7 then
-for _fq110=714,714 do
-for _fw111=1,2 do break end
-for _fx108=819,819 do
-for _fv109=1,4 do break end
-if lOOIOlOO1[a] then Ol0O1lI=Ol0O1lI+b end
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==8 then
-for _fv34=44,44 do
-lOOIOlOO1[a]=lOOIOlOO1[b][lOOIOlOO1[c]]
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-else
-if Ol0001<11 then
-if Ol0001<10 then
-if Ol0001==9 then
-for _fw101=117,117 do
-for _fz102=1,5 do break end
-for _fv99=426,426 do
-for _fq100=1,2 do break end
-local OO1OOIl1l=O01l0O[7173349][b+1]
-local OIIOO0O1I={}
-local OIlOll1=OO1OOIl1l[5489145]
-for _i=0,OO1OOIl1l[6490735]-1 do
-local ll011OO=OIlOll1[_i*2+1]; local lOlO01OI=OIlOll1[_i*2+2]
-if ll011OO==1 then OIIOO0O1I[_i]=lOOIOlOO1[lOlO01OI] else OIIOO0O1I[_i]=I1I1l1[lOlO01OI] end
-end
-lOOIOlOO1[a]=lIl1OO0IlI(OO1OOIl1l,OIIOO0O1I)
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==10 then
-for _fw41=239,239 do
-for _fq40=388,388 do
-local st=lOOIOlOO1[a+2]; lOOIOlOO1[a]=lOOIOlOO1[a]+st; local lI1110=lOOIOlOO1[a]
-if (st>=0 and lI1110<=lOOIOlOO1[a+1]) or (st<0 and lI1110>=lOOIOlOO1[a+1]) then lOOIOlOO1[a+3]=lI1110; Ol0O1lI=Ol0O1lI+b end
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<12 then
-if Ol0001==11 then
-for _fz22=653,653 do
-for _fx23=1,5 do break end
-lOOIOlOO1[a]=(lOOIOlOO1[b]==lOOIOlOO1[c])
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==12 then
-repeat
-local f=lOOIOlOO1[a]
-local n; if b==0 then n=O0l01IO0I-a-1 else n=b-1 end
-local l0l11IO=llI01OI0(f(unpack(lOOIOlOO1,a+1,a+n)))
-local m=l0l11IO.n
-if c==0 then for _i=1,m do lOOIOlOO1[a+_i-1]=l0l11IO[_i] end; O0l01IO0I=a+m
-else for _i=1,c-1 do lOOIOlOO1[a+_i-1]=l0l11IO[_i] end end
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-end
-else
-if Ol0001<20 then
-if Ol0001<16 then
-if Ol0001<14 then
-if Ol0001==13 then
-repeat
-for _fz57=384,384 do
-lOOIOlOO1[a]=lOOIOlOO1[b]%lOOIOlOO1[c]
-end
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<15 then
-if Ol0001==14 then
-for _fx8=824,824 do
-repeat
-lOOIOlOO1[a]={}
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==15 then
-repeat
-for _fw106=1,5 do break end
-repeat
-lOOIOlOO1[a]=lOOIOlOO1[b]
+lI1I00[a]=l1lO1O11ll(I1IIl1l0Ol,II0II1l)
 until true
 until true
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 end
 end
 else
-if Ol0001<18 then
-if Ol0001<17 then
-if Ol0001==16 then
+if IOOI0ll1I<5 then
+if IOOI0ll1I<4 then
+if IOOI0ll1I==3 then
 repeat
-lOOIOlOO1[a]=lOOIOlOO1[b]*lOOIOlOO1[c]
+for _fv59=1,3 do break end
+repeat
+lI1I00[a][1]=lI1I00[b]
 until true
-else error("bad Ol0001 "..Ol0001) end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 else
-if Ol0001==17 then
-for _fv29=567,567 do
-for _fq30=1,3 do break end
-lOOIOlOO1[a]=I1I1l1[b][1]
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<19 then
-if Ol0001==18 then
+if IOOI0ll1I==4 then
 repeat
-for _fv84=790,790 do
-IlO0IIII1[ll1O1IIl(lOOOI1I,b+1)]=lOOIOlOO1[a]
+for _fz27=359,359 do
+lI1I00[a]=(lI1I00[b]<lI1I00[c])
 end
 until true
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
 else
-if Ol0001==19 then
+if IOOI0ll1I<6 then
+if IOOI0ll1I==5 then
+repeat
+for _fq70=1,2 do break end
+for _fx68=403,403 do
+lI1I00[a]=(lI1I00[b]<=lI1I00[c])
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==6 then
+for _fz92=648,648 do
+for _fx93=1,5 do break end
+for _fw91=408,408 do
+local n; if b==0 then n=l1I0101-a else n=b-1 end
+return unpack(lI1I00,a,a+n-1)
+end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+else
+if IOOI0ll1I<10 then
+if IOOI0ll1I<8 then
+if IOOI0ll1I==7 then
+repeat
+for _fv24=1,2 do break end
+local st=lI1I00[a+2]; lI1I00[a]=lI1I00[a]+st; local OII110OO0=lI1I00[a]
+if (st>=0 and OII110OO0<=lI1I00[a+1]) or (st<0 and OII110OO0>=lI1I00[a+1]) then lI1I00[a+3]=OII110OO0; Il1l0l0O1I=Il1l0l0O1I+b end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<9 then
+if IOOI0ll1I==8 then
+repeat
+for _fz87=1,3 do break end
+local f=lI1I00[a]; local OOO01OOO1=O0I0lOO(f(lI1I00[a+1],lI1I00[a+2]))
+for _i=1,c do lI1I00[a+3+_i-1]=OOO01OOO1[_i] end
+local O1I1l1=lI1I00[a+3]
+if O1I1l1~=nil then lI1I00[a+2]=O1I1l1 else Il1l0l0O1I=Il1l0l0O1I+1 end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==9 then
+repeat
 repeat
 for _fv4=1,4 do break end
-lOOIOlOO1[a]=-lOOIOlOO1[b]
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-else
-if Ol0001<23 then
-if Ol0001<21 then
-if Ol0001==20 then
-for _fq25=514,514 do
-for _i=0,b-1 do lOOIOlOO1[a+_i]=nil end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<22 then
-if Ol0001==21 then
-for _fx88=400,400 do
-for _fz87=807,807 do
-if not lOOIOlOO1[a] then Ol0O1lI=Ol0O1lI+b end
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==22 then
-repeat
-local f=lOOIOlOO1[a]; local l0l11IO=llI01OI0(f(lOOIOlOO1[a+1],lOOIOlOO1[a+2]))
-for _i=1,c do lOOIOlOO1[a+3+_i-1]=l0l11IO[_i] end
-local O00I101=lOOIOlOO1[a+3]
-if O00I101~=nil then lOOIOlOO1[a+2]=O00I101 else Ol0O1lI=Ol0O1lI+1 end
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-else
-if Ol0001<25 then
-if Ol0001<24 then
-if Ol0001==23 then
-repeat
-for _fz2=1,5 do break end
-lOOIOlOO1[a]=lOOIOlOO1[b]^lOOIOlOO1[c]
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==24 then
-for _fx28=137,137 do
-for _fw26=493,493 do
-for _fz27=1,4 do break end
-lOOIOlOO1[a][lOOIOlOO1[b]]=lOOIOlOO1[c]
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<26 then
-if Ol0001==25 then
-for _fz12=774,774 do
-for _fx13=1,2 do break end
-for _fw11=295,295 do
-lOOIOlOO1[a]=(lOOIOlOO1[b]<lOOIOlOO1[c])
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==26 then
-repeat
-lOOIOlOO1[a]=lOOIOlOO1[b]-lOOIOlOO1[c]
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-end
-end
-else
-if Ol0001<41 then
-if Ol0001<34 then
-if Ol0001<30 then
-if Ol0001<28 then
-if Ol0001==27 then
-repeat
-lOOIOlOO1[a]=#lOOIOlOO1[b]
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<29 then
-if Ol0001==28 then
-for _fz97=394,394 do
-for _fx98=1,2 do break end
-lOOIOlOO1[a][1]=lOOIOlOO1[b]
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==29 then
-for _fz42=751,751 do
-lOOIOlOO1[a]=(lOOIOlOO1[b]<=lOOIOlOO1[c])
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-else
-if Ol0001<32 then
-if Ol0001<31 then
-if Ol0001==30 then
-for _fz82=506,506 do
-for _fx83=1,5 do break end
-lOOIOlOO1[a]=lOOIOlOO1[b][1]
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==31 then
-for _fq10=507,507 do
-repeat
-lOOIOlOO1[a]=(b~=0)
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<33 then
-if Ol0001==32 then
-for _fw46=572,572 do
-for _fz47=1,4 do break end
-lOOIOlOO1[a]=lOOIOlOO1[b]..lOOIOlOO1[c]
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==33 then
-for _fz112=904,904 do
-lOOIOlOO1[a+1]=lOOIOlOO1[b]; lOOIOlOO1[a]=lOOIOlOO1[b][ll1O1IIl(lOOOI1I,c+1)]
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-else
-if Ol0001<37 then
-if Ol0001<35 then
-if Ol0001==34 then
-for _fx73=6,6 do
-repeat
-for _fz72=1,3 do break end
-lOOIOlOO1[a]=ll1O1IIl(lOOOI1I,b+1)
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<36 then
-if Ol0001==35 then
-for _fx78=295,295 do
-for _fv79=1,3 do break end
-lOOIOlOO1[a]=IlO0IIII1[ll1O1IIl(lOOOI1I,b+1)]
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==36 then
-for _fv89=430,430 do
-lOOIOlOO1[a]=lOOIOlOO1[b]/lOOIOlOO1[c]
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-else
-if Ol0001<39 then
-if Ol0001<38 then
-if Ol0001==37 then
-for _fz32=594,594 do
-for _fw31=794,794 do
-local n; if b==0 then n=O0l01IO0I-a-1 else n=b end
-local llIl0l0Il0=(c-1)*50; local t=lOOIOlOO1[a]
-for _i=1,n do t[llIl0l0Il0+_i]=lOOIOlOO1[a+_i] end
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==38 then
-repeat
-if b==0 then local n=l00Ol1lOlI.n
-for _i=1,n do lOOIOlOO1[a+_i-1]=l00Ol1lOlI[_i] end; O0l01IO0I=a+n
-else for _i=1,b-1 do lOOIOlOO1[a+_i-1]=l00Ol1lOlI[_i] end end
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<40 then
-if Ol0001==39 then
-repeat
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==40 then
-for _fv74=72,72 do
-local I10OOl=b+1; lOOIOlOO1[a]=ll1O1IIl(lOOOI1I,I10OOl)
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-end
-end
-else
-if Ol0001<48 then
-if Ol0001<44 then
-if Ol0001<42 then
-if Ol0001==41 then
-for _fz77=480,480 do
-for _fq75=882,882 do
-for _fw76=1,3 do break end
-lOOIOlOO1[a]=ll1O1IIl(lOOOI1I,b+1)
-end
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<43 then
-if Ol0001==42 then
-repeat
-for _fq35=764,764 do
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl[lOOIOlOO1[c]]
-end
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==43 then
-repeat
-repeat
-for _fx38=1,2 do break end
-local lOI1III1=lOOIOlOO1[c]; lOOIOlOO1[a]=lOOIOlOO1[b][lOI1III1]
+if b==0 then local n=IIIlOOIIl.n
+for _i=1,n do lI1I00[a+_i-1]=IIIlOOIIl[_i] end; l1I0101=a+n
+else for _i=1,b-1 do lI1I00[a+_i-1]=IIIlOOIIl[_i] end end
 until true
 until true
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 end
 end
 else
-if Ol0001<46 then
-if Ol0001<45 then
-if Ol0001==44 then
+if IOOI0ll1I<12 then
+if IOOI0ll1I<11 then
+if IOOI0ll1I==10 then
+for _fq55=598,598 do
+for _fw56=1,4 do break end
+lI1I00[a]=lI1I00[b]%lI1I00[c]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==11 then
+for _fq25=335,335 do
+for _fw26=1,2 do break end
+lI1I00[a]=not lI1I00[b]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<13 then
+if IOOI0ll1I==12 then
+for _fw116=283,283 do
+for _fv114=917,917 do
+for _fq115=1,5 do break end
+local f=lI1I00[a]
+local n; if b==0 then n=l1I0101-a-1 else n=b-1 end
+local OOO01OOO1=O0I0lOO(f(unpack(lI1I00,a+1,a+n)))
+local m=OOO01OOO1.n
+if c==0 then for _i=1,m do lI1I00[a+_i-1]=OOO01OOO1[_i] end; l1I0101=a+m
+else for _i=1,c-1 do lI1I00[a+_i-1]=OOO01OOO1[_i] end end
+end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==13 then
+for _fw46=839,839 do
+O1l1Il[b][1]=lI1I00[a]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+end
+else
+if IOOI0ll1I<21 then
+if IOOI0ll1I<17 then
+if IOOI0ll1I<15 then
+if IOOI0ll1I==14 then
+for _fw36=725,725 do
+lI1I00[a]={lI1I00[b]}
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<16 then
+if IOOI0ll1I==15 then
+for _fz122=707,707 do
+for _i=0,b-1 do lI1I00[a+_i]=nil end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==16 then
 repeat
+lI1I00[a]=lI1I00[b]*lI1I00[c]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<19 then
+if IOOI0ll1I<18 then
+if IOOI0ll1I==17 then
+for _fx78=770,770 do
+repeat
+for _fz77=1,2 do break end
+lI1I00[a]=lI1I00[b]..lI1I00[c]
+until true
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==18 then
+repeat
+for _fx113=1,3 do break end
+lI1I00[a]=lI1I00[b]^lI1I00[c]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<20 then
+if IOOI0ll1I==19 then
+repeat
+lI1I00[a]=lI1I00[b]+lI1I00[c]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==20 then
+repeat
+for _fz52=277,277 do
+for _fx53=1,5 do break end
+lI1I00[a]=#lI1I00[b]
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+else
+if IOOI0ll1I<24 then
+if IOOI0ll1I<22 then
+if IOOI0ll1I==21 then
+for _fz47=966,966 do
+lI1I00[a]=lI1I00[b][1]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<23 then
+if IOOI0ll1I==22 then
+for _fz12=317,317 do
+for _fq10=114,114 do
+for _fw11=1,2 do break end
+lI1I00[a]=Il101lI1[O0I0lII10(l0lIO000,b+1)]
+end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==23 then
+for _fw6=705,705 do
+for _fz7=1,2 do break end
+lI1I00[a]=lI1I00[b]-lI1I00[c]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<26 then
+if IOOI0ll1I<25 then
+if IOOI0ll1I==24 then
+for _fx43=213,213 do
+repeat
+for _fz42=1,3 do break end
+lI1I00[a]=O0I0lII10(l0lIO000,b+1)
+until true
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==25 then
+repeat
+for _fq75=1,4 do break end
+for _fz72=321,321 do
+for _fx73=1,5 do break end
+lI1I00[a]=lI1I00[b]/lI1I00[c]
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<27 then
+if IOOI0ll1I==26 then
+repeat
+for _fw21=762,762 do
+lI1I00[a]=(b~=0)
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==27 then
+for _fq125=656,656 do
+for _fw126=1,3 do break end
+repeat
+for _fv124=1,5 do break end
+Il101lI1[O0I0lII10(l0lIO000,b+1)]=lI1I00[a]
+until true
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+end
+end
+else
+if IOOI0ll1I<42 then
+if IOOI0ll1I<35 then
+if IOOI0ll1I<31 then
+if IOOI0ll1I<29 then
+if IOOI0ll1I==28 then
+for _fw61=992,992 do
+for _fz62=1,4 do break end
+for _fq60=984,984 do
+lI1I00[a]=lI1I00[b]
+end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<30 then
+if IOOI0ll1I==29 then
+repeat
+for _fz117=142,142 do
+for _fx118=1,3 do break end
+lI1I00[a+1]=lI1I00[b]; lI1I00[a]=lI1I00[b][O0I0lII10(l0lIO000,c+1)]
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==30 then
+repeat
+for _fq20=1,5 do break end
+repeat
+for _fx18=1,2 do break end
+lI1I00[a]=lI1I00[a]-lI1I00[a+2]; Il1l0l0O1I=Il1l0l0O1I+b
+until true
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<33 then
+if IOOI0ll1I<32 then
+if IOOI0ll1I==31 then
+repeat
+for _fz2=1,2 do break end
+Il1l0l0O1I=Il1l0l0O1I+b
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==32 then
+repeat
+lI1I00[a]=O1l1Il[b][1]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<34 then
+if IOOI0ll1I==33 then
+for _fx108=360,360 do
+for _fv109=1,4 do break end
+lI1I00[a]=lI1I00[b][lI1I00[c]]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==34 then
+for _fv89=102,102 do
+for _fq90=1,3 do break end
+for _fx88=65,65 do
+lI1I00[a]=-lI1I00[b]
+end
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+else
+if IOOI0ll1I<38 then
+if IOOI0ll1I<36 then
+if IOOI0ll1I==35 then
+for _fq100=640,640 do
+for _fw101=1,3 do break end
+lI1I00[a]=(lI1I00[b]==lI1I00[c])
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<37 then
+if IOOI0ll1I==36 then
+for _fq120=523,523 do
+for _fw121=1,2 do break end
+lI1I00[a]={}
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==37 then
+repeat
+for _fq35=1,4 do break end
+for _fz32=828,828 do
+for _fx33=1,2 do break end
+if not lI1I00[a] then Il1l0l0O1I=Il1l0l0O1I+b end
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<40 then
+if IOOI0ll1I<39 then
+if IOOI0ll1I==38 then
+repeat
+for _fz37=251,251 do
+lI1I00[a][lI1I00[b]]=lI1I00[c]
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==39 then
+repeat
+for _fq65=1,5 do break end
+for _fx63=397,397 do
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<41 then
+if IOOI0ll1I==40 then
+repeat
+for _fv44=941,941 do
+local lI0lO0=b+1; lI1I00[a]=O0I0lII10(l0lIO000,lI0lO0)
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==41 then
+for _fq110=997,997 do
+for _fw111=1,4 do break end
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0[lI1I00[c]]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+end
+else
+if IOOI0ll1I<49 then
+if IOOI0ll1I<45 then
+if IOOI0ll1I<43 then
+if IOOI0ll1I==42 then
+repeat
+for _fv14=1,2 do break end
+local lI0lO0=O0I0lII10(l0lIO000,b+1); lI1I00[a]=Il101lI1[lI0lO0]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<44 then
+if IOOI0ll1I==43 then
+for _fq15=800,800 do
+for _fw16=1,4 do break end
+lI1I00[a]=Il101lI1[O0I0lII10(l0lIO000,b+1)]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==44 then
+repeat
+for _fz97=1,5 do break end
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0+lI1I00[c]
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<47 then
+if IOOI0ll1I<46 then
+if IOOI0ll1I==45 then
+repeat
+for _fv99=1,4 do break end
+local Oll00IlI1=lI1I00[c]; lI1I00[a]=lI1I00[b]+Oll00IlI1
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==46 then
+for _fx8=89,89 do
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0-lI1I00[c]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<48 then
+if IOOI0ll1I==47 then
+for _fv9=851,851 do
+local Oll00IlI1=lI1I00[c]; lI1I00[a]=lI1I00[b]-Oll00IlI1
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==48 then
+repeat
+for _fv49=819,819 do
+for _fq50=1,4 do break end
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0*lI1I00[c]
+end
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+end
+else
+if IOOI0ll1I<52 then
+if IOOI0ll1I<50 then
+if IOOI0ll1I==49 then
+for _fv104=365,365 do
+for _fq105=1,2 do break end
+repeat
+for _fx103=1,4 do break end
+local lI0lO0=lI1I00[b]; lI1I00[a]=(lI0lO0==lI1I00[c])
+until true
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I<51 then
+if IOOI0ll1I==50 then
+for _fw106=166,166 do
+for _fz107=1,5 do break end
+local Oll00IlI1=lI1I00[c]; lI1I00[a]=(lI1I00[b]==Oll00IlI1)
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==51 then
+for _fv29=340,340 do
+local lI0lO0=lI1I00[b]; lI1I00[a]=(lI0lO0<lI1I00[c])
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+end
+else
+if IOOI0ll1I<54 then
+if IOOI0ll1I<53 then
+if IOOI0ll1I==52 then
+repeat
+for _fw31=1,5 do break end
+local Oll00IlI1=lI1I00[c]; lI1I00[a]=(lI1I00[b]<Oll00IlI1)
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==53 then
+repeat
+local lI0lO0=lI1I00[b]; lI1I00[a]=(lI0lO0<=lI1I00[c])
+until true
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+end
+else
+if IOOI0ll1I<55 then
+if IOOI0ll1I==54 then
+for _fv79=383,383 do
+local lI0lO0=lI1I00[b]; lI1I00[a]=lI0lO0..lI1I00[c]
+end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
+else
+if IOOI0ll1I==55 then
+for _fz82=866,866 do
+for _fx83=1,2 do break end
+for _fq80=81,81 do
 for _fw81=1,5 do break end
-local I10OOl=ll1O1IIl(lOOOI1I,b+1); lOOIOlOO1[a]=IlO0IIII1[I10OOl]
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==45 then
-for _fq95=743,743 do
-for _fw96=1,5 do break end
-repeat
-for _fv94=1,5 do break end
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl+lOOIOlOO1[c]
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<47 then
-if Ol0001==46 then
-repeat
-for _fv19=1,3 do break end
-repeat
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl-lOOIOlOO1[c]
-until true
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==47 then
-for _fq20=608,608 do
-for _fw21=1,4 do break end
-local lOI1III1=lOOIOlOO1[c]; lOOIOlOO1[a]=lOOIOlOO1[b]-lOI1III1
-end
-else error("bad Ol0001 "..Ol0001) end
+local Oll00IlI1=lI1I00[c]; lI1I00[a]=lI1I00[b]..Oll00IlI1
 end
 end
-end
-else
-if Ol0001<51 then
-if Ol0001<49 then
-if Ol0001==48 then
-repeat
-for _fx63=1,4 do break end
-repeat
-for _fw61=1,2 do break end
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl*lOOIOlOO1[c]
-until true
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001<50 then
-if Ol0001==49 then
-repeat
-local lOI1III1=lOOIOlOO1[c]; lOOIOlOO1[a]=lOOIOlOO1[b]*lOI1III1
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==50 then
-for _fv24=395,395 do
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=(I10OOl==lOOIOlOO1[c])
-end
-else error("bad Ol0001 "..Ol0001) end
-end
-end
-else
-if Ol0001<53 then
-if Ol0001<52 then
-if Ol0001==51 then
-repeat
-for _fq15=1,2 do break end
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=(I10OOl<lOOIOlOO1[c])
-until true
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==52 then
-repeat
-for _fv44=1,5 do break end
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=(I10OOl<=lOOIOlOO1[c])
-until true
-else error("bad Ol0001 "..Ol0001) end
-end
-else
-if Ol0001<54 then
-if Ol0001==53 then
-for _fq50=481,481 do
-repeat
-for _fv49=1,4 do break end
-local I10OOl=lOOIOlOO1[b]; lOOIOlOO1[a]=I10OOl..lOOIOlOO1[c]
-until true
-end
-else error("bad Ol0001 "..Ol0001) end
-else
-if Ol0001==54 then
-repeat
-for _fx53=1,4 do break end
-repeat
-local lOI1III1=lOOIOlOO1[c]; lOOIOlOO1[a]=lOOIOlOO1[b]..lOI1III1
-until true
-until true
-else error("bad Ol0001 "..Ol0001) end
+else error("bad IOOI0ll1I "..IOOI0ll1I) end
 end
 end
 end
@@ -745,22 +749,22 @@ end
 end
   end
 end
--- xdwdchan approved this line personally
-local O11ll10II={[6195237]=0X000,[0B00010010111111000011010100]=0X01,[0X000630a6f]=0x0000,[8188362]={52973,0X04901,0x50a8,39304,0b0101011110010001,0X0dfeB,524759,4393,62162,0b00011011100010,47951,0b001001101110001010,0X000486f,0b00001101001101001,41464,0Xd62b,51955,0x56c4,14539,0x0002c16,0B11000011101001,0B1100100100110010,0X6442,0x88a2,32859,0B001010110001111111,0X5ca94,0x4082,0x00085cbf,0X000dc7a,0B010110010101111,0x1c1E,54521,0X00ae21,0X003397,15890,0X002023,31257,0b0001110111100010101,0x0148a,0X005135,65296,0B001001000000100,0xc942,3873,0X72a7,0Xb9c8,0X00010Eb,0B1110001110100101,0x00E78d,0X09627,0X000B07,17639,232,67907,0X029c1,0X8bf9,63735,523228,0x0B326,0X0006816,0x02ac6,568803,0X0d514,65567,0x00C958,0XC849,0X06724,0x06c481,0b1000110110010111,0B0100011111010001,0B00111010010111111,0X00060b0,0x09C05,63561,0Xc791,0B01010100000100110010,0b01111011110000100,19340,0B0101111010000,9273,0B001011100000000111,391384,5399,54983,0x0e815,0B001101011100101111010,0b1101011010010101,0B01111001010000110,0x0003b94,67297,0b00001010000101111101,0B001101101001011010,0X000b383,0B01110111101101010,0B001101001111000010,8571,0x001283,38879,0xce41,522614,0X00021b5,0b001010101011011110100,36343,0B010101101111100,18840,364041,11523,0x0066f3c,0b01001000110101010,0x0880B,17820,0Xe972,9110,0x0007013,0X0921,28314,0X001dd9,0b00100111000111001,0b01011101110101101,10833,42103,0b0000111100110010000,0x0005e7c,0X00011919,0x0007b7a,0x00cE34,30675,0x000a592,0B001101010101100000,0B00001101010010110101,0x9355,0X0dd24,0B001111111110100100,0X5f90D,51057,334161,19541,0B0001101110101101100,62433,8557,0x0cd2,26079,65016,0x000488e,0x07627,0x65dce,0X003e61,29903,0x000eafa,371817,0X2F03,0X00154b,44131,15390,0x7541,29040,0XE527,0B001011111100101110,52630,63945,0X002424,0x0cbf9,43040,28339,44559,0b01010100100100010110,0x0b6c4,0x067121,0b1010111100111011,9532,0X00F00f,54719,63359,0B00101100010000100,35599,66621,4234,0B00101111101101111,0B0010101001010100,30437,9469,0X000903e,0B1110000111110100,0x00e204,23240,0B01101100110100110,0x005ec6,0b01001110100001011,0X0e7Fe,61312,0x0007DE9,32105,47116,464093,0x003915,332242,0X05077,0b0001101000011010000010,0B00011001101101101,55312,0x00e2EF,58902,0X0884c,0Xbee9,0B101110100101111,0X64D40,47111,0xb6A4,53187,0x0001fd3,0x04a62,0X00e555,65208,0X00c925,0B00001101110010111011,60581,0b01110000111011101,0X55b8e,0B00101011001101011,0x000cb6a,0x18B5,0x00463d,15678,0b110010001100011,0x050b9,49140,0X00e8D1,0x000aA92,0Xa453,31663,55641,0B0000111000010110111,0X0006a3,0b001111011110110101,0xbd80,0x06686F,0x0Dd7c,47119,0x084E4,0B01000011110100,30956,0x00010F73,0x004932,0b0000101000100111110,0b00100000011111100,40433,0x0005E19,0x08Dc4,40709,0B01111001010000011,0b0000110110011000001,23627,0xCc03,15692,38090,0x5e3e,0b001001001011101010,0x60E5f,0B0000100111110111001,0Xbb1e,0X000DDfa,0b001110110000101011,0x00099b5,0x08a27,0x008c13,0X0002D1C,12661,56514,0x0cd56,0x000F70a,0b01111000110101011,0B1000000011001101,0x00c6f4,0x0B7D3,10239,0XB5DE,0XC206,0X09ebb,0X091a4,0X57e5,0x0B7d1,0B001010101111100100110,0B101110001001110,0x02c0e,0B00001101000111111000,0X005B369,55072,0XBEA2,32224,0b01110000011001001,0x00e646,50645,0b0001111101111100001,0B01010111011100110,0x00ccb4,0x06ac8,1849,0x0001D60,0x00042cf,24614,0x05A32,0b000010110101101101,0x000385b,33550,0X0e482,0xa4EF,63852,0b00101111010001011,0B001000111111111100,48227,0X00df,18916,0b1111011000001001,0X0007347,64107,0x051384,0x043Bd,0XD609,0X01aD5,0B010000110101000,16947,0B010011001001011110,0X0083cc,5949,0B110101100001111,36047,0x0587d,0X8fc2,0X0C0FD,0X00061A64,0x00e07d,65967,0x169,0b001000011101001111,0X003f3,0B001100000011011111,18899,0x005c9Fc,37567,63918,0x03501,0x00C432,8554,0B10100101000001111,44291,0X005f21a,43195,0X08840,0X000B7fb,21378,0x0b215,0X0081c0,0x009d82,0X071eb,0x083Fe,0X0Ea30,0x000483,39154,0b11111111101000,434351,0B0011000011101000,563351,35034,0x000316C,0X000ffb2,0x00f674,0B0001111111001101011,0x000dbfe,18043,0b00011101100111010,0X00093e,0X05fa5,0X00E29b,0x4055,0X068B2,0b01011100000011001,55000,0x445a,0x0a92,0X001c75,0B01111011100011,0B01100010010101111100,0b1011111001010101,0X0a00,0X000c88a,0X001386,24720,0x0042F5,65238,0X0005415,0x0198C,51067,44870,28476,0xd140,0B000010001001110111011101,3122,405099,0b000010100001000101,0x008241E,0X02357,0x00066eAd,0x000fa28,21203,53568,9587,0X0009F56,0xfa5,0b0001001101100111001,31558,40009,0x0065342,0x000c48a,0X00348c,33203,0X01607,0B00101011011011001,0x00C4FE,15347,0x0502a,0X08d35,33373,0Xd26,0XD522,0Xb5e1,0b01000111011101,49847,0X035F3,0X00ce23,0B00001010101110001110,4452,0x511b,0x06a5a,0x00d9c5,0xb0b6,0x471b,0x0f4fB,0X0014b14,0b100111110101000,0X0007201,0b01010001000011010,31235,0B11001010001101,41105,0X0007436,26517,53646,0xe529,0x2b1,0x0c41a,0X6f00,0X00AA5c,0x00795d,0X00743C,26181,0XEC77,0B110000100100101,0x64ec,0xa73f,56614,0xdb23,25086,0x0008225,540164,0xE8aa,0X000585e9,0b001111101011100010,0xfb2a,0X0001db5,0X0001802,0X000b78e,42001,51562,0x00107AC,0B00110101011000101,0B0001111100111111110,0x02C28,0B00001100000100001,15028,82971,0x04473,12511,20764,0x000cf73,0X21a6,0b0010001011110101000001,0x00042F3,0B0001100001011001011,0X00fd92,0X059f9,0b0000101110100101101,37081,56020,0X07fb9e,0x0ee54,0x005E870,2440,0x000d91e,0b0001011101010010111,0B0001001011010100111,29669,0B01001100000101110,0X000b71c,49061,0X0009326,55333,0b000101101000010,0xe84a,0x39b6,0x64af3,0X9A77,61568,13212,32182,0x0baa6,45578,0b01011000100111110,0X62cd3,0b00001101010111000101,0X0aa40,0x0bd4,0B1011101110101000111,0x0008BD0,0B0101001101001001,0X00017bf,0Xa238,7644,0Xc1Ab,0x004c8D,44981,32191,57664,0B00001000111010101000,0b01001101110010101001,0x00010c0,53695,0b000110100110101010,0b00001011100100110100,0x00A14a,0b1100101001110011011,0b00010000001001110,13834,38495,0x00063DD6,0x0008d4,0X02b6A,0x000D77E,0X7bdc,0x00029b4,0b00001110101100001,0X00046a,0xeF33,37652,0x7bc9,0B01100010010111000,30373,0x00b524,0b0010101100111000,0B001100101101001001,0X0ac74,0b00110110101110010,0b010000001000010000,0b000111001011000000,34019,0b00001110110001000,0X4080,0b11100101011111,0B00101010111100101011,56529,0B0001001010100111101,0B000111011101001100,0x010237,0xb514,28043,0b000101110010101001,0x00e589,0b01101100111110110,0B001111011000110000,0X00c6F6,0b011111010001110,34519,356190,0x00Fa10,523152,0B00001000011000011101,0X14d4,0X00D0Fc,0x08ae0d,0X0fc8c,0X0e307,0b001100100000001100,0Xbb8c,40158,0b001100100001110011,0B00001100000000111110,25551,0xACFB,0b00111111010111000,0X00D9D7,0X0734e,49346,0X0102E7,0X0063fc,0X0d3CC,0B01101100000111001,0x0bE80,0x4FC3,0x08609,17760,0b00001111101111100001111,0X09587,0B0110011010010011,12849,551374,48587,0X00065209,0x009d17,0b01011011001011101,25774,49267,0X067,0xf0ea,52297,0x00a78b,0x37c5,0X000cc04,0X0004e10,14081,0x1506,50535,0x1e5b,30041,0X000e011,0X00b5dc,1063,6244,0B001010111000010110,0Xfcf3,0X000a63d,0B00010000100011000110001,0B0001011100110111111,0X0005A2d4,0x00b7c7,0X0004f70,56370,27465,47312,0b100011010100100,0b01000111111011101,0b010001111100101,0x9583,0x0012d6,50440,35272,0xB190,65254,0X00A5BC,0x27Be,53552,0b000111101100011,0X003062,0X0005885,55627,0x65C0,25079,21583,57641,0b00001101101010110101000,0x57d,0X0Ef29,0x5adc,0x060e2b,0B01000110011011111,0B010000100110100,0X004fa,0b0000101100110110001,0x000cb98,0x0002D32,0x0002bd8,0X000b138,0b01001000101101010,0x000fd92,0x9188,0x08165,0B101001110100111,0x0003541,0B01001010101100101,0B1111110001000,0X000a991,0X0100a5,0x5c4e,0B00001100010101001101,36066,0x0dead,0b0001110101100111010,0b0000101101101001,38558,0B0001010000000100101,0x4b2,0x0002ff2,0b1011100100010001,26475,0x1F26,0x00010959,0x000fa03,0b01101111001100000,0xb07C,0xd215,0XE8D1,0X000ac39,12093,0B0111110001011101,44970,0Xff16,25874,0X0009ae5,52250,0b1010010111110001001,38948,0x714e9,0X002af5,9472,0x0080ae,376579,32295,0X000bf30,0B0001110010010011000,0b0001001010011010101,39893,0xB79E,18897,380904,53246,576603,64933,0x0DB30,58406,0X0007d8C,0X01A8E,28089,0x000ED81,67278,7450,0b011011100111010,0X6DC3,0b101010110100000,0X000F662,0x0009990,0x00d343,0B00001100000000000001110,0X0f680,57331,19524,0X00063636,0X0005746,0B00010000010000000100,0x00f18d,0B00010011000001100101101,0x000a4f3,21921,0Xc252,0b001100001001101011101,0X1981,0X000691f,0x0D474,0x5a37f,0B0010000111100010,0X1aed,36153,0X0bce0,0X000eb90,0b0111000101010100,0b000010001011000010,0X000235e,0B00111001100000,0X00081B8,63677,0B00001011101000111100100,0x002C69,466508,0b001111110110001001,0B01000010101010010,0x000982b,0x78a1,37811,36536,0B01010001000101,0x00060ecb,0X00011d1,0x0B386,54841,0x0001db0,0x00e891,45149,38302,0x005e9cb,0X000764A,0b0001101010000000,0b01110000111101110,0x0393E,38527,4010,0X04bF3,0X006F01,0b0000111011101100100,0X0A4D2,9715,0B00010110001110000,0B000101001111011100,57987,0B011111010101100,0x00D301,0x002b3c,0B00001101011011001000,38528,0x00a2c9,0X1771,0b0001010111010110111,0x001a22,7665,0X000d097,0B01010001011000,13345,56987,0x0009088,0B001100100101001100,8347,0X000f7BF,0X003817,29723,28408,0X07fB5b,53660,0X5ee13,0b1111001100001000,0x0076Ae7,0x0013E4,7191,0X006A6b,0X09b96,0x00ce04,33633,0x00afd4,21601,0X049e7,0x00106a0,0b1100001100110000,0x05AA1,58410,0b000100100110100101,0b001101100011000001,52025,0X80c8,0X45A2,11386,0x0001221b,0X0001ae6,0xb05b,0X000E793,0B000010000100110101000,50838,0xB632,0X006a0,0x0006f8a,0b0110011110011111,0x12Dda,23070,0b01110111011010000,0x06E64,18104,0B111000101001101,38888,0b0111111100110001,0x0C9C,0B0000111101001010110,0x7435,0X08089,0b010100000001100010,55841,47409,0B00001011101111010,0B00001010100110011101,0X00e0F1,50248,44112,39117,0XaD72,0X0002533,0B111100010001011,0B011011011000000,0x9f4a,37914,0B00001110001000001111,0B00001101000100010000001,0B00001101100111000001,32885,0x0b95f,0B01010001001001111100,0x01a5c,19908,0B0001100010011010110,45654,26384,0x009222,11658,0x00fc27,0X0a4e3,0x0006e99,0x0a494,0b11111010101011,0X000E1d9,435218,50744,0X000f9e5,57921,0B00110001111110010,0b010000000001000,0X00686e,0X0430A,0x11eeB,33665,33525,0X02281,0X00de1d,0x000867D,0B0110100111000110,0X0025b5,22692,0B0001010101011001000,0x79581,0B0001000110110010001,0b001101111000101100,0b000010010000111001,0x6c14,23282,355151,0b0000111110011001110,67179,0X6b79,21494,0X0004960,0x000d37,0b01011100110110111,0XD938,47611,64043,51683,571230,20345,0X9079,0x000bF03,48872,0x08b5D,390912,0B00001101111011110,49717,31479,0b01110111110011001,0X53e6,0x01095d,0xe516,0X005c627,0X0062A2,0b00001010010001011100,0B01100010000001100,0b0001010001100000000001,0x000beb8,0B0110100000110011,25728,0b00001101111001010011,0B0100111100110000,4255,0X0aaab,0X000762c,0X080C7,61361,0B1111001100101111,0x0007d384,52233,0B001100001111001001111,0X09278,0X0089473,92,0B00001100110011010100,0X008740,0x000F8d5,0X003f5,0B000101110000100,33851,0x0007ae22,0x6725,7084,36146,0X00e9f6,35262,0b00100111011110001,30562,0B00001000001110101010,0x86f,0b1001011000010000110,0x0064F,52003,58753,0X4eea,0X05f73,31879,0b01001001111010100,61657,9413,36154,0x003db,0x8fAD,17715,0B010100010101111,58886,0x0084a6D,44137,0Xc0b5,0x0009C21,0X7f33,0X0123,0B01101001111101100,0b00100010101011100,0b1101010100000101101,5965,0b0001100000100000011,0X009755,21965,0b0000101000000000100,0B00001111111010101010,45801,0b0010101010101101,0b0000110111011100011,0xBba8,0X00F071,16707,0X0001FD5,0X005373,0X00B174,0x0A171,0Xa2c1,0X0070ff,0x000ad39,0X00889d,0B00001111111000111101,0X007896,0b1100100010111111,64652,56434,0x0007be7,0xb34e,0X0eae2,0xC647,0x09c02,21220,0Xb465,0B011111010111101,0b101110101100,0x006187,0x0d9e2,0x072aD,0B0000101111110011000,0x000CC3,0B01001001011001110,0X03e51,0b00001011101101111000,0Xbec8,1235,0xF5A5,0x008b7f,5177,22645,0xafb,16497,7821,522070,55581,0X000e3D,29841,0X000ef49,0B000111011101011100,0x066fA,0X00f820,0b1111101100000110001,0X00f673,24524,0X0001639,23271,0X047C5,58822,0b0001000110110000011,0B1001110001001111,0X009248,0x077FF,33680,0x001372,0x01D7e,0X00dC9B,0x0005fa1,434285,0X00041B,0X0007db0,0b000110111100000110,396117,2348,0X69b0,0B001110011001000101,0x00013b38,0X01346,43474,0XaBC0,65448,56296,0b0001110001011011110,37783,0x010aa7,55763,0b100010001100101,39677,0b000010001011110100010,0x067eF,441514,0x002bef,4363,29677,0x07BEA,50542,0xa247,0b01000110000011101,19127,0X00e961,568544,0x000a774,0X08eff,0x0732d,29134,0X00fB1d,0x078Ab,23520,0X0009cb3,0X080f4,8277,14886,0x00083cA5,9881,40534,40328,20105,0X00068cd,336442,0X0C413,434521,0B00101000001011011,0xfaa9,0X00034e5,0x0007158,0B001111111110110010,0Xb900,54771,0x000680d,9544,0B01111000000000011,0b011011111000110,371313,0X0B12F,569200,0x00e85c,0x059015,13315,44840,0x008e3e,38527,11953,0b00011010101001100,31655,0B001101100111000111110,0B100011100010111,476663,48625,0B001111001111011000,0b00001000101110110011,0X00b99B,19359,0X0004d600,0X00f13f,0x0001597,0x00046A7,63724,21887,392846,0x05C00,42744,0X00ff80,54422,0x000c574,0x00f0ac,26748,0b001100100010000110001,34700,33262,8970,0B001101011110010011,0X001e60,0X0010956,0b00010011101100011,0B111111001111100,0x00ec34,0b010110010111110,0x87DC,0x01b07,0X000e3a7,0x000Dbb2,0x9107,0x0009224,41621,0b0001101010101001011000,20548,0B001101110000100001,0b0001011000011001110,46388,0X000d7f4,64561,0X07bcf,0b0010000010111010,0X000f985,0B000010000010100111100100,18667,0b01010010001100010,3307,0B00001000011010010101,0b1101000110001,0X0064062,0X0080a4,0X85701,0b0001101011010100011,25344,0X007Dd6,0X79420,0X44d3,0B111111111101,0x0001fca,11823,0x00E554,54572,0Xce32,0x64aeb,0x0c551,0b000101011100011011,0b0011001101001001,0x0010822,0X000C2Fc,44016,0B00001100111100110011,0x5c17,58275,0x000b358,0x000477a,0X005790,5420,0X00084731,0B000110000000100000,67890,0X0002F92,0x000804df,0b00001100010100001101,0b00001100000100100000110,0B010111000100111,0b1110010010101010,0X0D476,0X00de0b,0X006ef9,0X0005286,0x00033d6,26288,0X0029A6,0x10929,0B100101110000110,4205,0X0c213,35780,60969,0X00070e3,32193,0X0007f1d,0x1ff5,0X007e9f,0X00b2F9,0b001100000000111010,0x826a,0B10110001010111,0B100100001010,75369,0X03693,27691,0B000100010111100,20582,0x00061B1,50294,0x0066a4,0X7e71,0B1001100111010111,0x05e79,0X0f005,0X00A182,0b00100101001010011,0X00F16,0X04b42,0X04bfe,0X027cF,0X69e6,0x0005BC6,0x0eb67,0B01101111100100010,0x005a0cd,0b011000110000011,37077,0x06D98,0x0002618,0X001b0c,0X000e3c2,0X0B082,0B111101110011011,11622,0B00111100101100010,0X0ff27,0B001110011000111110,59851,0x0003560,15327,13134,0b00001011111010100110,508300,32310,0x06fc1,27769,0b00010000100100111100,0x000b05f,3565,0B1001111111110,0X0e672,28768,0x009675,9009,0X010775,0X0903D,0x000859e,38291,0X00c3C9,0x0003316,0X08b971,3671,0Xf61c,0x01ed,0b0001001110011011100,0x007618,0X102a1,0X0cd3e,78969,0B001101001111001111,0X00729f,0B01000111110000011,62220,0x030f,0x0004ea1e,22682,0x000631cb,38220,0x04e216,0b000101011110100001,28754,0x000e2cc,0b001111100100110010,0X000bA83,0X64042,0b0000101010101010100,0X0067E1,4735,49233,7893,0B10010000000110000001,51145,0B01010010000001100,35064,11267,0B1000010100011000,30681,49058,0Xee0d,0X000a585,0B00110011001011011,0X00e866,0x00B96e,0B0011000100100011,354106,0x004470,0X0007DBB,0X02E0e,0B001001010010010001,31319,0b0000111001101110010,28894,63999,0X001eee,0B0001001111101110010,0X0008D32,0X05Dcd,0B01010001011011101,44693,0Xb751,0b000100111001010011,0b000110010101011111,30084,0X000a8c,39981,47100,0X00035d4,0x00c26b,84402,26266,0b110000001110111,53207,0x005845,28773,0X0003a37,0b0001101110010100111,0b001111010110100001,0x0002592,0B00110100101101101,0X06bc3,0x004ef8,0B110110100101000,0X0a15,33291,0X0006816e,0x09a39,0x4B0,0B01011100101011010,369855,0x006d8d,0X0085d58,0Xc573,0B00001111111111011,59917,0x00088ab,5692,37215,0B011101111100111,0x07d3c4,0X002C60,365449,0b000101101001111001,0x001cf4,0XdCaF,457048,43518,0b000100001000000011,0B00001110101111,0x6cd4,0Xbda3,0X0406e,0xf0db,0x729a,0x0008d69,0X006489B,0b001001001100101100,0B00001100110101110011,0X00075e9,0b00001110101110100011,17870,0X0009d1EE,0X064fa,0B00001111000100110010,62675,24148,411,0X47a4,44201,0B000100110110111110,0X00EaC6,391833,0X000bdd1,0X00D598,43960,0x00e1c5,0x028d6,0b000111110001110101,47951,343754,0Xa5cd,0x612fc,0x0F5b5,0X9c21,0B011000001001110,0b1101011000101000011,0B00001001111100000100,0X0fa44,0B0001101000011010110,0X005507,45045,65218,0b0111010100001010,0Xfe83,57755,0XbB5C,0x0058b2,0x6D19,20558,0b00001001111100001110,0x26,0B001101010111101011011,0B0000101011110101110,6473,21410,0X0053BE1,0x0721E,34223,0x00eA56,0b010000000110100010,0B0110001011110011,0X2743,0x003223,0x2a06,0x007296,40471,42034,26981,0b00011101000011000,0x000c552,23849,0B000010011000010100,0B0001011101010100101,57722,0X0009848,0x06966,52890,412266,60073,0b0100001110100011,31756,0B00010000101001100010,0X036a3,0B01001000111100100,0B0000101010101100110,357043,0x0f1d9,0x00B118,508,0x05361,50,0B1011111111000000,0X058b0,0x02B26,0X00156d,0x09583,0B000101100110010011,0X02220,0X0007747,621367,0B000110010011011001,38813,5276,0b001001011111011,0x004607,0X7B0B,31538,0x1319,0X00ae56,0x0b2d1,0x000dd9a,62909,62866,10617,0B0100000000011110,0b0001010001100100110,0x0007aE8,0X00050A2,43982,0x006bBA,53301,0X8557,0X005C95,0B1101011000000011,0XC8Bf,10112,0b0111101110101110,0x000379F,0b00001110001110111010,41574,0x09c39,0X640d,0x0C30c,0X00453d,0xa95f,68256,34846,59770,0x000586,0x0006A82,0b1101001011101010,358618,0b00011000011001001,0b01000110110100000,0x0d2Cc,64233,0X0048b7,0B000111011010111001,0B1110010100001100,0b000100100100110101,0X0bb8d,0b001100101001101011,0B001101010100110000,0B111100011011011,0X0e5ee,27459,24306,0B00001111100011111110,0X06725,0X0008060,0x0fea,0x00B733,64254,27546,0B001101001010111001,0X086a96,10069,409804,48578,0X000Af3e,0x6a92,0B100111001000001,0B0001011110101010001,0x6148,0Xc8c3,63915,0x008d5e,0X07f4d5,18493,0x0319c,45012,0x0006113,0Xef8b,18193,0b0010110110100110,0X00532a,0x00a48,0b0111111101000,27905,0x000109a,0B00001010100111001000,0X0e27d,0x08063,36819,17910,0b0001001011111001111,0X0007e14,0b00011010001101011,49335,52284,45910,33781,60491,0x00087cf6,0b001101000100011010,0X000b4c3,0X04e40,0X7e39f,13668,0B00001100100000000111,18897,8066,46762,11511,0x0F430,0x005Bc8,0x005916,62826,0b0000110101100001011,0B01000111101011001,63773,3066,0X00f360,0x0004aA5,0x0075bc,0Xec41,0B000101100001011001,0b00001100011110111000110,31096,548312,0x0001e40,0x000d3ef,0x00d4dD,0X08ab6e,0B0001110011101010,0X01d6a,0b0110011110001101,0b0001010110101011000,0B000110000011101100,0X009065,0B0000100011101101101,0B011111010010010,0x002923,28272,0X0b55,33025,0X000362b,62192,31825,0x00f056,0xdbba,0B0001111101100110111,0x004a71,0x0068f84,18415,0x0801e,0x02216,0x000f80e,0b0001011100101011101,0X0007Dda0,7632,0X0c8A8,10792,0X9bf7,0x094be},[7079680]={"\130A\034[","\162E;mAx\131\1797\254","\181L.GAx\134","\183U!mAx\131\1797\254","\176S*Lmd\133\175 \200\162\024J\169\230Y","\169O,_HZ\153\187-\254\181","\182P.IJo\145\156;\232\180\003P\179",((0B010010011000101*91)-0X00d11a3),((-3478*248)+862559),(((-3212*0x003F)+0x0031675)/((-0x0004c1*0x0013)+0X005a55)),((-3044*0b000010001010)+0b00001100110110011010000),"\172N<JEd\150\191","\139E8","\182C=[Ad\178\175=","\171A\034[","\163O<MMf\176\169$\221\166\024Q\135\240U","\183E<[PE\155\137$\250\176\004","\181A=[J~","\178A&Jbe\135\153<\242\171\014","\181L.GAx\178\175=","\163R.SA","\182I5[","\176d&S\022",((0B1010110110001*0b0010011111)-0b000011010111100011101111),((-0x108B*186)+788030),((-0X0001C65*0b000011100101)+1665081),"\181O<WPc\154\180",((0x0236a*0b0001001011)-679930),"\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((0x0002d7*234)-0x2986D),"\167O=ZAx\166\179.\254\151\003D\165\233",((-9287*0x0A5)+1532357),"\167O=ZAx\182\1818\244\181Y",((0B0001000011011010*0B01100001)-0X000661d2),((0B00100111101011*0B0010100101)-0B00001100110001111111111),"\176i\012QVd\144\168","\166O=PAx\167\1870\242\178\025","\176d&S",((-0x0013DA*0X097)+767394),"\176i\008LEn\156\191:\239","\166O#QV","\166O#QVY\144\171!\254\169\009Y","\166O#QVY\144\171!\254\169\009Y\139\224E\031\151g\148\005",((9650*0X00047)-0x00a743b),((-0X0C8c*0x3f)+0b00110001011001110101),"\183O;_Pc\154\180",((0B0001010001011000*0B0001101001)-0x00857be),((-0X0001802*0x0039)+0x05589f),((-8813*0B00010111)+202879),((-0x0682*0b0010110011)+0X48d54),((0x1A59*0X0bd)-1274675),((-4845*0B11000111)+964305),"\177E7Jhk\151\1918",((4861*89)-432619),"\177E7J","\007\186\238\030bE\166\137\029\215\231,}\146\200\028B\216]\1744\213\191\230\240","\177E7Jge\153\181&\168","\167A,UCx\154\175:\255\147\024]\174\246L\014\138k\148\018\237","\163O!J","\160N:S","\162O;VEg\183\1818\255","\177E7Jwc\143\191",((-0x021a1*0b01001011)+645691),"\177E7J|K\153\1793\245\170\015R\180","\169E)J",((-0X01A49*0b0001100011)+0Xa2a59),"\135Yo}fO\161\150\027\207\134","\166O+[",((-0B0110111100010*0X00072)+405165),"\164C;WRo","\172N?KPH\144\1895\245","\166O!PAi\129","\172N?KPI\157\187:\252\162\014",((-0x0009DC*85)+214580),((0X59c*0X00099)-0x0003593D),((3096*0X83)-0x06303a),"\007\175\254\030\244\148$[\133\025\023\218\236{U\130\190y\223vK\180\195","\021\191\219\179\004O\166\138n\187\136,z",((-0b0111011011*0x08f)+68010),"\007\186\238\030\244\171%`\132%\022\234\236~T\189\190z\223vQ\188\128\198\205\226r\001\179&","\007\186\238\030\244\171%`\132%\022\234\236~T\189\190z\223vK\180","\197S;K@y\218\169","\021\191\220\179\004\218g\011\223JF\186\130\017\007\236\223\216\222E\161$\0342h3\209\147\016\183\154Y\144tb<n\008\225_",((0X0006d*0x6f)-11909),"\021\191\220\179\004\218g\011\223JF\186\130\017\007\236\223\194.","\197S;K@y","\007\175\254\030\244\157%j\132/\023\223\237@U\138\191B\222JQ\188\0343h3\209\148\017\140\155k`\232\192\1952",((-7955*0x75)+0b00011100011010010101001),"\007\175\254\030\244\157%j\132/\023\223\237@U\138\191B\222JK\180","\150","\021\191\235\168\004L\180\136\025\161\231%z\134",((-5039*0B11011001)+1093778),((0B1110100001000*0X00032)-0X5Aa28),((0X003Ea*81)-0x0013CBA),((0x02160*36)-0x4b178),((-0B00001111000000100*0xe0)+0x001a4385),"\007\164\246\209\156\133\213\010\244KR\186\170\016\029\236\243\216\222[\1616#'h\029\209\143\016\159q\220R\192\130h\203\243C\246\028\147\183\149\156\194\092<\157:/\247\244\157M\02030\148\018\225\092]\010u>\164\214@\247\214\238ptH\128\134\132\029~\004\242\206\206\132\239u3\180\016\199\004\028\130\092\230]T\173\138\018\201RF8f\225\169\192bJ\173\1445\225\168\151\236r\247=\185\191\167\252\147>\179\030c'BF\200\239$ba\214c\140>=x \141\025H\217wc\166\184#y\190\147\153\011\140U\240\255%U&\183\252&\171\149Z!\176\157Lx\177dx\141\167s\194\132\246Y\030\157?\019\166\172,\001\248\192\221~\198\208iLV\021\178\188\214|\173\142`T\247\220$78V\223(\174A\216\188\157\217v\204W{\191\185\021\027\224#$\183/\243@G\127;\218\213\152\228\218\247\010\025\128\165\156\164EO\200\017\180\179\155\152\202A\011","\177E7Jsx\148\170$\254\163","\177E7J}K\153\1793\245\170\015R\180","\177O?","\173E.LPh\144\187 ","\151I5DHo\135","\144N,aW~\148\174!\232","\135A<[@U\145\191$\239","\139P,aFo\157\187\034\242\168\024"},[7173349]={{[0X0005e8825]=0B000,[0X004bF0D4]=0b00000,[0b0011000110000101001101111]=0X0001,[0x0007cf1ca]={0b0101101010101100,0X18c8,5803,2752,13121,0B01000110100010100,0B0001011110110101000,0X000935a,0x0835a,0B001111101101,0b001010010001110110,0B000010011011011100,0X011e7,57991,38506,0B10000011111010,0X00fe7a,0X05A1f,0Xb2bc,0b01001001111110111,17404,0X000e045,0B0011111011001,0b0110110010100111,0X01133,0x00032A3,0x000cbb5,0x00194,0B001001111011010111,0B0000111101010011001,0X0e1b8,63255,0x000a774,0x0095DF,0x0008263,0b01011011001100101,0b001011011111110001,0b0001100000000100101,17141,0x95d8,61948,0xB6d,0B010011101100111000,42764,2036,0X925a,0B010101000111010,36679,0B01100110100110101,21084,0b00011010100101001,189,0X008b6b,0X0006983,0X003D49,16770,0xcd5c,57890,0x05cef,7248,0x003EDe,0X00042c3,0B00010111000111111101,1191,0B0100100100100000,0b001100110000111011,0x000166Bd,58877,0X099A7,0B01101111110111101,36905,0X000cb4b,0B0001110001110001010,0B000011100111010010,5009,0X00058b,0b00001111001100101001,0x00Ddde,0b001111110111010000,0X00c3c6,17845,0b0001111111100011010,0b0100000001000101,0x0004A55,0x0081c6,0x0AAcb,0x07f08,36824,0x0ab21,0B01101100000010101,0X7059,31281,0X924,0X04D95,89889,0x000465f,0b0000110001110110011,13773,0b01100110010000011,0b0010011110101000,0x000Ca1F,0x094C4,0B01100111101011110,0x007084,0xB77B,16838,0b111000111000000,0b010001010100101,3379,0x0fc38,0b001100010100000101,22576,0B000101011011010101,0X4980,50092,0x004534,6445,0x0005f95,0X0006f11,0B00001100110110110101,0x5905,50728,41165,0x04dd2,0X3270,0x000a5E5,33715,0B10100001011100,0B001000001011110001,0B0111001100110001,0b000111010111010,0B01111001011110010},[0b0011011000000011100000000]={"\166H.LEi\129\191&","\181A=[J~","\181R&SEx\140\1385\233\179","\163I!Zbc\135\169 \216\175\003P\164","\173U\034_Je\156\190\006\244\168\030l\161\247H","\167O+G",((-0X183*0X28)+15821),((-0x1631*0x00ea)+0X00144Aab)},[0X0006d74e5]={},[5489145]={1,0b11}},{[0b000010111101000100000100101]=0X000,[0B0010010111111000011010100]=0X000,[0X0630A6F]=0b0001,[0X0007cf1ca]={0X009e3,0X0802,3918,17911,0x088ff,8644,18842,112,0b00001011011110110011,0x00B826,0x08e53,0Xb449},[7079680]={"\146O=UWz\148\1851","\163I!Zbc\135\169 \216\175\003P\164"},[0X6d74e5]={},[0B0010100111100000111111001]={0x01,0x04}},{[0B0010111101000100000100101]=0x000,[0x004Bf0D4]=0,[0b00011000110000101001101111]=0B0001,[0x0007cF1CA]={0X00Fb5D,38620,0x3999,0Xb36f,5135,0b00001111001010011110,57649,0b0001011001010001001,0x000478D,0b0000111011110010010,0x06BED,37677,14081,0b1000111001111011,0B00101000111100110011,0xd091,0b000100101010001010,0x000fb83,38324,0B1100101100011100,0X0009b4,0X0455a,0B010111001101011101,0B0001001001011111,0X1c24,0x0C3bF,0B0001001100001101,0x2a4E,0Xd7dF,28721,0b101001101100001,0X06d24,0x09c3A,0b0001000000100000111,0x0119ba,12413,0x4152,0b01100000001001101,0B110011001010,0X003d68,0x00b2fc,0B001010110001100001,0X00DBE9,7362,0x080C4,0B0001100000010000001,0B0111011011011000,0X0008cee,16602,0XFFB6,0B000100010000010001,0X07075,0B1011111100110111,0X03d47,0X786a,33858,62525,43668,11346,0X43d0,0x04150,0B101000011110101,0xc1f9,0x005fA8,0X7736,0B0011000101001,0x09290,0X000da6b,0x0007b88,0b110100110011111,0Xa205,62018,35623,0B00001001110101011101,135417,41779,0X00db74,38654,0x000C680,0xbde0,0B000101110011011011,0b01101000110100111,0x012218,0X0cf70,34734,8919,0B10100011001101,0x0009ce8,0X00f34b,0x00645a,0b00001010000101111011,0B01000001111000111,0B1000110000001101,39963,0x21463,0x000Fd,0X000ffe3,0X00c794,55171,2146,0X0c511,55311,128272,0x000CD93,0b00001110100011010011,0x8ebe,0b00001010100011011110,44199,0B000101011100001100111,0b00001111101010101100,0X6c6,0B00001101100111100100,0b000010000000000101001,13728,0X07e71,13804,9590,0b01110000011011011,0x0fBf7,0b1001101001111100,0x0094d4,0b0000110111111011000,0b10000111100010001,0x2c79,146030,0X0087ca,0x00DF2,0x008e15,0B01010100000011111,7644,7725,0b0000101010110110001,0B0001111111000111101,0X02d3d,161889,0B0110011111011,0X14071,0x000Ea5,0b0001000101110101000,0B00110111101010000,48391,0B000110000100101100,0X1f3d6,0XbfAd,0x00a47,0X0002191,0X1D2D,53130,0Xa6dc,0xEB51,0X6125,0B0100010111101100,13858,0b001101101011010010,0B00001110010101010110,0x0A064,51901,62630,0b00001011110001110,0b0111000111111,0b00010001000101,0X3B21,0B001101001010100000,1848,0Xc601,0B0000100010101111100,0B00001111101101011110,57377,0X0e473,33260,0XC905,0b0001011010100101001,0b00001100001000100101,0x30D9,49497,0X00C9Ab,3042,0b1110011111100001,0X0080b9,0X0008D8E,0B00001000000000001111,14375,0x0008ffb,28996,23961,49461,0B1100101111110001,0B010001111011101,22589,0b00011011111111110,0x0072b2,0x0006b1d,0x00cabc,0b01110000111110101,0X100dc,0B00011000000001000,35055,0x09de0,0B101000000010001111,0x07975,36876,0x003c16,0b00101011010011101110,51899,22628,0X0bCd4,5612,5618,0x00103bf,0B111001100111100,0x07b1f,12247,0X5b80,0x00912a,0b011001111100010001,0b000111111001001,0x6C70,0b000111111000110000,0X040C0,0B011000110100110,0b0111110010110110,0X5f1c,0x0021F1,0b00001101000101001111,41258,31364,0x0004df7,0x0006E61,0X06561,0B1100000110010,0X0004213,511,0x00AF49,0x000479e,50248,59128,0X000aB13,0B01011100000100111,0X000eDBe,8902,0X0028b5,0x561b,0B0001101011100110010,0x7eAd,0B0101000110101010,0X0EF4C,0B0001111010110011010,0x43fc,0B000010011000101001001,0x3533,0X000522a,0B0001110110110111010,0X09b5a,1397,0b01001011001101111,11761,0X046f2,0X00b47,0x0110c,0X07080,0X0003b08,17366,0b0010101011111111011,0B01001110011000001,33848,0x00f8f,28261,0x0007cC9,0b0011111100001000,0b00001111110000000,0b111001001100100,0X0004d21,0x00022e2,0B001001101011011,0b0100100111111101,0Xe4fb,13580,0X03477,0b00001001111100100101,0b0001111100110001110,0X003f70,0X000a965,31400,0b00001101001110100111,0X000ECa8,0X00dd90,46178,0x00279c,0Xf555,0X0026c8,0X00e6c9,0X06bdc,52814,0x009361,0x00Ca28,0X0e530,18171,0xd1a,40447,0X55E2,0X5d63,61472,42693,7149,1601,0B0001000110101010,26116,0X00d1d9,53719,0x049cd,52881,0b00001111100010110011,0b00001001111001111101,0B0011011101100011,0X0009f7f,0x5ac5,0B000111011110100000,54627,0b00001010010110001000,0x0ebea},[0X06c0700]={"\140P.WVy","\162E;}Lc\153\190&\254\169","\172S\014","\167A<[tk\135\174","\168O+[H","\181R&SEx\140\1385\233\179","\163I!Zbc\135\169 \216\175\003P\164\210T\006\155f\179\002\213","\181O<WPc\154\180","\145A-RA","\140N<[V~","\140N<JEd\150\191","\149O<WPc\154\180",((0X0071*0B010001)-0B0010110101100),((-0X1ceb*192)+1422836)},[0X06D74e5]={},[0B010100111100000111111001]={0B0001,0x00012}},{[0B10111101000100000100101]=0b0001,[0X0004bf0d4]=0x00,[6490735]=0X0001,[0X0007cf1ca]={0B01110101000101101,0x0009c6c,31275,15851,0xAb42,0b0001101100101111001,14170,0X000D335,0Xa328,0b1100111000111011,0x00b3eb,0B000100111101110011,19635,0xeb4e,0x04abc,15238,67695,0x0916d,0b00101011111010110,0x0e5f7,42942,28595,0b0001101000011110010,0b01101110101011010,0X01731B,0X01b19,92888,0B000101001001100000,0x083f0,0B01001100010011000,0b100010110011110,0X0265C,0x6047,0x00023ae,95644,17629,61062,0B11010011101101,0x0f51F,0B01000111111100010,0X0ec25,0b00001000100001000000,0B0010000111111101100,0x00d35e,30798,31440,12971,0x00ad01,0X0016b24,55943,21832,63783,0x0103a,0B011101000001,30276,38498,62336,0x7633,0X7d8f,17543,0x013c8c,59607,0X14F,0b1101001011110100,0b1111011011001110,0B00001110000001001101,0B0001000011011000010,0X0302a},[0B0011011000000011100000000]={"\136A;V","\134L.ST",((5553*0X009f)-0x000D78EF),((-0X00C8C*0X0003F)+0X031675),"\131L QV",((1436*153)-0x03593d),"\166O#QV9","\131R SvM\183",((-2524*0X055)+0b0000110100011000110100)},[7173349]={},[5489145]={1,15}},{[6195237]=0x1,[0x0004Bf0D4]=0B0000,[0X0630A6F]=0x2,[0B000011111001111000111001010]={56165,0X0005FF9,0B111011101101111,0b00010011000101101,0b000111101100001011,0X0036c2,0X000378a,48451,0b001111010000010010,48734,0x000B6f6,0x005984,0B011001110101011111,0X3f55,0X008384,0B0100000110101100,0b001110011100010001,0X000346a,0b1101111100101000,0x9ebe,0b001001010011001101,29139,0B00110011010100011,0b011111101011110,0b001000111100101100,0x94f3,0x228F,8965,0x000E519,0X00090e5,0B0010101110100100110,0X0040D2,41581,0X5fF9,0b0001111111010100101,0X1d76,0xdf2d,0x0005eaD,0x000a453,65346,0b001011001001111101,33317,0B0000100011010011000,0X000486f,16764,59332,21716,0x00097ca,0B00001101110001000010,6783,0x010d5f,65205,0X0011a9,0X0073fb,0x0899C,0X04BDB,20754,15301,4454,14094,3392,0x000b878,0B001100111000110100,0b0110011101,47111,0X0e72c,0B000010101010110,0XE44,0x00defA,0b001101101110001011,63735,25977,22637,0b0001010000110000000,28357,0X0c3ec},[0x006c0700]={"\166H.LEi\129\191&","\166f=_Io","\139E8",((0xf9*0X00041)-0x3d9a),((0B1000010010110*123)-0x7f64c)},[0B011011010111010011100101]={},[0X53c1f9]={0x001,0X003,0b01,0X0011}},{[0b000010111101000100000100101]=3,[4976852]=0,[6490735]=0X0004,[0X0007cf1ca]={0X00Ce52,0X3e4f,0b0001110010010111000,0X000735D,0B00010011011111111001,38779,60431,0B01011010100001100,0X0189d,9806,0b00001001000110011100,47988,0x00012e82,50881,0B001010101111111010,0x002051,0X93c6,39142,0b00100101001110111,0x06D0f,0b00001010111111111100,0x001492,73075,0x00079c3,46562,0X008790,0b01100010011101110,0b00011000111100111,0b000110100001110101,0x000826D,0b000010101111110111,0B001101000101011000,0b01100010110101001,0X04f3c,0B0001010010101110110,0x4D54,0x0006294,0B00110110110110111,131820,0B1100000010110001,0X008403,45251,53298,0x93A2,0X4930,0x000a44a,0B1111010100101111,13355,0x70f,0x01E1b,0X0026f5,6751,8398,43236,0X7dBF,65280,0x00c460,0x7b93,0X0ee5b,0x0005349,0x0654f,0B0000101101011001010,21738,0b001111101000,0B0000110110001010000,0x00387b,49813,0x009d34,0b1000101111101010,0X000d610,36384,0B10011101100110,171642,11458,0X001b0e1,0b0111101101001101,0XfD69,0XDFC2,64851,53315,0x00034223,50488,39866,0Xcc08,0B0001011101000001011,0B00001000111011100010,26214,0x000cb5c,0X0cda1,0x000ACC8,0x0ba3a,0B000111000111001,0X004efb,0x0028c6,30268,15162,0B00001000001011010010,0x00084ef,35836,0B0000100001101000,0x03210,0X0EF35,0X000e90d,13323,0X04d43,0B00110000100001010,0X000ea98,0b01000000110000000,0x00028fF,0x009447,0B000110000011000010111,0B00100100101100001,0X000B2D4,62396,4148,0X925,0x93a5,0X00f95f,0X002dbb,32635,0B0001101011110010011,26041,0x2c1d,0X0817f,0x0D9b8,50253,0B00011110001101001001,5098,0x0F60C,45637,18299,22795,0b01010000011001000,0X03e65,0XB8a5,0b000101011001101011,0B100010010011100100,0B1010101011000011,0b101011010001101011,0x6414,0b0010111010000100,0X0a06E,0x0002534F,61350,117055,0X0043b6,0b110100100011000,0X0a825,19530,32609,0B1011011111010101,0x9bf5,0X0001d03,0B0000100100001010000,0x718,0X07A3e,0B0100010000001110111,13540,0X05614,0B000111011101101100,0X000c225,7606,0b010011000110000,48814,0B00001111100111001100,0X0eef7,0x27C1,61494,0X1023b,0X000db5b,93891,0X000b56F,0XE074,0x09fcb,0x0012996,0B0001111111010000010,0x0fb51,0X04e51,0xD295,0xfd87,0X00fff8,0x52cB,0b00110011010111010,0XF7c6,0B0011110101111010011,0b1001010001001110,0X0069A0,0x094E8,0x008ecb,0b01111101111010111,0X00024e3,0X008510,0x00BD60,0B01111010001000001,0X00DAF7,56209,0xee1f,30424,0b1100101100010,37068,127913,0B000101010010011111,51818,0X001c06,0x000aac9,0x0a524,16221,0B01011001000110101,0x481,0x0001a73,0x38Ad,26098,0X0002f917,0X015aa,34251,0X0016e5,0B0000111101000011111,0X000ebdb,32490,0x000677f,0X04721,0b00001000111110001,0B000011110101110101,0B1000010100110001,0x00C6dB,45655,0x0001b76,0xc1e2,0xf9ea,0b0111000101111001,0X22d6,0B0001100001010111111},[0X06c0700]={"\166H.LEi\129\191&","\168A(PM~\128\1901",0.1,"\136A;V","\134E&R",((-3212*63)+0x031675),"\181A=[J~","\169E=N","\166f=_Io","\139E8","\173E.LPh\144\187 ","\178A&J",((0B10000001100001*0X000e5)-1898119),((0X00381*76)-0x010883)},[0b011011010111010011100101]={},[5489145]={0X0001,0X003,1,17,0B001,9,0X0001,0X01}},{[0b10111101000100000100101]=1,[4976852]=0,[6490735]=0b101,[0X7cf1ca]={63862,0b001101010000,0X4c8b,0XC232,0B000110000101111010,0X0028e,0Xbe3e,54259,0x0b249,0x0022EC,0b10011101101000011,0X000f96f,62331,0Xa661,0x01DEce,0X038c9,23548,24749,36865,0x01d62,0X00b87e,4024,43487,0x000fA9d,0B000111001100001110,0b00001110010011001100,0B0010001000010000100,0b00001011001100100010,59907,0b001101000111110010,0X463c,62227,0B00001010011110010010,51154,47460,0X0001fbd,0X0004843,0X0003454,27806,0x4e60,0X00f8c1,0x000FEB1,765,0x008F71,0B011001111110,22949,0Xd12e,0x0006af6,0b1000000100101,24521,0B0011010000010011001,50648,51893,0x00701c,10515,0x00f42,0x19e5e,0B0111001011110000,12839,33226,0B01001010101111100,0x009c1,51487,0b00100010111101001,0b0000111001101111,0x1d68,0x5048,16292,32407,0B000101110010000000,0X07ab8,35007,65414,0B0001001000000011101,0X000d33,0X000394d,0B1100010011101110,64850,0B00001100101111110100,43350,0b00001101011000100110,0X000319a,0x07edc,0B1010011110010100,0X0001d414,0X4771,0x000ced9,0B0000101010110101001,37395,0x04fa9,0B00001111000110100101,25690,0b1110001110111001,20609,0x0004b84,59835,12664,2004,0X09ce5,49483,49315,0x06e80,0X000fd87,0b0101010010111,0X0F95B,0x0c44c,0B01111100110011000,0x00726a,52578,0x0052d,29621,0X000fcBc,0b100111100110010,0b011010010100100,0B00101010111110100,6365,111404,0X335,0B00001100011010011110,24676,0x0086F0,0x0e667,0X010031,0x059A2,0X00013b10,0X25F1,0x17b30,0x0cca3,0b001000011001101011,0X000D2a8,39780,27526,20420,0b0001111010000001111,0b000111010001100001,0x0001CC2,54364,0xe7A3,0x00461f,55637,747,0X6276,0b001110110011011011,0X0021ad,42941,0x00030AF,58425,0b00001010011011010010,0b0001101110001010110,0X1Ddf,33064,28616,51962,0X7175,5255,0X0059a4,0X08EEE,0x00f7e,137412,0x6B36,0X10f0,34586,0X01da9,0x0046D0,63537,0x0d7B0,0x012A1,0X00482e,0x015A0D,38031,0B01110111101100100,18038,0x0009D64,0X000603b,0X0068d2,0b0001111010010111010,61215,25535,36184,0X3ca0,0X000fed0,0B0000100010001001,21449,0X00d86e,0x00c6f0,41576,0X01a86f,60326,0B00101111011110010,0XB9dF,6525,0b0001011110101001111,0B00001100000100101000,0X0002f,21987,23250,3116,0X0004e5e,0B001011011010100101,0x0006C50,0X0006E6b,0X000743c,0B01011101001001010,0x004e0b,0x99c,0B01010011001101011,0B00001011110000100,7351,20133,3662,4655,0B000111111001,0X000970f,0B111101010110010,0X0009670,0Xf095,0x00062ab,65336,0X00ea15,10496,0X023C9,0B1011010011100111,0b00001111110101000100,0x00090e0,51824,0B100000101010111,0B011101110111111,0B001010100010111111,94408,0b001001101101100000,0x0112a,0X005eec,0B101111000101111,46215,13913,0x63ce,11242,0X06032,4918,0X000c619,3901,28848,0B00010110001010000,18885},[0x6c0700]={"\166H.LEi\129\191&","\181O<WPc\154\180",((0B00001010110110001*159)-0x000d78ef),"\179E,JKx\198","\139E8","\189","\188","\191",((-0X0001e04*0X0e0)+1721221),((0B000010000101100000*0B0000100100)-307576),((0b00010001100001100*0b00001110010)-0X000F9B55),((0x012fD*0B00001011001)-432619),((-0x24a1*0x0bB)+1754429),((-0x2467*230)+0X0020b909)},[0x0006d74E5]={},[5489145]={1,3,0x01,0b0010001,1,0b1001,1,0X0006,1,0B00010110}},{[0X0005e8825]=1,[0b00010010111111000011010100]=0x0000,[6490735]=0X002,[0x7cf1CA]={0X000189Ba,0B01101011010101101,0x952E,0x3456,0B001000111100000111,0x12ff,31754,0x00f01b,0B00001011000111001101,0x001564,0x000D2D,0X00A57d,0b1010011001101001,64892,19153,0b0000101111111001000,0x000890d,0X00064C8,45303,16838,0X07177,984,0B00001000101000100,0x000117,0b0001001111001010100,0Xb174,0x13550,0X08645,0b11000111101010,0X0004E7b,0x000142F,0X00Fb8,0X00b899,13935,0X0087D2,0b010100010001010,10626,0B0001001111010000,0X000A177,29664,0x000B41c,0x00b686,28160,0x00071e1,0B0110100100110,0X0aCc5,60739,0x0009b1f,6727,26470,0X0011EAf,0X000ABE8,0B101100110010011,0X0e8e7,0X000346,57712,0B1100100111000010,0B0000100111110010011,0x000bC10,0X00c809,0x05fF3,0x0030d,0X0006582,0b0000110110011001000,28106,62478,0X2dd4,9798,0B1111011111110,0Xb1ec,0X0b389,0x007293,0x06255,10468,0X6a7C,0b01010111110111111,598,0b1000100000011010,19271,0X40c7,4786,0b01100110000100010,0X0009D6A,59047,0x00479d,29718,60819,7240,0X1E6D,0X054F1,0B1111111011000011,62615,0x000D548,0x00d3C1,34779,0B0001110100000111,0B01110101010101110,13358,38614,0B00001010101101101001,0X00e6DE,0X1c75,0b01100101100,0X004b70,0xd853,0x07b07,0X0008478,0B0000101101001011,0X03bfb,18625,0X0630f,0X0ff36,0X000Ae84,0x000112b,0X016d57,0x000dfcf,3191,0x000e050,0B000011111111100111,0xc3E9,0x0047d1,0x00010f2,0x011457,0X0001b6c,0B00001011001000011101,30376,0B00010101101101010011,0x089bc,42738,0B00101111111001001,0b10001000011010,0X003DEA,26441,0x00ea62,1893,29950,4278,57793,0B001111010011011011,0X048b,43231,0b10011110010001,0x000e801,0B1100001000011101,7439,0X00a404,50265,20163,0b1011100100100100,0b0001111010001001010,0B111100101000110,0x000a965,0X008b7a,526,0X000E754,0XfCe6,0XEc45,0x04b6A,0X0009907,0b01100110100100101,7394,0B01000011100110001,0b001010110000111,0B00011001001010001,0B00010110011010111000,0X0037aa,0B01110011101100000,0x00029a6,0B0001111111000110000,5666,48940,11902,11822,0b00001011101000101100,0x007D51,0X00e229,0x376D,0X005a32,0X000b474,0xC58A,0X0005104,31934,0b001100111001001100,10232,55112,0b001000001000110,25111,0X0009aaf,42377,0x00097FB,0x0e56c,0x00059a1,19745,0x71f7,0X3F22,0x6d6,0x2646,0x000bC2E,0X002754,38375,0b00001110111110110001,0b0111100100011,0X18c0,44085,0x06341,31230,0X0c955,0b0001111000010110010,0x0b2cC,0b00001111110111001010,0xA872,58768,0x0008973,0x0c8b0,0x0008dFE,0X84cb,89293,62535,64139,0X09425,0x0311e,0x1d44,0B001100000111010111,0x00092d8,0b00001010110011110110,0b0001100010010010110},[7079680]={"\161E<JVe\140","\145R.]Ax","\129O;","\137A-[H","\132R=QS",((0B00101011011000*264)-732704),((0x0022C8*152)-0X14a274)},[0b11011010111010011100101]={},[5489145]={0B01,0Xb,1,0XD}},{[0X05E8825]=0,[4976852]=0X0,[6490735]=2,[0X07cf1ca]={0B00001001011111011110,60562,49356,0X8fce,0x23f,0X008Cc2,0x00013c7e,28504,3224,0x0237f,0X1E563,0b0111101110011001,10823,0X00Fa11,0b1111011111001100,0B010011010011,0B1001111000011110,46532,0x000DCbd,0b00001011001101000,49474,61314,26758,0x000a3dc,0X4fae,30039,23232,0B0000100001100100110,44244,0B1110011001101011,29948,0x4d43,0b1100001100100100,0B000011001110000111,0x04a4f,0B000110110111010001,0B00110111100010101,0x0f207,0X00fF95,0X0c6F3,0b011000110111100,0B00110001101101000,0x0effc,63274,0B11101110010100,0B0011101000101101,0X000b68e,0Xbee0,0B00001100001011010011,32708,0x0004cF1,55653,0B100000101110100,50595,0x00099de,12834,0b0110101010110000,34250,0b0001000111110010,0B000011000011000,6330,0B1011101010110011,0X00Fb13,0xbcD9,8216,26686,21949,0x8609,0b00001100101101110111,0x0f56a,0b001100111001000001,0B00110110111011101,40793,0B01101001101011,6031,35385,0x07f7e,61439,0B01010100010011100,0x0a0ac,0x0C891,0x32f0,0X0097E9,0xd87e,0X81DD,49916,0B00001000010111100111,24295,0XC63,0b0000100001101,27266,0b001111111101101,13073,0b01111000010110010,20478,10812,0B0001101001110101000,43461,0x000f57a,17358,0b0100111111110001,31921,0x012Ffe,0b0111110010011001,68899,0X06bC6,0b001010101001010100,0X000bab9,0X0939f,54728,0b000010100101101101,0B0001010001000111001,0X0007662,0x0fe88,53750,0X7efF,57173,0x0003b6f,0b01101010010111100,0B00011001011111,0B0001100011110110111,0B01110000110111101,0X088F3,16856},[0b000011011000000011100000000]={"\181A=[J~","\172N<JEd\150\191","\139E8","\182C=[Ad\178\175=","\171A\034[","\163O<MMf\176\169$\212\177\015N\172\228E","\183E<[PE\155\137$\250\176\004","\172G!QVo\178\175=\210\169\025Y\180","\161I<NHk\140\149&\255\162\024",((-0b0001011000011011*0x0002a)+238677),"\178A&Jbe\135\153<\242\171\014","\181L.GAx\178\175=",((-0B0010001011111000*0B011111110)+2274023),((6329*0x82)-0b0011001000101101100010)},[0b00011011010111010011100101]={},[0x0053c1f9]={0X1,0X000C,0b0001,0b11}},{[6195237]=0X1,[0x004bf0d4]=0x0,[0B00011000110000101001101111]=4,[8188362]={0x1a97a,0X00df56,63030,0b0000101011100100001,0x0007cc0,0x0097ad,0X8220,0X09e98,0X00e85a,0b0001011110110100101,0x0012fdc,0b0001001011100011001,13270,0x00c407,0X0135c4,0x000fabc,0x70c6,0x000D466,0X000b3eb,41912,0xB2b7,39271,0b10000000100001000,18909,0xfe26,0B100011010111001,0X59f9,13384,0X01d7ef,0B01100001000010111,0B11011110000000110,0x2df0,35375,5023,0B0111111111110100,0Xc2a0,0x00420,39430,0XC5d1,0X0f813,0B111101011001000,0X0002856,0Xf24,0b1000001101100,0X00011f3d,15230,0x0ebc4,29471,0B0011110000100000100,54802,0X007916,0x00084F4,15623,0b0001110101010000011,0X00bcD4,0b01101000000110101,82178,16237,0X0003fdc,0b00111010001100100,38837,0b0010111111011010,5704,50803,0B0001111011110000000,0x4F8b,0x0d82c,0b00001111110,66907,15876,0x000aB02,0X005Be0,0X000670A,58025,0x09ebe,0X0D1F4,0B1000110100110001,0X03f64,0b00011011101011100111,19809,0X0008b82,0X19ed,0x045cb,45472,60308,0X000ca75,0x01753c,0x00516a,0Xb43e,0x81aD,0B00011100001111010000,0X662B,0X14b0a,0X49fe,0x669f,7581,29702,0XFfE1,0x0006447,19302,0x013411,0xbd80,0b000011011101011001011,0x006B34,58181,0B00001010001000110101,0x0001B132,0x000f583,0x00a8Fd,0X00eef2,50417,0x08ADD,0b111011110001011,0x01414,0x0001d10,0B0001110001011000101,0x005935,0x07B8,0X00cdf1,29491,0X0012a34,0X0737e,0B011010111100010,0B1011000100001111,0x8982,0X00F97f,0b1001101000100001,0x03b19,0b001011000000011001,0B000011011000101101,42303,0X000ea79,0X0C8b7,0B00001101000010001110,0X009a7c,11615,59281,0X08884,0X01eb8b,0x000ea74,25926,10994,0x0001Df37,0x0006ff6,72105,0X001a23,0x07eAC,0X4976,38070,0X2a1c,126040,48943,0b110010111000100,0X00F5b5,0X008908,0x00067de,0B00111000000001011,0B0001101000001010111,0X0fdc,0B00010001101100010,0X0004ca6,0B00001110011111111011,26414,0b10111101100010,0B00111010100000011,0B00001010000101111000,84679,0X0002a7b,1594,0b1101110011111001,18097,0X00080a2,0X16F2D,51380,0X000190c1,0x0004A2F,19730,0X000f7d0,28820,17346,0B011010111000100011,0b01111000100111111,77800,0b101011001111100,0xba1f,17314,0B001101110010101110,0X0ed76,89614,0b0000110000100001010,0x1bd2f,0X058d,0B00001011101011011010,20255,0x1A37A,61261,0X6074,0b0000101001110011010,0X9c91,0X035F4,59776,32947,0x011e3E,0x00efe5,57439,0x09Ba3,0X001486c,0B001001011111010010,44910,21876,0X0009dbd,0x000cd3f,0X0030f,0xA8d7,45160,57917,0xe2B1,60068,36340,0x0095dc,0x000C6Ca,0X00052fc,0B000101101100101,0X000c744,0B101101010100000,57338,72975,0x000a02,0x00731e,32477,0X000235a8,27585,48539,0X000706B,13078,0xc648,0x0008ee1,31931,0x000d00f,0Xbf16,0x001588d,56320,0x13973,0x0A0bc,0B0010100001001100011,0b00001010011011110001,0x01273a,25581,0b00011101100010100,54074,40310,0b011101011011010,20430,4943,0B001100101111110111,0b0001100011011100111,0x0002D40,0B0001100101110111000,0x013f3b,0X0002AC1,29321,0X000c24e,0X07aB8,0x0ba98,86160,0X08414,0X07ffB,0x000b396,0X301a,0b00001110011001100100,0B0001101011101111110,24892,0B00011000000101101,2198,52229,0X0007306,37967,0X0563C,0x005c9D,0X44aE,0X00280f,2904,0b0010011110000111011,0X000cd00,0x00075c3,0X0237A,0B1010001010001,58493,0x00EB25,41683,0B0001100011001001100,0xe549,67836,0x46Bc,136557,0x074ce,0x00AF37,0B011010011011111,0x0200f4,0X3eBF,0b0000111000110011000,0b0001110010000111000,0b010111000000000,12604,0b000111010010010000,0X00B739,0X0879,0b000010100011011000,0x00De26,49916,0x0731F,48041,0B011110100101100100,60746,0x025902,0x008fdc,0Xf67,0X9663,0x00f990,0b001111100001000101,0B00001100000001111111,57065,0X4268,0X00efdf,33567,0x04180,24339,0X000233f,46751,0B1100100001100,0b00100100101010,0x002c47,0b0011000100011110110,0x0008fb7,0X00Abb5,41256,0B001110001010011111,64285,56199,26529,0B1111000111111000,0x00CFa2,0X00D99F,33209,0x04EF4,0x00192a,0x00f5d9,0X087f5,0x0077c4,0xdEbc,0X0020a6,46407,11975,0B00100111011011110,0X1a0d0,0X020c4,0X00246d3,0b011111110000000,26647,0B00110100110110000,0x2389A,0x00050eA,0x0b57e,0X000ee70,0X9875,0x90d5,118346,65085,0b0001010101101011110,0x0005E69,0x0D2e8,0B0001110101101000010,155463,28096,19403,20175,0b0000111001101011011,0B00001010011011101111,0X014B58,287,59110,46812,0b11101000100100011,37133,104550,8577,0x2082a,0b00111100001110101,0X0b3c5,6396,28546,0x0006538,0B000111110101110001,49184,0x019f7b,41001,7388,0Xdef0,0X008838,0X000e9be,0Xb516,0B00110111010101010,62681,27644,0B001110111100001,0B00100001101100010,64826,0b011110100001010,0X0926,53631,0B010001010010111,0x0009471,0b00001010101001001101,12372,0X007c0a,0Xcad1,19099,50427,103772,28929,0B000100010110011110,0X0008fa9,81496,0B0001011010010001,65389,0b00011001011101110,43293,0B101011000111000,0X02eba,0x002699,0x0c82c,55980,0b011111100101011101,14734,1239,46078,0x000124D9,0X000829,0X0E6f,57195,0b1110010110011101,58209,0x031A1,0b00001110010100000110,0X0F2D1,0x000e001,0x09f27,0X00d45,0b0001111100100000100,0b00001010110010001011,0x0027D8A,0B001101111011110111,0x17444,0x000ccaa,56090,0x0e6f7,0B00101100011110110,17299,38511,0X00b7eb,0x05c9b,0x0060f1,0b0001011010111111,0X000e779,0Xd135,0X0005b9c,0X01A4A,26083,0B001111010111010011,0b1011001111101101,0x03d1a,5031,0x0007633,10400,96363,29788,15170,0xee83,0x000Ae7b,0B001011111011100101,0x001a352,0X9a3e,0X0001431f,62909,0x006be7,50686,0X0007ba7,0B1000111110011001,57084,0X000bba9,0X000E52E,40835,0x0007D4A,0B00001010111010010010,0X0001FE6,0B0000101010011001,0B1010100000101,0b001100001010100101,0B111101100011010,0x0002d68,0x000991e,11248,0x00ad68,386,116427,0x000b9BC,0X0EaE3,28284,0X00e492,0xb686,0b01000110101000101,21200,0B10111111100010,19791,22533,0B111011111,0X002e3,0b0001000100011000111,0X0001a260,0x00172e,63277,35058,0B00001101010110000010,0B0001101010000101101,0X00cbc7,0B01001111100010100,0X7D21,0X00082A4,0b0000111100011001001,0b0100110011111010,0x000E2Cb,0x003BA5,0B11101011101110,35124,0B000010101010010101001,26909,72878,0xb7a7,62369,32998,0x009ef1,52290,0x00c058,0X02747,36163,9069,77054,0X183a,0x020c1b,0b1100100011000111,0X00e587,3372,0B01001001010011001,0B00001001001011011000,0B1111011111010101,0Xf605,111938,0B1000101001011001,131192,0x09Faf,0B01010011000010111,0X009F0,0B001010101110010010,0x00080Ad,0X49C7,0X004971,50653,6257,45457,10888,0x0009dEb,0b1011100101111100,48269,0b001100010111011101,0x000c684,0b00001101001101110101,0X1ee8a,0b0001010011001010001,0b11001010111001,0X0c90e,0x000ce1a,14762,14080,51896,39030,7555,0X0067Fa,0X0269d,0X00056e5,0x005E08,0b1100010001110000,0x001B15,19624,0B00101011101111010,0X0007a18,0X000ac9,0x000CEef,0X0001bed,66506,0xE60,0b010011110111100101,56171,62038,0b00001100000000001,0X010550,0x000a1c8,0x0E54d,0B00001001010000000110,0b011000110010110,24981,0b0000111011000100000,0X9e,0B000111011010100010,0x00ca87,0X0eead,0b00110110101111100,0X0db64,34631},[0x6c0700]={"\140N<JEd\150\191","\172N<JEd\150\191","\139E8","\173I(VHc\146\178 ","\163I#Rpx\148\180'\235\166\024Y\174\230E",((-3212*0B111111)+0b00110001011001110101),"\170U;RMd\144\142&\250\169\025L\161\247Y\001\155w",((0x0015B1*0b010011111)-0B0011010111100011101111),"\170U;RMd\144\153;\247\168\024","\166O#QV9","\131R SvM\183",((0B0010110011100*0b00010011001)-0x003593d),((0X0009eb*165)-0X0663ff),"\161E?JLG\154\1901","\160N:S","\173I(VHc\146\178 \223\162\026H\168\200S\011\157","\164L8_]y\186\180\000\244\183","\164D LJo\144","\181A=[J~","\163R.SA","\171A\034[","\177R.]Ax","\167O=ZAx\166\179.\254\151\003D\165\233","\164N,VKx\165\181=\245\179","\179E,JKx\199",(((-0x00c8C*0b00111111)+0x00031675)/((-0X004C1*0x00013)+23125)),"\167A,UCx\154\175:\255\132\005P\175\247\015","\179I<WFf\144","\161O;","\182I5[","\176d&S\022",((0X1C13*0b01011001)-0X9c295),"\177E7Jhk\151\1918","\169A-[H",((0x0ad8*264)-0xB2e20),((-0X00839*174)+0x0596de),"\167A,UCx\154\175:\255\147\024]\174\246L\014\138k\148\018\237","\177E7Jge\153\181&\168","\177E7Jw~\135\181?\254\147\024]\174\246L\014\138k\148\018\237","\177E7Jw~\135\181?\254\132\005P\175\247\015","\163O!J","\182O:LGo\166\187:\232\133\005P\164","\177E7Jwc\143\191",((3096*131)-0X0006303a),"\177E7J","\163O<MMf","\164R=QS",((-0x0009dc*0x0055)+0X00034634),((1165*0x000bC)-218992),"\007\182\253","\145R.]Ax","\129O;","\137A-[H","\132R=QS"},[0B11011010111010011100101]={},[0B10100111100000111111001]={0x1,25,0B01,0b1011,0x1,0x0c,1,0Xd}},{[0B0010111101000100000100101]=0x04,[0b000010010111111000011010100]=0B000,[0x0630a6f]=0x0003,[0X0007cf1ca]={0x7C6E,0B00001011000100110011,42104,0B001011000000100110,62431,0x000ea4e,40258,0X0008879,0x00021c67,0B00001010011011111001,0x2d7d,53056,0X227a9,0x000D612,31801,0X0EF5A,0x0377c4,0b00001010011100110,0x000e349,0X0004d24,0b001010100101100011,0b001110010110000111,184718,0b0010100001010010,0B111000100010011110,0X07a65,311057,33167,0B111010101110110,0B01100100010100001,0x0075Bf,0x002179,0B1011111010111101,0x00ca05,5133,0b000110011100010101,0X799e,0x000cB26,0B01110110111011001,0Xbf0b,0X00693a,59529,0b000100100100101110,6329,0x02f7ab,0b0001100010000110110,0x035dc,0X007C54,0x024bac,52821,0b00101000111010000100,0b00001111000100011011,0x00832,20601,0b110111010100110000,0b000101100100011111,4406,0x0ff56,16479,0X000bae6,0X29F7,0x000Da57,0X0f5dc,0B110100101100110,0xf792,0x008f30,20413,0X00025F9,0X0195d,0B0001010111011110,0x027BA1,0x00b2,0X0002dd41,0x38dd,0X0040Bb,0b000100011000101100,0x0001050f,6485,12853,0b0101001001001010,0B0111011111010001000,0b010100100,0B0000111110111100000,42522,0X5A3A,0xdcc0,14803,0X0002F8f,0b000011110100100111,16482,5456,9170,0b0000100001001100001011,0b0110001001110101,0X02de36,0B000100101000000010,0x01e9bf,14549,0X0A8BD,0x0003E8A,0b001100110110101100,0x00a44c,0x00c7d8,0B01011011001100111,24064,0x0A248,0b101111100111110100,0X0d1f0,0x00031A8d,0B1011000100000100,161272,0x002a40,40350,5840,0B000011100010000111001,0B001000010110100010,192497,0x005af1,37680,0x005b74,0X02404,0b01000100110110110,0B00001000101010101100000,49602,0X0323a3,0xC9D8,38918,0b000110111110111000,0b1001101101010011,0x0ec32,0b0101110100011101101,0xc5e3,0X002b857,0b01001001010110101,30323,0x9084,32741,0x108e,0x4779,0x01580,0x00616b,0b01011101000110111,0b01101010001000000,0X0004B36,0x0f81c,12318,0B000100111101001,0x0026cf,0B00110100110110110011,20268,0b0111111100011000,0b0001110110101101101,0x003983,31731,0x000d6a3,7787,0x00a2a6,0x02011,0B010111000010111,0x00153f,0xd27,0B0001101011111011111,0Xa35d,25287,137544,0B00001111110010101110,0X000C3f2,0B111111110100000,0xA263,0b1000011101100010,0x000516e,0B00011101011110100,0x0056b4,794,0x035c5D,8930,0B00001100100010110010,0B00001111100101110110,0X08337,20630,0X0028e7,0b00001001110110010011,0X00D4cf,62170,0B11010100101111100,42301,0X4DAC,0X0dc7a,0b0000101010000001110,0b00010000001010000,0xe951,0X0080b,0x58f4,0x00D2a9,0B0000110011011001011,0B0001110111011101110,14484,0X0163A,0X02a59e,0x057f1,176821,0x0BE9,269677,18407,0X00025d3,0b111111001011,0B01010110000011000,0X00b95B,0X0003d755,0x0007ba5,0x0011912,0X00ed8b,34693,0B1001110111011110,0X0094c2,0x000317A,48862,17437,16183,0b100111001000100,118746,10810,0B110001001001001001,61222,0x00122F5,0x0295c,0b1010100100101011,0B001110000100110100,20889,27508,147586,35239,0x2e256,0B0001011100010110010,0x01c13,42555,47097,0b0000110001111010101,21453,0b101010111,0xe73B,0x006649,0B0011101001100101,0B1100110010110000,0B0001100110000000001,0x000b107,0B000100100001011110,0B1101101100110000,0B00001000010101110110,12123,31041,0X9374,27909,40944,33626,17326,173912,0X0e2d,0X0a933,0X000ECD0,33842,0X04421,0B0000101000000111110,0x0e7ce,0B000100100111000110001,8548,41264,0B11000101011,0B1000010101000011,0B01101010100010101,31516,0X0002139,0B000100111010000010,0X00058c4,0x0029b19,0x0Bb83,49427,0x38bb,0X00ee83,0X000705d,0B00110010000100010100,0X000FcD,4215,0B00111110110000100,0X0a451,26653,105234,645,0B01100001001001100,55185,0X000531B,0X0b619,0x00E93D,0Xb5ba,9988,17536,0X02f07f,0X03078,0b00001000100110001,0X06ef1,0b00001110110001110,0B01010000000011111,208740,0x0024cc,0b1000111101110110,0b001110011011100010,0b101110100011001111,0x00ce38,0x0006C7D,43720,0X00094C2,0X000Af74,9778,0b0111011001001000,0X0002404,0B11111110110100,50288,0X00cf28,50929,0B01100000100101011,0X0923E,0x02d1,0X000258C0,16244,0X0001034,0B00001101110011001101,0B001110011111101001,52515,0X028aa8,0b00001000110010101011,0b00101111001011,0b1001010101100010,0B011111011111111,47935,0X0001Ae5D,58798,0X9350,0X0002960,0B0110100100001110111,58800,0b0001011011001001,8997,0x00683b,0x09d01,43210,0X0032af,0X0003299,0xa07B,0x0006dF7,0XfB95,0x24752,0X0007ea9,0X00048D7,0X00051c5,0X6B1f,0x0009381,0x0032f8E,0b0001011010111110100,0X0031F9,0xce13,0B0101110011001011111,0b0011000110101,44610,0X00efb1,0B0000100000101001010,38447,0x0004b01,0X00Ab3,0b0110101011001111,0B001111111001010111,0B101100101111,0x2F66,0x025c0d,0X0eC7A,0x00034a0,0x000A8Ea,0X0003584,36263,2867,0B010001110101001,0B0000101001101010010000,0x000f36d,0x0376cb,0b000010011001111,0b01001111000111000,0B0111011000101110,0X0e2dC,0B01111000100110011,7200,0X9fa5,210422,0Xa308,0X000E5B4,0x0D4cd,0x003C27e,21380,0b001111111101101110,40102,0X02FFFC,0X00037e8,0b0111110001011110,0X00aca8,31349,0Xd750,51251,0X00f0a7,36509,0B0001101010011100010,0X00ffdc,0b011110101010010,3162,62700,203588,0x0665A,0x0adf9,54886,25280,0X0007380,21247,0B1011001010001,11518,41906,23187,0xCBCb,10767,0X0007d56,0X00976E,18920,0X0be6b,0b1000010111001111,0X00028c1e,0x0d7a8,27981,3873,0X320Fe,40155,0b0100011001010011001,0X00cf7c,0x8f27,7998,0X0008aff,0b0001101011101001011,0x070f,0x00c73d,0x3662c,0x0008eFC,197557,0B0001010001000100001,0x00016e8,48076,114944,0b00001100111111001101,0X0ef83,58175,0x6aaf,0b1101011001101101,0x07b3b,0b0000110010000011010,0x00084c7,2555,0X10209,0X0a6A4,0X0006fc7,0X003b69,0x00086CE,0B01111000000001,0X8e0f,0XfFcd,146848,0B01101011111100000,0X0001b98,0b000100111111111100,0B00001110100001110111,0x0009eec,0b001010000010011010,0B0000111011000011001,0x1f7a7,0B0001110100100101100,0B000010000000001000110,0b000111011110101100,47772,21273,0x025f80,0X06e16,0b00100000010100100,42582,0x02654a,0B1100011101100110,0b0100110001100101011,0X2B48,65998,0X00073fc,0x09339,0B00001111111111000011,0X07A3A,0x000B5A3,63605,0b00001001101010010010,0x0d949,0xc541,0x00ed44,0B010001111111,0X5a24,15838,0x02B3B1,0xe75d,0x00ce42,0X009b40,0X20247,0x0Dd23,0X2c390,56840,0x00eb8a,0x00d1f7,0b000110100110100010,0x00079d1,0B1111000110111101,7642,0X0a754,0b00001100100111111001,0X00ce0,0b0000100111011100,0x0001fEc,0B001101001110101011,0x1b7d,0X0008F73,17543,0x133e,0X75b6,0x0cF1D,153432,0x64d5,0X2d89B,57703,0B000011111101001100010,0X00bfcc,0X000e265,0b0111000001011,0b0001010101111100110,3157,0XE51D,0Xdce7,0X000F93A,0x003899,0b100000001101101,4709,188598,0b0001001111010010110,25306,52155,10505,0X000644d,0B0100111011101000000,41519,0x03A5F,0b00001001110100101,14746,0X00ccc2,0xfe26,0X29d9,0X000bbf0,0X0795C,0X000a5f6,0x00aeDA,0B000110000111110011,0Xc3d1,0x643e,0Xef28,0b110011011111000111,0X00199f,0X2954d,0X010bb,0x00078bc,36096,0x0002741b,55198,0b0001010011010010,0b00100001011001011,0x06961,0b1100111000111110,36768,0x0006010,0x000A152,26100,163613,0X00C348,46951,0X0b268,0B1110000001110000,0X0b8e8,0x0091E5,0x04ac9,0X2c90d,0X00d2A2,0X0e534,0x01b0,0X1f353,0X0b472,0X00370e,0b00011110010010100,0X000d581,0X0b0af,157776,0x000efce,0X069d4,0x009bf6,0X2A587,0x732b,0b000110000101110000000,0B0001010100000010101,0B01111001011101001,34422,0X06909,0X0365c,0X0D876,0x001eca,235783,0x00a0df,0x00f893,0x0163d,0X00092D2,0B1101111100001100,0X81ea,0x4806,0x00015b3,0X0008ae5,46567,1802,0B0010010101110000,0x03571,0x4344,0b000100110000101110,0b00011101111011001010,0x002648,0x000aa8b,0X0eE9,0b000011101010011010,22822,0Xbf1,32428,0x000DA1e,14204,0b1110101100010101,41541,0b0000101000011000,65029,0x00c11c,0X008a52,0b001010100001111001,0X7dd8,0X00f282,0X205f,32565,54228,0x006612,0x003D6f,49912,0x0b9a8,0X01D314,0x00d7F2,0b1011111001111010,0b0001101101010000011,6071,0XB7CF,0x000fc82,0X0004487,172095,0X002Fed,0x019f52,0X0faa5,0x0005a6c,0x000ae48,0X8908,0X000a34e,0b001100110010111110,0X0c50c,32933,0X0003505,45659,44851,0x00011250,0B01111110111010000,0X0005138,0b000111101101001110,0x0001a422,0x0a0d3,2329,0xcb75,14493,0X0c3A4,0b1010010100110001,53413,0B00101111101110100,0b0001101010000111100,0X0e706,0x9c4A,57307,0x03b26,17179,10288,0b0111010000000110111,0b0001000000100010011,175560,49529,5765,0x000c9ae,0x00Bc30,0X44D6,0x0028729,53888,0X698a,0x03950,0b01010101011101000,62846,0x94F0,0x009b75,61899,5501,65987,0b0000100110101101001,63406,13290,0X0008aaa,0x000abbc,0B0011101000101011101,0X00eF83,6419,0b000101010011111100,0X0009671,0B110111010110101,38713,17431,0x008acb,23530,0b0000101001100000100001,0X09591,0X3707d,0x0067c2,0X00010041,0XCD37,0x02e1d8,34068,36318,0B00001101110100111000,0X002cd21,0b000100010101011100,31133,877,0x220b,0b0010000000011001,0x10b5,0B0000100011001011110,0X0003e62,0X60e,23036,0B0001000011111001011,0B0101100011000110000,0x063e4,0B111000101101110111,0x1C94,0B0010001110010101,0b1011110001011100,220516,23163,0x000a878,0b00001110010110100,0X295b5,0B000011101110100101,50388,0b01011111100001000,0b000100110100010101001,17217,116697,0xAeb9,54995,0B00001011000101000101,0b0000111101001000010,17876,57288,0X00232c,0B00001101011110100100,42212,0B000101101011000011100,15961,241058,0x001091,51743,0X0001c04,0b0100111110110101001,0x0005001,0X008af5,0X1591,0B1100101000001110,0X046fa,0x0005F8a,0X00fcdf,0B001011101010111110,0X01744,200377,0B0001100001001110111,16546,0X00ba44,44288,0X9C4A,14506,0B00011111110000011,0B1001000010010001,4034,0Xa205,0xb97b,0x0027dec,0X1EfE,0X0006ba,0X00085cc,43805,65055,0X03b44a,0X0ae22,0x009f07,0x0f054,0x2Dce3,32759,0b101001100100011,0b01001100011100010,0x0FE20,34057,0X00dfcc,0X006C32,53370,0X00d05D,0B1101001010100001,17939,0X0045c8,0B00111101100101001,0x0007c0,0B0100011001101111,0b0000101011010011111,0X0E085,0b0001011000001010101,0X01ecf,172220,0x0462b,0X38002,53917,33259,11407,0x00013a4c,0x000f1dB,1388,33882,215935,0x00011c0,0X000f743,54120,35521,0x00e54a,0X8e1d,0B0001010111011100,18273,0X00105d,0B0001000000001111001,0b01010001000001011,0b01010011110100111,0B0110100111001000,0x035905,2785,0x09f7d,0x09Bd8,0x00b750,33237,0B001011110011111111,0X0a4d5,0x0Efe6,0b00001011100011111011,0Xdb36,0b1010000101010010,0b00001110000110110100,0B0000101010010011101,11947,0X28F4,0b001001110000101110,0b0100100101010110,67511,0b001111010110010111,56388,0B0010101110110101,0b10010001010111,0x005D0B,0x19DB7,0b00001110011100011101,0b00100011100100,38870,0b00001100000011100010,0x004E24,0b101100111101010001,0x08E08,22135,57037},[0X0006c0700]={"\140N<JEd\150\191","\181O<WPc\154\180","\149O<WPc\154\180","\168A(PM~\128\1901",((0B001010110110001*0x009f)-0b00011010111100011101111),"\170U;RMd\144\153;\247\168\024","\178O=R@^\154\140=\254\176\026S\178\241l\000\145`\142","\191","\132R=QS","\179I<WFf\144","\179E,JKx\199","\139E8","\189",((-0b000010010001000111*0Xa5)+1532357),"\188","\136A;V","\150Q=J","\129E(","\132T.P\022",((0X01458*0X0069)-0x857be),"\145R.]Ax","\182I5[","\176d&S\022","\183O;_Pc\154\180","\167A,UCx\154\175:\255\132\005P\175\247\015","\129O;","\137A-[H",((8544*0B0100100)-307576),"\177E7Jge\153\181&\168","\177E7J","\150T=WJm","\131O=SE~","\192Soe\001$\197\1889\198","\171A\034[","\166f=_Io","\179E,JKx\161\181\027\249\173\015_\180\214L\014\155k",((-0x000226d*0B010111)+0B0110001100001111111),"\136I!",((-0x0024b6*0x9F)+0X00016cD46),"\151A+","\134O<","\150I!","\007\182\253\030\001$\197\1889",((5302*0X000d8)-0x000117612),((-0x0001D53*0B0100001001)+1990642)},[0x0006D74E5]={},[0X053c1f9]={0B01,0b00001101,0B001,0b010100,0X0001,11}},{[0X5E8825]=0x00,[0X004bf0d4]=0b0000,[0b011000110000101001101111]=7,[0b000011111001111000111001010]={0x6b04,56707,0Xff2d,0X00eF44,0x84b7,64712,33339,0x00966c,17501,0x0008fb,0x0c372,47602,63255,0x00906b,0X0001Cbe,0x000DdFE,0b00001111100110010011,0x00053F3,35339,0x00F1a2,62560,49478,0X005056,65332,52364,0x006693,11413,0X034aa,0X0b449,31700,59495,0X5344,0X0D7cA,0B0111001001101110,195422,0X09704,0b100011111111100,9858,0X0100a,0x0fb6b,0x000cE19,0X006c83,0X00056bc,0b0101110011101000,0X0022533,0x073D7,0Xb982,0X00017B2,0X0F9F1,53860,48057,33751,15870,31300,0x0138F5,0X01050,0b001101011010010,0B001000011000110111,27024,0B11011110100,26168,0X0009e33,0x44e2,43639,0b01111001001011111,25019,34984,59274,49529,0X4815,0x00B9d1,29942,1384,0X008f42,0B001110000100100010,35640,0x001163F,0x00066dD,0B10111111110101,0b10011000101110,57397,0X001a97,0x05010,0B01000111111011100,0X0003192,0X44b4,0b01001111011001011,0B01100101111011001,0x00EdF8,53780,52873,0x9D90,1956,0X072fb,0x00f4c,48725,0x0002b059,63942,19458,56284,0Xd5be,0b00010001100110000,0B000010011001110101,0b1000001000111101,0B01010100011011011,0B0000110100101010001,0x0004236,0x87da,0X001FF7,0X0feb9,0X0d8b9,16751,53937,40041,48413,20147,0b001100001110010010,4171,0x12c0,0Xea46,0B00001111010100000010,0B01111101011010000,0x00f078,7437,0X000bba2,37180,0x007708,0X0005d4e,0x9dAb,0B0000101010110011110,66421,52285,52073,0X0c80b,0xce36,0B001001101100000000,45008,62235,0x0055be,0XB6b9,0B001010000110101001,0b101010111110111,0b0011011100000010,0x009F3A,0x0005549,0X0205C,168217,59192,55093,44844,0B000111110000101101,0b00011101110110001,0X4c83,34642,35293,0B0001101100011100111,0X0d7f2,0X9b9a,0x01302,0b01101110111011111,0b00100000100101100,0b00001010100010010110,17758,0B1110101010100111,0x00a3cc,0b011010011,0X022af5,62804,0B10110001000001,0X007b7e,0b000100010111011001110,0X0009267,0x00045dF,0x0012c5,0x0014b8,0x5E17,0x077cd,24163,0X0096f8,0B1100101110001100,83881,0x00b437,38369,0X09F5e,1136,49446,0Xd076,0X06f9C,48105,0B00001001100101110010,0x000d43d,0B00010100001100100,47206,0x001C6,0x00164b5,29137,0X2794,0b1001010101111101,0xca57,0b00111111001100000,0b1010010001111000,42742,0X00c5d9,21562,0X002beb,0xabe,195234,0x007EfC,0b0000111111110011,0x0185f,0xEBEA,0X00207d,0b0001101111101011000,41876,0B000110000110101101,0b01101000011101101,0X007ece,65085,0x1788,0X9c11,0X001c08c,0X09DF3,0x000b9E8,0x2e85,0B1000011000110111,0x004EA7,0X242D9,16968,45070,0x000DF0C,0X0008d84,0B010001010101101,0x098c3,8226,0X0206bb,61247,59206,0X003578,0X00C02C,0x0bb2,0x001df1,0X006666,0B000011110100100001,61005,0b01011000001000000,19195,30384,0X00182c,52292,0xBE19,0x000A1F,0xd8e0,0x6a3b,0B0001110111000100,3128,0x28d8,81219,0Xc21f},[0X6c0700]={"\146O=UWz\148\1851","\166U=LAd\129\1535\246\162\024]","\179I*ITe\135\174\007\242\189\015","\140P.WVy","\140N<JEd\150\191","\149A&LW",((0x00024Bc*0xb7)-0X01a40a9),((6722*0xf0)-1612678)},[7173349]={},[0X00053c1f9]={0b01,19,0b01,17,0b001,11,0X1,0X18,0X1,0B1101,0x01,0B00011010,0B01,0x1b}},{[6195237]=0,[0B000010010111111000011010100]=0B00000,[6490735]=0b00101,[0x0007cF1CA]={22198,0x000a721,0XD65c,62634,0X1378B,40714,0b0110101000101110,58215,0x00070aF,0X02ab5,0xccea,0B1011000111110101,0X09d8c,0x002ed1,0X004B1D,0B0001111111100001011,0X000107ec,12776,0x035a,0x007Ad3,0x0003a4e,4306,0x0008Eaa,0X000848},[7079680]={"\183E!ZAx\166\1741\235\183\015X","\166O!PAi\129"},[0x006d74e5]={{[0X005e8825]=0X000,[0b0010010111111000011010100]=0,[0x630a6f]=0x01,[8188362]={27305,63301,0b00001000011100111110,31729,0x002F01,0X053dF},[7079680]={},[0b00011011010111010011100101]={},[0X0053c1f9]={0x0000,0X3}}},[5489145]={1,8,0x001,25,0X1,1,0x0001,28,1,14}},{[0b10111101000100000100101]=0b00,[4976852]=0,[6490735]=5,[0B00011111001111000111001010]={0X4854,0x7625,27770,0b001101111011001011,42182,0X4Ea1,0B00111100101101111,37657,0X103c2,0X001669,0X00A89F,52856,0x13747,0b0000111111011010,57401,0B0001110100001000,0x003bc2,44785,68639,0B00001000110111000000,62853,0b1100011010110010,0x0108dc,52107,57149,0xbd96,0X01005,0x00cf93,0X000B3c0,0XEc7c,0X02393,23941,0b00101000111111010,0X0001dae,0x0d7fd,0X0006841,0B0010111000101,46630,0B00001001010101100010,0x02297,0b1010001111001101,0xfc0f,218,0b00001010000110011100,38093,0B0001011110101010101,0B0101010100010011,43435,7835,0B001101100001110101,0X0083a6,0X00094e9,3033,7511,48386,3378,6866,0X00A340,0x00f47,0x6A66,0X0001009f,0x05A3E,0x7107,0b0100010100001111,6417,0X0003ea9,0B0001101100001100001,0x0F1b3,0X053Ce,30925,0xa871,0X00010ab,58892,0x003522,0X00050d3,0Xf133,0x0B40f,0B0001101100011110010,39583,10314,0x0002cd9,0X000F391,0x0a25f,0B001111000111000110,0X0017FC,0b000110001111010,0X0DaF,0X007467,0x000C9CD,0B01011001101111011,36132,0B010111100110000,0b00010110100010011,0b0111110011010000,0X000f193,3427,0b1111001111010,0X00495,0B1001000011010000,0x063aC,32286,0b1011111001101010,39493,0X04169,0x01917,0X000fd1f,78401,0X006dff,0b00110110101011000,0X00cf13},[0X006C0700]={"\161I<]Kd\155\1917\239","\149A&LW","\161E<JVe\140",((-0B010010001110100*130)+1213299),((0X0389*0b0010001100)-126240)},[7173349]={},[0X053c1f9]={0b00001,8,0B01,14,0b001,0x000b,0X0001,0x00018,0X01,12}},{[0x005e8825]=0,[4976852]=0B0000,[0x0630a6f]=0b11,[0b11111001111000111001010]={14262,0x00b97A,13810,0Xfff0,47813,0X2c4d,0b00001110100101101110,0X000f4d9,13870,20915,0X05333,0X009840,0b00001101011000010100,27302,0b1101000100010001,0X000640c,41637,0X000a849,0b0001000010000110010,0X005516,0X0D1D0,0X06774,0b0100011100100111,17091,0x0011cc4,21345,0B001110100101101,0X03952,59619,0X004d8f},[0X06c0700]={((-0b10000011001101*0B11010101)+0b0000110110100111000100100),((-0X00652*0b010011111)+258248)},[7173349]={},[5489145]={0x001,0B0001000,0X01,0B00011110,1,29}},{[0x0005e8825]=0b0,[4976852]=0,[0b11000110000101001101111]=0x0006,[0X007cf1ca]={0x026Fc,0X0ae50,0X04b8b,0x00c597,0b00100000011011010101,0x0954,0B00011000100011001011,8019,0B1010101011100111,0X0501b,0x000bb22,0x0092D3,0XA7cF,0B0110110000101,9415,0X29b,49511,0b0001111100110100010,0x000e550,11389,93583,0B000010011101110011,0b00001100011011111000,0X9F3f,0X00BB4D,0b0001011111100010,0x00c8fe,0x0De9e,0B100110011111010,0b01100011101100110,0x000aaf8,61300,0B000110100011000011,0x00fa42,30340,4555,52938,0x001359,0X004627,15162,0B0001100011100100111,0b00001100001010100110,0x00b095,15085,0B100000000001110,0x00bf1,32502,0b0001001011011101010,0x4A21,0B1010000111010101,0x0a788,0b1110010110110001,0X04ADd,0x01f31,0x00097f1,0X8d13,24471,53805,0b0001011000101101000,0X0004800,9296,0X04f5,0X00a3ea,0X0f87c,0x0b798,0XFA9E,0X0040f,0x00d2c7,0B101111011010100,26626,0Xcf6d,16884,0x012F4,0X00Db0D,0X000264b,0b00001000000000101,0X01D50,0XA9a3,10440,0x0006247,0B0010011110101101010,0B0101100010111010,0X0523,0B001111110001101,0b00001100001011011100,0X0e3b1,0X000ea28,0x04725,21107,0B00001010100100100100,50731,3750,50890,0X2e5f,0B000010101111111001111,0b00100101111010101,44182,0b000011011111101010,0x01e6C,0xed35,0b0011111111110101101,0X7f38,51395,0x0b775,0X09c06,0B010101011100100,0Xc065,5996,3150,0B001110010000000111,2460,0X000f65,0b1111101010100101,0B0100011011111011,62584,0x0009252,0B000010101101001110,0b00001000011011111100,0x7599,0x3A3C,20204,0b01110011111011110,0X0007F3e,0X000a1FD,0x000a14e,0x0009051,0X0dde7,0X85f,0X7E6a,0X000e2ca,0X01ec5b,33844,0x3a98,46610,0x9fe9,0b111010001001111,0X000cd18,34924,0X000fbd,0x00A399,0b01111000011101101,0b0000111001000011111,0b001101111011110101,41858,16095,46437,90881,0b1000100101001,39934,0b0000100110110000,35675,0b0000100011000101010,0b00101110101000011,0B0111000001101111,17536,0X0007b25,0B0001010001110101000,0x9447,0b1111100011011100,16805,25459,0x094e9,0b00001000101000100111,64188,40878,9022,81005,0B01100101010101010,0B001111100100000,5990,0x0ce1e,49049,0Xf6bB,0B0001001110110001010,0X00e7bf,0X0C0d5,0b1110011001110000,0xe5b4,33860,10904,62271,0x00069c3,59473,0X098b9,0x000F0F6,0B0000111101000111110,27461,52845,0X00eE19,0X8170,0b00010001100000110011,27842,0xce7f,63251,0X0c3b9,30136,53975,0Xf0cc,0Xece5,0B0001110011001011100,0b01101011010100011,0b010000111010000,0b110101111000110,0X0f714,0B0000110001111001011,31973,0B00100011011001011,23417,3237,0b001001001110111,0B000101110110100010,43864,30593,0x4318,0B11011010010000,0B0001101111111100000,0x0001847d,0x000d549,0X001970,56368,0B000010010110011000,35709,54322,0b00001000011110100011,2814,43578,0X000f3df,14354,0X0028a7,47883,0b0001011001111100110,0Xb886,0X0006b56,23732,0B00001011010111111001,26544,0x002b02,0B0011100011100111,0x22Cd,0x00a282,0X0abc9,58715,0x1a0c4,0X000fb73,0X07474,0X004ba8,7943,0X03B26,0b111000101110000,0X83e7,0b00010001110001100,6306,0Xd537,62419,0x94a7,0B00111100000001111,0B0001110110010111110,28168,0x9621,0X0009D5,43853,0x0015d7,0B00001101001110001101,38443,0b000010000000111110100,0x0bf40,0x0bf20,0b011011101110001,14459,0b11010111001111,2527,62259,60329,33772,46450,0X00ca13,0x000b687,0X005865,0x00c57b,52032,0X0003E2a,0b000100111001101,0x1b85d,25492,0x079D4,0x04D23,0X00dff3,20122,0B01010011110100011,0xBd97,0b1101110100011111,0B0100011111000011,0X03dfb,41853,0b111000010100000,0X0Ea2A,0x0002E7E,0x032cc,37996,17198,41963,0B000011100011001111,27602,16577,0X22a8,27771,1581,0B0001011001101001010,39026,0x01f85,0x0004c4f,0X0007c96,0x00dc0b,0x0001425,0X000E03e,0x1779,0X07C5e,0x03eD4,0x000776e,0B00001000011000011001,0b11100010000011,3044,0b0010010011001101,49627,26082,0X9298,0Xbeb3,0X00c1f,0B01010001000011,0b1111010010100100,0X6A8D,0B00001111000010010000,0b00110100011001,14519,0b0001110001101011001,62435,0b00001010011101011111,0B0001000110000101001,14807,0b1101100011100110,0Xb3cc,51842,8577,0X09bb4,0x009dc9,0B01010000110110010,0XF239,0x00043c8,0X0F371,0x00e5E8},[0X0006C0700]={((5553*0x0009f)-0B000011010111100011101111),"\145A-RA","\150O=J",((-0B0000110010001100*0x0003f)+0X031675),"\149O<WPc\154\180","\140N<JEd\150\191","\163I!Zbc\135\169 \216\175\003P\164\210T\006\155f\179\002\213","\181R FMg\156\174-\203\181\005Q\176\241","\131I=[Tx\154\162=\246\174\030E\176\247S\002\136z","\149C.RH","\146A=P","\131I=[Tx\154\162=\246\174\030E\176\247S\002\136z\218\161)#\007h2\209\144\017\142\154Ta\223\193\247\203\217B\203\237\250\231\178l\162;b\240cGba\008\189vV`\247A\136\011;g\017m\200\136","\181A=[J~","\145A<U","\146A&J",0.05,(((-0B000110010001100*0X03f)+0x31675)/((-0X4c1*0X13)+0X5a55)),((-0x009a8*0B10010110)+0b1011010110000111000),((0b1011110011*0B000111011)-42643)},[0X006d74e5]={{[0B010111101000100000100101]=2,[0b000010010111111000011010100]=0x0,[0x000630a6F]=0x0001,[0B11111001111000111001010]={0X001d2c0,21877,26696,0B000110110100011110,0B0101111111110100,0X0003986,124442,0b000101100111011111,0b00001100111110001110,3401,0B011011110001010110,34412,62521,0X00760a,39331,61782,0X000a452,0B001101010011110010,0X001c10a,0b000011100110010000,0X8E73,0b001111011110101100,83533,10285,0X00017E5C,53341,0x009850,0X00ab83,0b110101001001001,0b001000100110010000,0X18172,0X03758,0B001011010010100010,0X059d0,0X0001153c,0x686d,0B00001100001001110110,0X0063dD,0x2914,0b000111100110111000,28096,0X17d},[0X0006C0700]={"\181O<WPc\154\180","\149O<WPc\154\180","\168A(PM~\128\1901"},[0B0011011010111010011100101]={},[0X53c1f9]={0B00001,0x0}},{[0x05e8825]=0,[4976852]=0X000,[0B0011000110000101001101111]=0b01,[0X0007cf1ca]={0X000C0F1,5230,0X06e01,0X00093a8,33820,0x100d,58047,0X00901},[0x6c0700]={"\131I=[Tx\154\162=\246\174\030E\176\247S\002\136z"},[7173349]={},[5489145]={0X1,3}}},[0x053c1f9]={1,0B0001001,0x0001,17,0b001,0x13,0x01,0b000010111,0X01,0x010,1,7}},{[0X0005E8825]=0X000,[0X4bf0d4]=0,[0b0011000110000101001101111]=2,[8188362]={0b01010111100001,0xAeBf,0X0aa58,0B110100110001101,0X0B8B9,0X00096B8,0b0000111000001101011,0B01001001111001010,0x0e827,0x0005d8b,0xcdef,22429,3879,0b0001001000010000101,39796,0X50e3,0b00001111100000100000,0X053D7,0x0df4a,0Xa3ce,0b01100010110011101,0X01f60,49336,41893,0x4E53,0b0000100110010111100,0X00E8Ba,0b001111010100000101,0B000011001100000111,0B0001011101110110001,51698,0X000f1e6,0B0011110101101110,34812,0x5179,57472,0X000fd49,0B10100001011101,0b11010000111011,15281,0x049F4,0b0001010111001100011,0b1011001110011110,0x0004c2},[0X06c0700]={"\145A<U","\150P.IJ",((0X0001122*0X4d)-0X52493),((0x0d6d*0x35)-180516)},[7173349]={},[0X053c1F9]={1,9,0X0001,0X00020}},{[6195237]=0x001,[0B10010111111000011010100]=0X0000,[0x00630a6f]=0b0000100,[0x0007cF1cA]={0x629,0x0001b09,0x00757C,0x0e093,0B000100101001110,0X0003352,0X00276a,0x00cd8a,0xece5,0XC988,25202,0x00c69f,0b0001110011100110001,0B00001001110101011011,60890,0Xf9e4,0X00513a,21635,77413,0x000cdfF,19622,10767,0X000d27e,0b00001110111101110110,93249,0X008b2C,0XAe67,0b100011101000001,0b0001110010011000,0X000eaC1,0X0D6Fc,0X0009d3,0X0f648,0B1111100101100001,11121,5895,0x0f037,0b01101001001010,0b0010100110101001011,57234,0b000011001001101101,0B001110001010101100,0X167ea,30063,0b0001011110000011000,9144,28485,0Xf52D,0x013205,0b01010010000111001,0b000101101111001010,0B001000101100010111,0Xced8,0B00001101010000000011,22452,7205,0B001111001100011100,0b1011111111011100,37678,0b01111011111100111,0x0d36f,0X51F5,0x0778d,0x0a409,9796,59059,0x0007748,0b0101100101111,63866,4813,0b10011101011000111,0b1100001000111100,0X6a2f,42075,0x000fd99,0b000110011100011000,32315,0XC88E,50777,0b1001000100101011},[0x06c0700]={"\176S*Lmd\133\175 \207\190\026Y","\160N:S","\168O:MAH\128\174 \244\169[","\177O:]L","\181O<WPc\154\180","\166H.PCo\145","\166O!PAi\129",((-0X0239*154)+0B000010101011011101000),((7476*244)-0B00110111101000110001100)},[0B00011011010111010011100101]={{[6195237]=0x0,[0x4bf0d4]=0,[0x630A6f]=2,[0b11111001111000111001010]={0X06Af4,0x004b5D,0B010011111001111,0x7DC8,0x00483F,0x0B95e,27965,0X0032DC,42726,0X01C84,0B0001011001101111011,19910,19846,0xb542,0x083D2,0B0011101111111000,0b0001010010111000011,0b000110011010110001,0x05083,0X002b29,0x000fc70,0b01010011000100000,0B001000100000000011,40059,0b000011100110101011,0x000f244,0B00010000101001010001,0Xa17d,18803,0x70d9,0b000100101100000111,0b0001011011011010110,0b1101100010110011,0x0be28,35515,0x001390,49574,0B0101111101010100,0X02b0b,0B00010011100011001,0Xde51,0x00F154,53714,0X0d5f3,0X001481,11714,0x09d7f,14019},[7079680]={"\176S*Lmd\133\175 \200\179\011H\165","\160N:S","\160N+",((0Xfc7*0b000010010010)-589590),((-632*0B000111000)+35812)},[0x006D74E5]={},[5489145]={0x001,0,0x0000,0X000}}},[0X053c1f9]={0x01,0x002a,0x1,0b101011,0x1,0x023,0x001,0b000101100}},{[0x005E8825]=0X001,[0x4bF0d4]=0B0,[0X00630a6f]=4,[0x0007Cf1ca]={112134,0xa4a1,0X7689,0x07017,0B1100011000011111,44131,0x174fe,42229,0x0c506,8685,0x0002dcB,63888,0X002d01,0b0111100100110101,42497,62787,0B01110100101001100,0X0017b8,38520,0x0bfdd,0X000178b,0X0b929,0X001a84,0B000111110010101100,0b000011011001010010,29808,154124,0X0008485,0B1010001111000100,0B00001011011000110010,0X000a840,25520,0B110100101001010,379,18083,0xa436,0x000c62b,0B0001101010110110111,0x017b0,0B1000110100001011,59329,0b1000100000011,0B001001011001001100,0Xa048,0xdff0,59089,0x00617e,0xfbf,0b0010100000001110100,0B01110100000111,0B000010010110110010000,0x92C2,32409,0x90b9,103673,59970,0x0699f,0b1111011100100011,24836,0xdbe2,0X0a25f,58518,0b00001100101000100011,50838,0x023d0,27446,32741,4232,0B1001000111001010,0B00001001010111111001,0X05d9b,0x0F8F5,51793,38083,0X01b1e,25310,0X000cbae,0x00034f9,112277,0B1110100010011110,7033,25363,0X00659c,0x040f4,0X00083d2,0x000d1b9,32626,34276,76905,0x00925d,40942,61418,0b00010110010101100000,0x00c794,0X0001fb5c,0x0E023,54248,0b0111100101001000,0B0001010111111111000,0b001110001100000111,0b0011011101010000101,0X03727,0B0001000010001100100,58834,0b0100001100001111111,0B0000111111001000000,0XAd98,0x0023eb,0b0000101011001001111,0xC07C,0b00010100000100101001,14844,0B01011010100100001,0X004b25,0B000011111111110101100,6645,60914,0x0b42B,42255,46395,0X01a471,0x0eF5F,0X17AFf,0XE37,0X008A72,0X00deaa,0X0008752,0b010010111110111,113848,0B00001100001101010000,50026,64508,0X020905,0x00a5ab,0b001001010000011101,0b1010010101011100,54652,0x0017f3,0x000e1c8,62751,0x000cf3f,0x04d7b,0X0001dBae,0X06eec,0X7Bd3,0B01010111110001000,0X006678,13822,0b001111100100101001,0b00010001101111010,0x00Bb6B,0B000011000111000011,0X009A13,136,0B0010011100001100,0X0007c10,0x00079de,0X4649,83155,15661,13899,0B0001001010010000011,81055,0x06c54,0X00013e8,0x0b4f9,0xA4bF,0xda79,0B01000110110011000,0X00aAb,0B00011111101100000,0x007e42,54446,24557,0b001000011111000011,0b00001000001110101000,0B0001011110110001011,0B00001001001010010100,0X000ecec,0x0C972},[7079680]={"\176S*Lmd\133\175 \207\190\026Y","\160N:S","\168O:MAG\154\1721\246\162\004H","\177O:]L","\181O<WPc\154\180","\176d&S\022","\139E8","\189","\182C.RA","\170F)MA~","\188",((-9422*244)+0x0023155E),((-0x00766*232)+0B01101011100000111111)},[0x6d74e5]={},[5489145]={0X0001,0b0000101010,1,43,0b01,44,0x1,0X023}},{[6195237]=0b0100,[0x004Bf0d4]=0X00,[0x00630a6f]=0x00,[8188362]={0B0001110011000010011,22871,0B01101110100011000,0x000662a,0b00110111010101,35084,40511,63165,0X0006866,4942,0xd38b,26640,0x0c633,0x00d6d4,0B010000101101011,0x5b36,0x000506c,0B00001101110011101,0B00010100101000111100,13157,0b01111100000110000,0X000bf5,0X02296A,5303,0X1be1,0B00100010101000110,53585,38428,0b10000110010001111,63595,59041,3923,16871,57603,55447,0B1110000100,0X0001e0CA,10707,0X0001779a,0X000a346,43222,0X00098C7,122673,0b0001101101000100001,0b0000100111001111011,0XDEc4,0b00111110101111000,0b001010111010001101,0X71bc,0X0b043,0x0001a44a,56643,0B0001100001111001010,19368,0B001110001010110111,39518,0x072ad,0B111000110101100,109831,0b0001111011100000101,91838,0X00065df,0b00001110100000100110,22098,0b011010100111001,33758,0X01A10F,0b0001001001101001010,0b000110000001111110,0Xc63e,0X03e1d,0x00a030,0B0101001001000101,0X7446,0X0009d14,0B0000100110110101111,0b000101000110010011,0x03580,0Xd1d1,0x009d94,0B001100001101111,0Xf6aa,0b0011000110111000101,6009,0X000e610,0x000c3d6,0b1010010001010001,0b001001011010011000,107899,35146,0x0007f3d,31295,0X001dc18,60891,0x0E61E,0b001101110101101110,0x0078dd,0x48f6,0b0011101101110011,0x87B2,0b00011001100111111101,0x0008820,0XF1c4,0B101100011110000,0B0001000011011000111110,0b111001100100001,13578,0B000100001101110,0X008298,0x0d76d,0X000779c,15780,0b0011101110110110,21144,0X54b5,3235,0B01110001011011000,0B1110010010000101,17102,61228,0x00Cc89,5082,66131,0x0003b07,0b010010010110000100,0X000110C,0x6033,0B00110101011110100,0B0000100110010111001,0B11110101100000,53625,52768,0x01Efd,0X00cf09,0B001111000110001110,0X00f8dc,0x000D8eC,38551,109612,0XC4f0,0B000011101010010110001,0x053a5,0B0010001110001100010,0Xd4ee,0X0b4d9,0B1011101101111010,0x00f34b,49759,135119,16452,0x0005958,0b0111001000111010,0x00b11b,0x000fbA6,0b000010111001101011,0x00d8c8,0B0001001011110001111000,18545,0b000010110000100001000,6686,0x0058c6,0b0001101111111111100,60909,1789,0X00019ac,0X05B05,92600,5233,0b1000010001000010,0b00001111101011100010,0b000010111101000000101,65385,0XB2DD,0b00111010110011110,0x3792,0X00090fd,0X000D6B4,0b0111100011010101,59488,6765,44948,0X008771,49866,0x07E3a,36059,0B0001101100011101001,0x0715C,0X00013f1,0b00010100010110001111,0xB085,0B0001110011000110110,60305,0b00011001110001111,0b001010011010111101,0x000A36b,0XF170,35867,0B0001001110100101101,0X09E0f,0b01011000010001010,0B0000101010010000010,0X089AB,0X000Af0E,0x000D214,0b10110110001001,0B1001111101011011,64917,0x29f8,270320,0B001111110111110111,0x05Fb0,0B001010000001111010,0B0000111010111011011,0X109E,0b1100110111100011,0X000359c,0X0008D8B,0B000111011111010101,0X0dca7,0X073bd,0B000010001001110010110,58248,0x000396,0b01100110001110000,21946,44507,0X1185a,49417,0X0002a82,0X000900b},[0X0006C0700]={"\172N<JEd\150\191","\139E8","\177E7Jf\127\129\174;\245","\182I5[","\176d&S\022",((-0X000c8c*0x0003f)+0x00031675),((9066*0X4b)-0B10100101111111111010),((5553*0x09f)-882927),((-0X9dc*0B01010101)+0X34634),"\181O<WPc\154\180","\177E7J","\163O!J","\160N:S","\162O;VEg\183\1818\255","\177E7Jwc\143\191",((0X0c18*131)-0X6303a),"\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((0x0018fe*0x0ad)-1106804),((0x08d9*0X00043)-0X002508a),"\177E7Jge\153\181&\168","\167O=ZAx\166\179.\254\151\003D\165\233","\167O=ZAx\182\1818\244\181Y",((0b0001111101010*0b0001010001)-81082),((0B10010011000101*0x05b)-0b11010001000110100011),"\181A=[J~","\176i\012QVd\144\168","\166O=PAx\167\1870\242\178\025","\176d&S",((0x2160*0x00024)-307576),"\168O:MAO\155\1741\233","\166O!PAi\129","\168O:MAF\144\187\034\254","\168O:MAH\128\174 \244\169[\127\172\236_\004"},[0x06d74e5]={{[0x05E8825]=0X0000,[0B0010010111111000011010100]=0,[0x0630a6F]=1,[8188362]={0b010110001101,0B00010010010001110,21011,0X006906,97337,16139,72820,3895,0xe47,0x1df,74860,0X0bb68,0B0000110011110101100,0b0001110010111100,0b00100100010110010,0X4E1C,0X0007f16,0X000fCF1,0X06194,0x0021bB,0x004e9b,56593},[0x0006c0700]={"\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((-0X001448*0xB7)+0b011100111111110111110),((-475*143)+0b0010000100110101010)},[0B00011011010111010011100101]={},[0X00053C1f9]={0B001,4}},{[0x5e8825]=0x0000,[0X0004bf0d4]=0x0,[6490735]=0b01,[0X7cf1ca]={62781,0x9dcc,0X0005E59,56372,88786,0x009dba,31847,0b00111101101011110,0x025d1,0b00100100000011,0b01001111100000000,0x009bac,0XD6E0,0B1001111100100000,0X00517F,0x003003,0X3560,10197,0B111000011101000,17343,0x000f88f,44853},[7079680]={"\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((0x00018fe*0b000010101101)-1106804),((0X008d9*0X043)-0b0000100101000010001010)},[0B11011010111010011100101]={},[5489145]={0X1,0B00100}}},[0X53C1f9]={}},{[6195237]=0B0,[0X04bf0d4]=0,[0B00011000110000101001101111]=0X02,[0X7Cf1Ca]={0Xd4fb,13429,0b000111001010000001,0XA335,0b011010110100000,0b01101011100100011,0B000010110111100111100,32197,65649,48783,0X0Bba8,0X002425,0B00001011101011010110,25528,0X006381,0B0000111100011101000,0B01101010110110011,0B0010000001100001,0x0007958,0x000b037,0X013cdA,14783,0b001010110010010110,0x00A84F,7187,59768,50116,0b01010010011101001,0X00fd69,0X08dFd,41765,0X000e3c7,0X02a3b,0b00011010011001000,11593,0B01001100000100111,0B1000001111111111,0X006585,0x57Ef,0x09913,0X00058de,58772,0b001101001000111000,31806,0B01111110001001001,49765,34549,45668,13623,0X1dd3,0XE676,0x00060D6,0b00001110111101001011,0B10011001001101,0X00b0ea,0x000cc5d,0B001110110110110010,0x3B2D,0B0001110010110101,0b0000111100111000110,13265,0X06e81,0B0001111000110000100,0b001111011110101100,0b010000001000010101,0X02269,0b001000001010100100,0b1100010001010000,0X0007515,0X00CE78,0X04fca,0B0010110000001000,0X0F2aB,0b0001000110000000010,0B001110111010001001,0B000110111010000001,61957,0Xb368,0b0001101100101101001,0X000824A,56955,0Xe98F,0x0039db,0xf1ed,0Xe930,0X000c0aa,0x0009428,0X01539,0x8329,63310,113852,0B010111111111001,55322,0B1100100000111100,0B0001011010111111,13316,39209,54461,0xaef6,27790,0B000010111010100111001,40900,0B011001000100101010,0X000eAA5,0B001101001100011100,0X000CCcb,36192,0x09418,40127,0X00a1cf,36558,0B01001001100010110,6375,1992,0x2E6c,18797,0B1001111110100000,0B111011100111100,0X000c365,0X1e6d,0x000650c,0X000695c,0B00010111011010101,0X0AC75,0X9B6,0x6282},[0x0006C0700]={"\128S?|Pd","\177E7J","\021\191\219\179\004O\166\138n\187\136$","\021\191\219\179\004O\166\138n\187\136,z","\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((0X015b1*0X9f)-882927),((-4845*199)+0b0011101011011011010001),((0B10010011000101*91)-0B011010001000110100011),((0X0018Fe*0B00010101101)-0X0010e374),((0x0008d9*67)-0B0100101000010001010),((-0b00100100001001*0X08f)+0B01010000111111011110),((5346*0B0100000000)-0X14DCdc)},[0x0006d74e5]={},[0X00053c1F9]={0X001,0X0001f,1,8}},{[0b010111101000100000100101]=0B000101,[4976852]=0,[0b0011000110000101001101111]=0,[8188362]={0x00c74b,2205,7160,12958,31236,65068,52819,0X04799,0X000160aA,0X00016ae,25878,0x0009ca4,0x0073576,0X003e8,0b0000110000111011011,15502,0x1eA71,0X000B650,0X000625f,0x00d15a,0x507F,0x0900d,17774,0b01001110000101001,0X0b06a,11720,0B01011000011000101,0b01101001100100110,0x000f4b9,0b0001001000111000010,0X006885,3875,0X3733,0x0c0a1,0xe63d,23433,0B1101001011100001,0X00aFC8,0x00010fab,0b001100000100101011,0X02182,30423,0x12b8e,0X0b12,0B100010110111010,0b01111101101000000,0B000010001101101111101,0B0000100011010111101,0x02c89,0B0001011001101100101,0X25fa6,1266,24471,0x04369,0X00249ca,0xD65a,133379,49557,0B001101000110010110,0x0463b,147606,9955,53727,8860,0b111101101001000,0X0Cc61,0X000D278,0B100101110010100,0X03a1d,0B00001010101010100111,0xdd61,11029,0x2b05,0b001010011111101011,31809,0X0005dfe,0b11100001010000001,48533,122642,60389,0X08426,57486,4454,18488,0X0006c79,0x5108,0b0001100111001001101,0b000011111100011110,0X000f986,0x005934,68809,12890,31049,0b000110101010011011,40059,59771,0B100011100110,49884,4448,0X000916B,48862,0b0010110111110000,0X0132d1,20673,0X0001f9a,0x0D525,124684,0X0009818,0x6595,0x000AF2D,0x0E2e3,65423,5872,0B0001110110110100111,0b00001001110111101111,0x006ef5,0X066E4,8426,0x8239,0x00d360,147939,0x00e687,0X004180,0x00062Bb,116746,0x0c179,0x000e939,0x678d,95654,0b0111100000101000,0X0050df,3817,0x00cfdc,5998,0X000221de,62612,0X00Add1,0b000110111100111101,0x01CAca,21333,15059,49137,0X02835,65484,61302,6630,0x4d23,0x00668c,0b0000101000111101010,9778,0X0057bf,38847,0x000C1d6,0b0001010100110100010,46971,55563,0X2eb9,0x0d533,35295,29559,29676,61914,0B001010110110011110,0B101001110001110,0B00110110110111100,58375,0X00577C,36881,0B01001001101101100,0X0f7BE,0X0007c54,0B0001010011110111101,126868,0b0001001000111011111,0X00f9bf,0B111110001111011,77423,50535,0X0002428,55453,51025,48358,0b1001101111101001,0b000100010010111101,0X00caeb,0X000d7f2,0b00010011010101000001,0x6557,1363,7114,0X143B,0x53d5,0b00001011000111100010,0x03e4a,0x00091a7,0b00001001101110111101,0X79e6,0xfdc5,0x006493,0X000B891,25295,0B01000000101001100,0X0001fB6,33175,123168,0X0045b0,0X0003140,45494,58023,0X009727,0B000100000101110100110,44457,0x000FeD9,0x00C5A7,0X673,57958,0B1101100010001001,0x000cf12,45355,0b01010110110000101,0B011010001111111110,0x009ca6,0X7859,0b0001110000101111100,0X0bea7,0X000e414,0X00063d,51171,96764,57898,0X00292,4748,0B00010101101111101101,0X051d7,0b000011010011110000000,0x7b1a,110335,0B0111000000011101,0b00111110001000000,0B0001010001001101101,58761,0Xf097,0x00454b,0X008089,0x0004746,0B001010010100100111,0B10101011010001,0X67f9,0X05B2,0b001010100101100010,0x06fe2,0x1cD1,0X006738,0X009f09,0X8528,0x00e633,0b0011101101001110010,0X074e4,0X04A2c,0B00001101001001011001,0X00015A1,0X0011f2,25550,0B1101101011011,0x08836,0b111101111011010,0B001001100111010,0b0111100100010000,41384,1481,0x02fb8,0X52D1,0X4a2c,0X09578,0B0001110110111110001,0B11110000100001,84662,0B1000100001111011,96726,31525,0x00015044,0X0002fcf,0x000e0ae,0X097ED,13878,0b0001010000100100,27953,0X0002ef0,0X77b5,0x3464,0XFdf1,61142,105029,0b000100011001001011,0b011001010110110,0x00150d,49509,7814,0b100011101001011,27431,0X0012808,0B0001001110010011000,0B0000100110111010111001,0X0e389,0b0000100011010100010000,0xa8c9,0x0091F6,63285,0B000011000010011111100,0x000cdc4,2900,0X000273e,26086,0b00001010000110010100,0X009cC,0X000cdda,35567,0B001001000111110010,0X03F94,26196,0x002469B,4266,0B1101001000010100,0x4383,0B010100110001000,0X68e7,131622,0X02228,0B101001011100101,0x0be4b,51702,41125,25894,36641,0Xc507,0X9fEA,111675,59077,47309,0x42d5,58505,41673,0B0011001001110110010,0X00fea2,0X0b8b5,0b01010111101100111,0X006762,9949,0X0004946,54063,0b0101100000011011,16874,0X0089DA,26791,0X2ce8,0B000110111001001100,0x4A01,0x0b1eb,108199,0x019C8,104403,20544,0b001100110111100011,0X000F48,45358,0B00011011101100010,0X79f1,0x8E4B,0X00CF8B,0B00101011110110111,0X018bc2,44722,0X0943,29747,163040,0X0151c,0xfd84,25179,0B0000100011011110000,16435,0xD6cA,46365,0X00885,1838,147001,31222,113245,0X9584,0x00c290,0x000169a,0B0001011000101111,5370,0X000c8E9,11889,29712,0b001000101001010011,0x00076a4,0b1011001110011110,114429,0B0001010111110000011,16262,3993,0X0001b878,0B111011110110100,0X00155Ad,46099,0x0014854,0X879c,0X1bDcf,51847,0b001110000010001011,9366,0x00c0a0,60771,17146,0X00eb07,17065,0x0009f6b,0x000890F,0X54Bd,39338,0x0fffe,0X00449e,58722,28731,0b000110100101100001,0X0e7E1,0X000e14d,0x5272,0x9c98,0B11001101000011111,9758,0B0110000110111001,0B0001100001011001111},[0B000011011000000011100000000]={"\172N<JEd\150\191","\139E8","\163R.SA","\182I5[","\176d&S\022",((-0X0c8c*63)+0B0110001011001110101),((9066*75)-0x00a5ffa),((0X0015B1*159)-882927),((-0X00794*0X00051)+0x2660b),"\181O<WPc\154\180","\167A,UCx\154\175:\255\147\024]\174\246L\014\138k\148\018\237","\167O=ZAx\166\179.\254\151\003D\165\233","\181A=[J~","\177E7Jhk\151\1918",((0X0eC4*197)-0b010110101110011000010),"\177E7Jge\153\181&\168","\166O#QV9","\131R SvM\183",((-0X00226D*0b10111)+202879),((0b01000011011010*97)-418258),"\163O!J","\160N:S","\162O;VEg\166\1919\242\165\005P\164","\177E7Jwc\143\191",((-0B001001111011010*0x0097)+0x000bb5a2),"\177E7J|K\153\1793\245\170\015R\180","\169E)J","\177E7J","\177E7Jfe\141",((0B00010010001101*188)-218992),((-0b0001101101100*0X00af)+0B0000100101011011101010),"\167A,UCx\154\175:\255\132\005P\175\247\015",((0b00010010110110010*71)-0B0010100111010000111011),((-0x0001802*0B111001)+0B001010101100010011111),((0B00010110011100*0x99)-0X0003593D),((-0B1001011101101*0B011000111)+964305),"\181L.]Ab\154\1820\254\181)S\172\234N\092",((0x0024c5*0X5b)-0B0011010001000110100011),((0X009eb*0x00a5)-0B00001100110001111111111),"\181L.]Ab\154\1820\254\181>Y\184\241","5\178\159\140\244\191%n\132#\231\186\139\0168\236\223)\137*\196DNb\000V\180","\162O;VEg",((-0X0022e0*0B10101001)+0B101110000010111101101),"\167O=ZAx\182\1818\244\181Y",((-9398*0b010011111)+0B000101101100110101000110),((0x0003ea*0B00001010001)-81082),"\145O<JVc\155\189","\176i\012QVd\144\168","\166O=PAx\167\1870\242\178\025","\176d&S",((0B001110000010011*0B01011001)-639637),"\163O,KWF\154\169 ","\166O!PAi\129"},[0x0006d74e5]={},[0X53c1f9]={}},{[0B00010111101000100000100101]=0,[4976852]=0,[0B00011000110000101001101111]=1,[8188362]={46315,0x02822,0x000e31d,41446,0X008776,49363,0B1101000111010001,0X15f5,32842,0b00110011110001111,0x00018e7,0x0A6a6,30649,0B00110110111000111,67960,0b01010011110101011,0b00001010001101011,24688,0X0de69,24329,29569,37402,0B000010011000011011111,58834,0x00b5a2,0X007c74,21640,0x00C627,23833,0x00049E,0X000f372,0x006791,2442,18332,0x00046cC,0x00050db,36093,0X503,0x0c2d2,0x0d2cb,0X0107aA,6437,21959,0x005F6D,0x0011928,2529,0x000fa85,0x2589,0x000c303,17450,0X00AEC7,0B1000101111101010,62878,0b0100100011010111,0b01110000001000100,11115,0X89a4,0Xcc19,0X015c44,57159,56564,62812,0b1100100011111001,0X22c1,54468,0x004dec},[0b11011000000011100000000]={"\145O!KIh\144\168","\150P*[@H\154\162","\177E7J",((5553*159)-0x0d78ef),"\150P*[@F\148\1841\247","\007\186\238\030\244\171%`\132%\022\234\236~T\189\190z\223vK\180","\197S;K@y\218\169","\145O<JVc\155\189",((3284*0X7e)-413615),((8199*0Xd0)-0X001a01bb)},[0b000011011010111010011100101]={},[5489145]={0B1,0B0000101}},{[0x0005e8825]=0b000,[0b10010111111000011010100]=0B00000,[0b0011000110000101001101111]=0x1,[0X0007cf1Ca]={0x000A6f0,0X0a0D9,49724,0x00b178,0x000C4Ee,0b000111111010010100,0x36e6,0x00a505,0X23Fc,0b101101000101000,0x00eae1,0X0e772,0B0001110010110001100,37785,0X08920,56087,0B1001010100001010,0x2f7f,0B1000000011000100,57589,0b01100010101001001,54617,54019,0X4cda,22480,0X0007Ede,0X00467a,0X0089d1,0x009a36,0X00C5CD,0B1100001101000100,27442,0X0085dd,56992,0X008386,0x00021ab,0X0a66b,0B01010101001110110,63050,0X0203b,0xeA75,55648,0B0000100100000001000,0b100100101110,0b00010001100110110,64277,104182,0x00a976,0x05541,0x00fe3e,0B010011000011110000,50144,74281,26295,0B1101111010101000,0x0E81c,0X000b199,0x0005F21,0x000dfaa,58033,25580,0X001b77,0X000E864,37643,0x000D2B3,0xEEC8,62138,0x0007b9,0x006080,36723},[0x6c0700]={"\145O!KIh\144\168","\141O9[VH\154\162","\177E7J","\136A;V","\136A7",((0X00015B1*0X9F)-882927),"\141O9[VF\148\1841\247","\021\191\220\179\004\218g\011\223JF\186\130\017\007\236\223\194.","\197S;K@y","\145O<JVc\155\189",((6910*0b00011101011)-0x00018c435),((-0X1313*108)+0B10000001000100100001)},[0X06D74E5]={},[5489145]={0X0001,0x0006}},{[0X005E8825]=0x000,[0x4Bf0d4]=0b0000,[6490735]=1,[0X0007CF1Ca]={37706,0b00100000101100111,0b0000101010000001000,0x000e01F,0X003dba,0x000a3ee,0X4659,0x0a9f7,0x0004dc1,59759,0x000b997,0B01001001011111000,75299,6613,50705,9994,0x1b305,12025,0x00fb15,0B0011010100110111,0X000155b4,45819,56086,0x0002FEC,77348,0X9C39,0x01C2e,0b01001111110101101,0xb65B,12342,0B001110100101100,0B1101101111100010,28157,41992,0X000d300,0X001c5A,0x08c95,0xa847,64137,13728,0x00455,0b0000100001101000001,0x0004716,0B00001010011110110011,0B011110101000111111,59412,30547,44600,37494,44372,0b0000100000111101110,0X3369,0x00fd5c,0X05c02,0X0002496,0X0b085,0x987f,1384,0b000010111011101110,0b010111111110100,0b000011100110001100,0X000711B,65098,24079,13749,0X08737,0b0111100000000000,0x6e1d,48761,0b01110001001111010,0X00cab6,0x001602,20648,0x88F1,0b1101101010000010,0x00b282,0b0011110000001110,6165,0x013Fe0,0X1563,43680,0B00011110001011001,0x00423a,0B00101110110001011,0B00010011011100010,0B00010101010010101,0X0f310,49288},[0x06c0700]={"\145O!KIh\144\168","\146A&Jfe\141","\177E7J","\136A;V","\136A7",((5553*0X009F)-0xd78ef),"\146A&Jhk\151\1918","\007\175\254\030\244\157%j\132/\023\223\237@U\138\191B\222JK\180","\150","\145O<JVc\155\189",((-563*0b001000100)+38450),((-0x0001e23*0b000011100010)+1744144)},[7173349]={},[0B010100111100000111111001]={1,0x007}},{[0B00010111101000100000100101]=0x0000,[4976852]=0x0000,[0X630A6F]=0b10,[0b0011111001111000111001010]={0B0001000001110001110,13510,31364,0b01000000010101000,0X00cc0c,350,10197,0xd8c4,0X0006148,0X0fb66,0X5b1F,0Xb09a,57345,52121,14908,64900,0X000120A,0X0d4bc,27347,0b001000011111000101,0X000d545,56443,31001,62624,0X00c7e0,0x00e44c,0X0498,0b001011011010100111,40454,0X0c619,0X0f1A1,16353,0X00055bc,16919,12741,0B0101011001111000,12672,56125,32032,0B00110100000010110,8639,0b0001001110101101001,0x08Cc7,0X9884,0x001c6ea,2405,30109,46598,0x7daf,48909,0B0001001110011111110,0B001110100011111010,0x0a675,0b0100101100010001,0x00fa95,0X9d7f,0b01011000000010110,0b0001011111111001000,0x00100dd,0x0009095,0X0496A,57482,22170,2926,35026,0X0006302,3197,51914,27863,0x91af,80021,62944,40681,0X08ed1,0B0001110110100101001,21160,0b0000110010011001110,0b0001001000011111100,0x03639,0B1010001011111001,61897,0X083E3,47454,0B1000011111110101,0B00001010010110,0X038bd,0X029ee,8886,0x0E8e5,0b0001101010110001001,0B01101111010111010,0B01000001011110101,64474,0xb0AD,0b001110110000011011,0x00d16e,59783,0B0001101100101101011,0x000daa8,0B0001011010011111100,0xcbaf,0X10Fe,8345,0x0e72d,0B001110000100111110,56434,0b0001110101111000011,0X0009d4b,11564,0xc22d,0X06b45,29963,0x8702,52193,35443,0x01fe8,0x04Aaa,0X04138,0x017C0,8829,0B0100000000001011,0B000011111011001101,0x84e9,60686,0Xf897,0x000ee73,47952,0X0002384,0X0009f1e,0x004c2d,0x00e1b9,0Xee73,0x000ae78,59907,0b001101101011010000,0x06bCD,0X0ece1,0x9a4b,0b0010011001010100001,0B011011111110100,0B000011000010100100011,0X009bcd,19996,0X041e3,0x00272e,59921,0x0006496,0B0110011001001100,0B000010101001000000,0B0000111010100101101,0X07FB,0X00a6fa,0X0002fde,36174,63760,0X0079AA,46089,0X3fe},[7079680]={"\131A=Sf~\155","\177E7J","\021\191\235\168\004L\180\136\025\161\231%r","\021\191\235\168\004L\180\136\025\161\231%z\134","\167A,UCx\154\175:\255\132\005P\175\247\015","\166O#QV9","\131R SvM\183",((4314*0x00061)-418258),((0B1111101010*0B00001010001)-0x00013CBa),((0x0015b1*159)-0X000D78Ef),((0b00001100011111110*173)-0X0010e374),((0b0000100011011001*0X0043)-0X002508a),((0B1000001111101*0b00011011001)-0B000011011111011101010011),((-0x00235d*0B101101)+0x0063bca)},[0B0011011010111010011100101]={},[0X00053c1f9]={0x0001,33,0x1,0B00001001}},{[6195237]=0x00,[0B000010010111111000011010100]=0X0000,[0x630a6f]=2,[0X7cF1CA]={0x000F36B,0B001111111001011101,7165,0b00100000101011100,0b0000110100101110010,0X0C190,0x000135dd,0x000c914,0b01001010100011000,39578,4636,0x000fadd,25230,0X0bad6,0B1010000010010000,0xFB32,0B000100111101101101,0B000101100011111001,21038,0b001101011000001100},[7079680]={"\177E7J","\007\175\254\030\244\148$[\133\025\023\218\236{U\130\190y\223vK\180"},[0X06d74e5]={},[0B10100111100000111111001]={0x1,0X0013,1,43}}},[0b0010100111100000111111001]={}}
+-- 0x skill required to make this, infinite skill to break it
+local O11I100={[0X7f06a2]=0x0,[6821668]=0x001,[0X003e5080]=0X0,[0X0002997ce]={0X00eC6B,0X0009478,0x0006542,0X01e11,0x004637,39460,0x008c24,0X0005CF8,0Xc1F4,0X000c4a5,0Xff42,0B001000111001111111,0X02e86,9633,0X000f394,0b001000011001100111,16123,0b1101101110000,0X001900,0Xdff1,0X0563B,56195,0X00Aa57,0b0001110111110000000,0X07fb8,0B00110010101011,0X08b47,64615,0b01111011100001110,15685,44159,28444,0xc182,0b001010010001110,0B1011010100001100,0x0058a9,0b0000100011001101000,0x003473,0x03CBA,0x54af,0B011111100011001,44130,0X0005104,0x005a06F,19727,0x5ce4,0Xa095,0B001101001001111001001,0b1011001010001000,0x000b38f,31254,0b0001011100011010000111,0X01789,0B1000000010011101,0x00015C6,18502,28465,0x04ec85,0B000100111100100101,0x08229F,0b001111010000011010,0X0006B7ea,43303,0x0BFeE,0B00101011100,4145,0X035EC,0Xee2a,0B111010001010,0x107E7,16646,38729,0X00331D,0X08B8A,0B01101000010000110,0x0001567,0B10101111110100,0x0bb57,0b0000100110111101,0X0024B6,22297,24247,0B11100101111100,0X000142f,0x008Daf,0b001111000110001100,0x006c5c,28093,46566,28309,0X9658,0b00001011010000001011,0x001628,0B01000100111001,4592,0X0006d03,27503,0B01110000100000001101,0x005431,52430,0x000d543,44878,0B000111101011010,43435,11683,0X005ffe,0X001475,15836,0b0001000100101101011,0b0001111001010110110,0x9744,49833,0XA1B,0b000100110001111000,41290,59710,0b01001110110110101,0b101011000010111,29588,0B0100010110001101,0b0001110000000000101,0X0060153,0B00001001010001011110,34921,0b01111000110101100,0b1010110100011100,0X54b,0b0011001001101110,16486,0x0007dd7d,0x7230,65195,0X09f3f,0X0005cfb,14219,0B00010000101010011011,0x84e9,0B001011100000011011111,0x08764,0b000011011010101100,0x09500,20985,0X006441,0x0002060,0x09a0b,0B000100101000110010,15500,44867,0X000b813,0x000c7b8,0b000010100101110011,0x0D272,0B1110000100100011,0X04A63,0b0000110011001000010,22629,0x08C9E,0Xfc41,0X6F19,36542,19808,64535,61273,0X0fe52,0xe8d9,47336,0B1001100110111111,0B00010000010111100110,61549,36528,0X00f8c2,576277,0X0590b,429285,0x0006a28,0X0006c42,4931,0x00076F7,0b1110011100011100,376128,62730,549628,0B001111110000000000,0b000101010010100101,22441,0x00095dA,17940,0X005c2bf,0b01011100010,0X00bfdc,0B0100011100111,0x0acca,0b0001001001110101100,424570,0x3554,0X9bF1,0X2bda,49688,0B0111001110001010,0x3493,0x05871,0X010869,0Xf218,50331,64155,0B000101011110111100,0B00111110000111011,0b0001011101100000110000,0X00887D,0x0010978,0b001110101010110111,401388,36823,0x0FC42,0X0007c88,43901,0X9ea3,36769,18682,0X000A174,20757,28980,0xdee0,0xfCDD,0b00001001101001000001,0X06BC07,4782,0b0101010100000011,0X47A0,0X010787,0x027f3,0b10010000011000,0b000111010010001000,61593,0x0dd5,0x0061010,45158,0x000A22b,15421,0X0006119F,17368,0xA001,23265,0b01101111000010000,0xbcf6,0X002cdB,43810,17267,0b1010010100000110,0x000b539,0B0011101010,0B1000100001101100,0x2e80,0X079e1,0B00101101000001010,0X000f263,0X0008dCf,382026,0x00591D,47612,0b010001110100001,0b10000111101110010010,0x1f36,0x000ccf,0x00f132,0b0010000101110110111110,0x327c,0x0c55d,0b00001001001100010010,0b0000111010101100011,53841,0x0008402,0b00110100010111,0X6b40,0b00110101101011110,0b00001101101100000101,45815,0X58799,3072,0X0087435,0Xdd64,56618,8371,0X00038e5,0x001887,21521,14248,0x000657e8,41495,0b001101001010001001,0X0cdc6,0x0005B44,0b0000110111110000000,0X0004Cec,0X00c9a9,0x00ef00,0X000b49E,0XAA3d,0x0040fb,0X00032F4,0x008644,0x10469,0b0000111100110000011,0B0001100000001101100,0x0446a,0X0628f8,0x0526c,0b01101110100000101,0Xf8d3,0X05ae45,0B00001110011100001110,0B000010111000011001,2821,0b101111110010010,0X0E400,0X05325,0X06f9c,0b00001111100010001100101,3571,365498,0B00001110110001101111,88979,0x7ad5,0B01001011010100010,0x000b13e,0x00bBF,0b011100010010011,0X08e6c,0x008986,408020,7888,0b001011001001001001,55436,0x7652,46915,33456,0b001111000011010110,0x068469,13651,0x003074,0Xbf78,0B00011100000110001,54273,0x00cb16,63346,0x00b2c3,0X00037dd,26722,55171,0X007c0c,0b000110000100011111,0X00a218,0X03f51,0B00011110100100100,64776,12304,29234,0X079eb,0x00a976,0x087a3f,0X000735d,0b00101101010010000,0X00D6e2,32357,52149,56514,32266,358228,0x9937,520891,0x003695,23830,22741,0b0000111001011000100,36172,0B00001111010110111101,0x00d464,0x0d249,0x000f28b,0X063Dba,0X00dcf3,0X6caE,0x09189,24016,0b1010000000110001,0B00010000010001111100,0x04504,553491,0B0001101101111000100,0X04407,14233,0b01111101000110101,0x03373,0X10295,0x03c49,60130,0x0024eE,0x0d25f,23948,403865,0B0110011011001110,11697,0x009a8f,70132,0x006d6c,0X4e86B,0b0001010101001101,0xfaB0,0B001001101011100111,61894,0B00001110011100100010,0B00101101000110111,0b1000110111111100,45307,51236,0x008bab,0X08c3e,0B10000000001001001,0B00100000011101101,0X0087A0,0x015Fc,100209,0X00a001,0x08186,0x429b,15398,0X02E85,0x000DBD4,0x03e20,0x0da39,0x003A5c,0X07763,0B000111111000001010,0B01111000000111101,0X0F873,0b00001011001100100100,0x0022C9,0x000e8cc,0x0299C,0B001111101010111110110,0B00001110100110001100,0Xfa9d,0B001010000111101001,32198,0B00001001101111001101,0x6252a,0B00001001011100010000,16013,11952,0x020C3,0X52f0,0b00001101011011111101,0X0067Ad,0X001004a,0X0914c,0B00001000101001001001,49634,0b11010001010111,17245,0B0001010000010000010,51539,0x008f58,0xdc67,0x0007536,0B000111000111111011,0Xcf68,0b0001011001000010,0B00001101010010111111,0X000328a,3684,19998,0x0019cd,0xB863,402365,0X0A4Ba,0B00001011001000101111011,0x000f90a,0B00010001001010101001,0X069c7,0X63a8,0X00B89e,0X8d30c,0B01000101010100011,0X001716,0x0065e4,0b01111111011110011,0Xb377,0x005e9a2,31047,0B000010010000101010,0b000101101111110101,535946,0X0A670,0X919d,0X09eD7,537070,0B001100100001100111,0x01f01,0B0000111111011011100,0x0689e,60292,0x02a60,0B0001100111100011001,0B0001110010111000,0X0015ec,0x007695,30338,67017,0X00044Bd,7940,51001,0X95a4,36309,0X000309c5,0x4C5c,483916,0x0a080,335206,0B01111110000000,59789,0xb331,0b0001100001000011110111,0X845f,0x005dc8,36018,0x0067eA,0b1000000010010110,0B00001011111011001011,49134,0x00074a27,34987,0XeF98,25671,0X3C8e,26534,355069,0X0032AC,0x0003c43,0X0bf5d,58498,0B00110110111010011,0Xa244,26120,0B1101100011001,20562,0x56dda,31682,68855,0x000Da5B,0b001011010001100111110,7514,27722,0x00062C0,0B00001001100110111001,0X04901,0B010100101110110,0X00070ce,0B01101001101101011,16152,0B00001000010101000111,0X0b9e,0B001100001101110101,58490,0x0009b51,57649,0b000010000001100011101,0b0111011110101100,0B1000011100101011,0X772e,0B0001010001000101001,45432,0X79f3,0b01111001111100111,0x0126f4,0b110001111111101,0b0000111011101111000,0b0001011111111111101,0X66611,0b00001101111000000011,39614,22675,4566,0B1000000000111101,0X0DF0A,0x6681,0x000909B,29434,0x5EBfa,49006,0X002C9d,0x0B86E,0x00C165,48885,0X0007C04,0X0dF6e,0x005cfe9,0Xa257,25502,26317,0x09214,0B0001111111100000011,0x0013b2e,0X000fac4,0x07E417,38380,68301,65391,0X004170,0B0000111000111100010,37510,9932,0x0D835,0X002058,0b001111001010101011001,27398,0B00010101010100101,0b01001011110101001,59163,0x009e31,0x06cb5f,0X943b,62064,57639,0b00010111010111000,52546,0B01111001000001111,0b000110100101000111,0B10000010011111001101,0x0c08f,4951,0xe2Ce,5403,0Xd810,0X0067385,55274,392490,0x09072,0X078d7,0X0CE1C,58811,8032,0b0000110001101001111,48211,0X00a5DA,40192,47315,0x048c4,0X000a120,0B0001101110000100101,27153,31203,0X00010b75,15528,51987,0XA465,60202,0B1000011000100100,50129,0x4980,0X00c752,36979,0x00ef0a,0X009A83,367492,0X000ef6b,19415,28630,0Xe7a5,11816,29934,0b1111000011111010,383501,29942,66404,0x071ca,64411,13825,32727,32474,13995,0x000bd55,0X0020aC,0B00001010100110111000,0b0001001110010111001,59036,66030,7069,0B001010011101010110,45535,0X642Db,16202,0X62fb,0X0488A,0x00F719,0x000ba80,49503,28937,0x843db,0x03477,0b000101001101111110,46548,0b001001010100111011,0X4ebc,0x0e58b,0b00001010100010001000,0x9297,24801,573915,18783,0b00001001101100110010,0B00001000110101011101,0x0942c1,0b001011010110011110,63140,36289,0x00042d5,36626,33909,20705,0b00101011100101110,0b000101011100000001,0X006378,0X000be90,0X00071a1,0b01011110101011000,0x000E192,0B00001011111110110110,0X260b,14491,0x0009F08,26518,0X6D982,41914,0b0100111010101010,0X0008E30,0b001111000011001,50020,5627,538,33689,0b0010001011011110,29029,31890,12697,0x0008569,59810,0B0111111000100101,0x0102aC,47151,543127,0x04126,0x00010C89,0B0100001000111110,0x08B70,21224,0X1d6a,0B0000111111111010011,0x5f27b,0B0000110001010001001,0X1025E,0X0db23,0x07b9e,0x01149,33632,0X000988,0B001001111011101,0b1000000100011001,0x00cff1,0b1001011011000111,0X00fB4C,0B01010101101010111,56472,0B01010001100101000,48884,0x08be8,0B00001100001000101001,16453,43046,0x003f51,0B0010111001001000,0B0001010011001001100,10380,0X00c17b,0X083b6,6963,0x0026fe,62489,0b111010101100000,0xeaf0,0X000e261,3815,0X00f908,7904,0b01000111111110101,0X6cD2,36175,0x042bc,0x00086a3,0x00095d8,0B111111101000110,0x92E3,0x00041B2,0X05889,0x003Ff8,0B00011000100110000,583122,0xea47,0X0a2233,0b01111011011011111,0x00090a0,4287,0X00aFbA,10792,0X0f251,0X00077aD,41450,0XF900,0Xe689,0X0002995,0X000c165,0X000e6B9,0x0e6ba,8470,0b0000110001010000111,39699,0X009535,0X000f0e8,0x00060d98,0B01000010110000011,5038,0x57B5,32932,44467,0B0000101111000101010,0B00111111100100001,0X6b94,0b1010000010100101,0X00a410,0x0787e,0X877B,41667,30239,0X1459,0x06F0C,58674,30551,35085,26797,0B111101101111000,0X041Cf,0b01001100100010010,368539,0X00fF8a,0b0001001010111000100,0X00626a,0b1101000010001101100,0b001100000001111001,0x00088B66,0b1001101111110111,0X00012A2,0x00518d,0B0010001011011111,0b00010011110100011,0X001e7c,50349,0X08587,0Xf6A1,59382,51013,439669,53077,0x0e2d6,0b111010111001000,68553,0B0000100010001010010,21580,21714,35846,0x13c3,0B101001011000010,0x00F150,0b000010100001110100,0xc787,0x05a578,0b1101111110010100,541478,0X00071e2,0x006323D,0x2c57,0x000589f,23620,0b001100110010100111,0x968a,51557,0B0001100010111100101,0X8b7a,0X005e2f,407752,0x0b546,59003,60712,0b0001001111111001110,27389,0x004e96,0x000fa26,48548,0X2607,0x0003ee2,23630,0X00abbf,0X0003242,0xd58d,0x0036f0,539092,0B0001101011100111100,0x0ac0d,17160,0b0110011110111011,0Xb79d,0X10561,41256,0b01111100001111001,0B0001000010000001010,59329,0x000647,0X64ea9,13517,53370,28500,50997,0x0566E,37341,0b1001001110011001,464501,0B01011111100011,0x8a28,0x2617,530095,0b001011110001001111,0X0098e8,0b0001100011100100,0x005a9f,0X0906f,0B001111011000100100,0x00BEa2,0x00f87c,0B0011101010100000,51129,0X0adab,0X0003457,0x0b229,54958,0x04c7a,0B0010101110011011,0X49cf,40638,1546,0X0102a9,34004,0b01000010000011111,54311,0b001000101110000100,0b00010010000001001,0x00069745,0x0003714,0X000562b,0x009177,382010,31344,0X0b4a7,0b0000111010111101100,455900,39767,49298,0b001000101111000000,0X018d5,57643,0b01000111011100000,0x0952e,539865,0x0139d,0X006960,0b00110110100001110,0B00011000110101110,0X000e375,0b0001100011111110101,0x06c27,0X09CD0,0B000011010000100010,37035,47782,0x70c4,12028,0x009575,0X0007381,0X6097c,0x062aB,66625,0b001000000001011000,0X9227,62411,0x00d754,0B00001100110110111110,0X00010683,65173,0x2346,0b000101111100010,13635,50368,392512,38013,0b0101100100010000,0B00101000011110001,32412,0x000BE44,344275,0x0009a81,0x030d2,0x5ccA,0x000577b1,56432,0x0004467,0X000E8b3,0x00fd06,0B001100101000100011,0X004c887,0x000f3db,0X003110,12694,0xb923,0x0004fb2,55431,0x00d1f1,0b000101001011101001,0B0100010100000101,0B010110101100,0x000faae,0x00d3cb,0X00a0bb,0X0e656,0b0110000111010010,0X7cfb4,0X000e6e2,367817,11834,0X07bE3f,0x057e5,0b01001111000100101,0B001110001011110101,0X9e94,0X4C24,27905,38174,0xe249,25611,464978,0x0078c8,0B0000110011011000101,0X00822f,0B00001100010001101100,0x0007d73,0Xf8BA,28617,0X002162,0B00010110101100100,0x00022e3,26242,0X7f3d,34911,0X05ec8,44998,23555,0x00587D,0x0008b0d,54053,0B10000010111110,33517,7446,0x0D7b8,53069,63542,0X0e5a9,0x6e14,0x05c8b,0b1101001000010110,17936,0x000571e,0B0000111000111011111,0Xe84,50547,64100,5318,0x0b92e,0x6E5d4,0b0001111011111010000,0x0006A31e,0x007972,0X006aef,0xa072,0X0d2E1,0X000bfa6,0B0010000011101011111110,0x00ea8d,44734,0x01496,0x000b53E,0X000c062,0x00d456,0B00001111001011011100,0X006b5C6,0x0005271,0b01001100110111,0B0000101101100011110,0b0000101000100011001,0x0029e3,0X00d33c,61432,0b00001101001001101011,0x000a0b2,0x622c,0B0001000011001101110,53399,13931,0X005aa2e,35460,0B00011101000100001,0X05bc7,36520,0X0075a3,0x000a4a2,0X06CEA,0x0005AbB1,57232,379996,0x00098db,17774,0xE08E,0B001000110110110,0X5d9d,0XD030,0b00001011010010110000,10240,0XE1c1,0x07ab6,33169,58528,0X53C1,0b00001001110011111001010,0b1010001011010110,7369,0x000358a,0b0001010011010100111111,0x0Bcda,0x00A7Cb,0x0A561,0X00A6E2,0x08079,0B0001000000010001110,19547,0B0000101001101000010,655,0x0006b2c,47142,0b000110100110000011,0X5A6D,40654,0b00001111011101001101,0xedbc,0x000Bf53,33994,0B000111110001000101,0x6f22,0b00001001110111111010,0B000101000010111011,0B01011011010010000,0xfB93,21589,0X00052d3,0x00D0e,29589,58487,0B010011001101100100,0B01000010000101,59792,0b000101011001011010,0x0a609,59337,0B01100010000110000100,0B00001101100110101100,0B1111010011001001,40153,0X00e6b2,57663,36810,0x984c,520343,28745,432291,0XBeDf,49467,0B0001110011100001000,0b11101101001000,0x0001E0d,0x000ff10,58757,0X00897c9,53634,0X000403d,0b0001100000101111100,0b000010001100000111111000,0B00001011110110100001,0x0003B18,0X0bfd7,0x14672,0x0dd6f,47578,0x0f548,0X0C731,0B111010000101100,0x00010dB3,0X0006377,0x0011e60,0B001001100100010110,0X008Cd3,0B00011110101010101,0X0099e6,0x008fe,0X03E27,0b00111001110111100,0X0001139F,0B1111000101110111,0b0001110010011110110,41254,537093,0b100010100010111,0X005E746,0b010000111001011,0X8bFE,23038,55335,0B111010000001010,0X2ee5,6563,0B00001110000100110100,0x00a538,0X00c325,0b01101111111001000,27066,0xbAb4,26073,0xc7be,0b0000101011000101001,43211,395154,0x8FDB,0x04FD6,0X0F8cE,0X00081B15,0B000111111100111110,0b0010000100100100111,0X000C81c,0x000c34d,0B01100010000101110,0x00616B6,20650,0B000101111000011101,52883,0X0E9AC,8955,0X25cf,0X00be86,13209,0xeaCc,21810,0x000683C,536619,0b0000110101010,0b010001000000101,28555,0X000101a2,0x0545,0B00101011100000001,0x00ef02,378315,0x9C1b,51648,38761,0x0008834,0B00100011110001110,0B1010101111010101,0b00001101110110100011,0x570C,0b101101000001101,0b0001001111100100010,0Xbfb9,26432,0B1111101001011101,0x0003d70,0X0e54F,13664,0x0003be3,44010,37234,31691,64746,0b001001100001100100,0Xc9e1,9939,0B00011010100110010,35155,0x0006d71,0X008f02,0B00111101101101110,0B01100110110011111,0X9e2b,0x601Be,0b0001011001001010100,0X102Ae,0X0006754,632666,0b01100001101011110,0X054c09,0xE261,0x0008aeb,47442,0B00001011011011101110,0x8510,0X00878f2,16418,0X5519,19248,0X00d8b8,0X000caD,62192,0x007a5b,0b000110010111001010,63344,21138,43729,0x5835A,65156,0x04757,26432,0x0060a8d,0x093fb,47510,0B00111111111100011,399319,0X060D8,0B001010100001101111,0b010100101011111,0x000c679,0X01B7F,4281,0x0F33c,0B0001011001111001011,5855,0B00111111010101110,0x0002021,0b0001000100101010111,0b01110111111110111,0X9188,0X002A00,60769,0X000720d,0B0000100110000001010,0X00ff66,0b1100001100000101,0x000e297,0X0006c88,0x0e38c,0X00074e5,0B00100100001110011,59483,45199,0x006136,60720,0x000ac89,0B001110011000010001,0B001101100011110101,0X004b84,0b1000000000011,0X005b6c,0b10000000101100011,0B00110111111100000,0x9b1e,0x0001009,0B00001000001011010,0X0d854,0b111110110011101,0B0000101111000010001,37630,0B01100010001111111,14690,0x009779,0B1000100101100111,0X019a7,0x007ce8,41714,0X006cd7,0x0b32e,3259,14746,0x005e003,23044,28259,0x008cf8,55015,20705,0x0d1C2,0x7550,0x00E5A5,42823,59151,0b00110111000001000,0X0007D83,0b011011000101,0B01011011110100110,16408,0B000110010001101001,12241,0X87c34,0X0e272,0x00066a7,43427,0X0118Ed,0x04109,0XC241,30240,0b00001111110010110001,0x000a8f9,3782,0X000f8cc,5857,0x00FFF1,68675,0x004f2e,0b001000011101100101,4327,8086,0B0100010101111110,0X223F,0X06641,0B001001100110111111,0B010001011100001,0x5aAC,0x000d4bC,0x008fa5,0b0001000011110100001,0X00140e,54904,38741,28081,0x000965A,0x004d72,0B0001100110011111011,37706,0x00B0bD,0X00467b,0x81b0a,12901,26788,2583,0x05146,0xEB70,0x0813d,0X0031c4,0X00f036,0x01680,0xe7E1,0x0798d,370760,0X00D95b,62086,0x004fa4,11240,0xb400,0Xa115,34400,53747,0X0826,0X000df48,0Xdeec,0X5FA27,39872,61523,0x07132,41733,0X00d01e,0x0005adc,10681,0b001100101011010000,0x0c9b8,56088,0B0001011100000001010,24249,18451,0b1111101001000110,0b00001111111001000011,0xe084,0x80B,33418,10656,0B1110110100101,0x058c0,0X0008376,0X00074Ff,0X0005aEc,47215,0b0011010010100000,46366,0x000677d1,19081,0B1111001000110100,0x00b20d,0b00110001110011111,62083,0B001100011001111100,0X00cbC6,0X086209,0x006435,446739,21279,0b010000011001010010,0b11101111111010,0b00001001000000111010,0X06e30,0b00001001001000001001,0b0000100001011101111,0b0111110100110000,0B0001100000111111010,0X00e70f,0X8a6d,0X000b398,0X000d13d,0b0010110010111000,0B0001110010111101011,25325,0x6f21,0B00001110111100000010,0B0001000010101001001,58300,39416,0x0001A31,0x6C3B,0X0067D3D,55220,0x0b7e1,42649,0x00c1F6,0b0010001100011101,0B10111011111100,0xA6e2,0X000a57e,0X09b64,0B0001101101010011101,0X0a4db,0xd8d0,0x0d569,36164,0x000d573,0x03120,29438,0B001011100110000000100,39228,59318,0X00d4f6,0x081b84,0X00031e2,0b01111100111101011,36672,585736,0x51ae,0X00af8b,58895,63694,0x0e683,0X00f9c6,40137,0x004f70,41923,0x7CdA0,65315,13482,47625,0X0f198,0X0007fd0,372015,0X00394,0X0B8c2,0X00d92B,0b00001100011010000010,0x00c0ce,0B1011110011101111000,26593,551793,0x0035f3,0b1001011000101100,0XB333,23402,0B0000101101111101100,0X00641FA,0b0010111001101001,0x644a,0x000da54,0x04c09,0b0101110110001101,0x0006d5a,16486,0B000101111100111010,0b000100001100010000,0B001011011111010010010,0Xa7b0,0B01000001011010011,0B1101000010100100,450401,0b1010001101111111,0B0001010010000101011001,0B0000110000111100011,0B000101001010001000,0X0e812,15455,0x00070bA,0B10001000001111001,0x0ee6e,19973,23558,0B01111100000011,0Xcf68,0Xd4E3,0x00b231,0b00001001100011001111000,0B0001110111101001001,46236,0b0100111110100011,0X0006eae,17946,37723,0x991f,0B0000101001100000100,0x0b698,55873,44012,0X007d2f,0x00860f,0x0545aa,0X00939,0x00043B0,0B0010111110101110,0B111101100001011,0X04DD3,10863,0X6dA6,0x05B33e,0B00001010110010001110,28601,0X01d4c,0X0B567,40552,15263,7768,0xf69f,8983,0b001011010111100011,0B1111010010101101,0B110011100010010,0X001700,0xbb93,29414,0x03484,14095,0x6947b,0x000f88a,0b000010001100010111101,0x90b1,32760,0b011011001011010,0x0013dfb,0B1010011001011,0x0059e8,0B111110001010001,408133,0x000ffd,0x008939,0X1a87,0x00012590,0b0001111001000101000,0x004f89,0x857b,0X000d8B4,0B00001011111110000001,375954,0x008258,0b1010001001101001,7303,0x61326,0X06dA1,65463,0X377e,0x0056a5,0X001E35,0X60E6,0xcfca,0b0000100000100001011,0B00001001100010101,41760,27458,0x0004Adf,0X455c,0x00066BD,21475,0X0d7d2,0x0BEBD,56603,48140,49079,0x4ece,0X7f8ff,0X5825,0X009d66,33631,0b1111001110010001,0B01100100010011001,0B01000001100010},[0b0100011101010101010]={"\200\223\202\010","\232\219\211<\092Q\192PLE","\255\210\198\022\092Q\197","\253\203\201<\092Q\192PLE","\250\205\194\029pM\198L[s\135`\200\234R\202","\227\209\196\014Us\218XVE\144","\252\206\198\024WF\210\127@S\145{\210\240",((-0b0010100010101*53)+0x0010dbd),((0x0b00*0X000d4)-0X0091bf1),(((-0x00021b0*143)+1233233)/((-0B001110011101101*0x008b)+0xfb4b1)),((0x0001cae*0X00100)-0X1caa18),"\230\208\212\027XM\213\092","\193\219\208","\252\221\213\010\092M\241LF","\225\223\202\010","\233\209\212\028PO\243J_f\131`\211\196D\198","\253\219\212\010Ml\216j_A\149|","\255\223\213\010WW","\248\223\206\027\127L\196zGI\142v","\255\210\198\022\092Q\241LF","\233\204\198\002\092","\252\215\221\010","\250\250\206\002\011",((-0X000A3b*0X005F)+0B00111100101111100101),((0x0019c6*0X00075)-771646),((-0x10A9*248)+0x00102598),"\255\209\212\006MJ\217W",((-4720*0X2f)+0B0110110001010100100),"\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((7446*201)-1496621),"\237\209\213\011\092Q\229PUE\178{\198\230]",((0x020b2*0X0008f)-1196908),"\237\209\213\011\092Q\245VCO\144!",((6616*144)-0X0e88b8),((0b0001110000001*19)-0b0000100001000011011),"\250\247\228\000KM\211K","\236\209\213\001\092Q\228XKI\151a","\250\250\206\002",((-0b001100100010*0x0004e)+0b00001111010001101000),"\250\247\224\029XG\223\092AT","\236\209\203\000K","\236\209\203\000Kp\211HZE\140q\219","\236\209\203\000Kp\211HZE\140q\219\200T\214\132\240@VQ",((7903*0B00011011000)-0B000110100000110000000101),((-0B00010000110110000*0x8F)+1233233),"\253\209\211\014MJ\217W",((0X00015a*258)-0X15C5A),((-0x0b5f*0x01e)+0B000010101010101001111),((0b00001000101000010*0X000B2)-786224),((5433*262)-0x015b7e8),((-4924*0B1011011)+0b00001101101011011010110),((0b0010100011*0X5f)-0X3BE7),"\251\219\223\027uB\212\092C",((0b0011001101100*65)-106850),"\251\219\223\027","M$\006O\127l\229jfl\194T\255\209|\143\217\191zl`\172\251\233|","\251\219\223\027zL\218V]\019","\237\223\196\004^Q\217LAD\182`\223\237B\223\149\237LVF\148","\233\209\201\027","\234\208\210\002","\232\209\211\007XN\244VCD","\251\219\223\027jJ\204\092",((-0X00022db*0x9c)+1392004),"\251\219\223\027ab\218PHN\143w\208\247","\227\219\193\027",((0x01a4B*69)-0B00001110001011000011001),"\205\199\135,{f\226u`t\163","\236\209\195\010",((-0x08F2*0x000a5)+0x05c403),"\238\221\211\006OF","\230\208\215\026Ma\211^NN","\236\209\201\001\092@\194","\230\208\215\026M`\222XAG\135v",((-0X009dB*264)+0b000010100010101000000000),((9680*0B01110011)-0x0010FB71),((-0b0110010111111*0xde)+0xb0db0),"M1\022O\233\189g\184\254\1622\162n8\225\017%\030\248\180\031\205\135","_!3\226\025f\229i\021\000\173T\248",((-0X01218*156)+722677),"M$\006O\233\130f\131\255\1583\146n=\224.%\029\248\180\005\197\196\201A\223\218\137\019\185","M$\006O\233\130f\131\255\1583\146n=\224.%\029\248\180\031\205","\143\205\211\026]P\153J","_!4\226\025\243$\232\164\241c\194\000R\179\127D\191\249\135\245]f=\228\014y\027\176(\209\130\147\005\001m\222\222\216z",((0B00010010101110111*0x101)-0x00259bb9),"_!4\226\025\243$\232\164\241c\194\000R\179\127D\165\009","\143\205\211\026]P","M1\022O\233\180f\137\255\1482\167o\003\225\025$%\249\136\005\197f<\228\014y\028\177\019\208\176c\153\163\146\130",((-0x002484*58)+0b00010000100011011100010),"M1\022O\233\180f\137\255\1482\167o\003\225\025$%\249\136\031\205","\220","_!\003\249\025e\247kb\026\194]\248\197",((0B000111101100*0b0011011000)-0x00019de5),((6437*0x0E0)-0x00015FeF8),((-0XE4B*99)+362321),((-0b0001110011101*0x002C)+0b001001111100000100),((0X0937*197)-0x7174e),"M:\030\128\129\172\150\233\143\240w\194(S\169\127h\191\249\153\245Og(\228 y\007\176\000:\007Q\177\2259{%z\211\228\180b\142\251\148/\144S\006\229\030 .\005\244\157\001\001i\136ocz\201L\185\217\015\249\203\197\143v\030\135\132\235\025\017\134\170+\154V>\233\014,\220\241\158\253g\166\191\206/B\142K\181\217\177k\133\170Vs\031b\208\221\142\138\229\239\252F\215\010f\181bx\178^\253\179\249\163a\154go\002\193U\140\224:\211\224\127\143\029g\225\216\179v\145\143\231\034\188^\014\208=4\223\009\147\228Qe\011\182{k\006\205P\168\2374\020h\011\1999\155\147\153\223\026\253\230\1326\222.o\181k[\186Y\004\132\016\008Y\153\143\020^\2202\197\187W\134\191u\135\238o\250\208\137\148\195\219\203\170\218\002k\177Vm\166S\000\141\021\034T\154sy\015\135\168\200\151\171\212\234!\230\130\243\155\166*K\167\147\236V\207J\027\2216","\251\219\223\027nQ\215I_E\134","\251\219\223\027`b\218PHN\143w\208\247","\251\209\215","\231\219\198\029MA\211X[","\204\219\213\027PE\223\092K\127\145y\215\231","\218\204\248\013XG","\194\223\203\011PM\209","\203\219\200\013_|\194QFS\189~\209\239","\200\215\192\014ZK\215]pV\131`","\216\209\202\031fT\217T_"},[0X2B9AD9]={{[0X7f06a2]=0X000,[0x681724]=0x000,[4083840]=1,[2725838]={0x04216,0x004b4b,0B001000001011011011,0X42EA,0B00001100001101010001,55535,0X07d79,42165,0xb22d,87179,0X000252E,0X008655,5705,0B01001011110011101,31086,27288,44158,52260,25184,0x079E,42920,74410,0B00001111111000101,0b00100100000111011,57917,0b0001000011010010000,63498,28100,65517,0x00094d6,0x000cee5,60547,37610,0x0004548,0B01101110001101111,15242,26364,53853,0X68e2,0B0000101001111101010,0x00bedc,46780,0x0005813,0b0000101011101101101,0b01101101101101111,0B001110001011010011,0X00efcf,0x00013a71,0X00064F0,0XE6FE,0X0466d,0x00745f,0x0cca1,0x2b6a,11981,0x86bc,53718,0X07b02,0B00111101101011000,5681,0B1011011111100111,0b1110110000000100,0x0e12f,0x077D2,0Xfd16,0b001101101000000101,0x11d3,40652,0X0a631,25803,0X049d6,0x0aA28,0B01011000001110111,0X0de1b,0X01a31,0b0001010111100010101,1016,0B0010100010111111,0X00c7c0,53321,0B0001100011110110100,0x17e8,0x00e0Ca,0x00ff4a,0x275c,0xFd29,0B00001000000111000110,0X000cffd,0x169C,52107,0b010010111101100,0x91ca,0x006a8b,0xb439,0b1001001110001001,0X4be4,0X61e5,0x001d1,0b000011100011010,0Xaec4,0b00110110101101001,15344,0X09229,0x0E9DB,0xfab4,0b00111111100111111,0X071d7,49547,0B0000101111000100,0x0CC03,0B00001110000010101000,0x000bb80,0x009402,50643,0x7D9A,0Xdfb},[0b100011101010101010]={"\236\214\198\029X@\194\092]","\255\223\213\010WW","\255\204\206\002XQ\207iNR\150","\233\215\201\011\127J\196J[c\138{\210\231","\231\203\202\014WL\223]}O\141f\238\226C\219","\237\209\195\022",((0x00017da*142)-866271),((0X0001748*0X023)-0x0032abd)},[0x0002b9ad9]={},[0X0064cf77]={1,0x03}},{[0x007f06a2]=0,[0x000681724]=0x0,[0X03e5080]=0b1,[0b01010011001011111001110]={0B0011000111001100,0X0396b,39275,39264,0X000b963,0X000deb7,38823,0B0100001010110010,0B0001110110011011001,0X7c3e,0X000bf7d,37970},[0X23aaa]={"\216\209\213\004JS\215ZJ","\233\215\201\011\127J\196J[c\138{\210\231"},[0X0002b9ad9]={},[6606711]={1,0X0004}},{[0B0011111110000011010100010]=0,[0x00681724]=0X00,[4083840]=0X01,[0x0002997ce]={8587,0b001111101011101010,0B000111011001010110,0Xee8b,0B001100011100101,0x20F6,0X00071FD,0b0010110101001010101,37318,0x000Ed11,0B1000001001110,5468,48177,28876,0x000f628,0X0ba21,0b0001000001100110011,0X000b20b,0x0af8f,0X16c3d,0B0101001010100000,6819,0B00100101010,0X009711,0x00028e1,0x00146d,0x004304,0b00001101110001,17767,14695,0x03c1d,0X00035b7,8244,0x00076F3,0x80d5,0X000bf1D,0X002bf,65964,0B0001011101011101001,50936,1318,0X05c83,26123,0b1011011010111000,14571,0X63A7,0x0b3f3,41521,0x000b3a6,0xde1D,0X07ed5,0X000132a,16891,0b0001010011011100000,0b0000110101101111001,2910,0xb5f8,0B00110101110110100,6456,0X07D67,0X06FDF,0X098F4,0x0004443,0b001101100101000111,0X0896D,10105,15491,0Xe64f,19943,0x002a176,0X0006225,0X00f1f5,0b0010001110100011,0X00DA37,39328,0x5632,46425,0X28ca8,0x001af5,1063,0X0029c1,0X0C356,31649,0X9446,0X00b670,0X0001C3c,10147,0x010E93,0b0100001110010000,0B00001010011011111,0x858f,0B00110011111111100,0B0000100100110000000,7961,0b1111011001010000,53294,0x009A30,10792,0xb06e,0x001c29D,23201,0X0af83,29364,32702,0x850B,65033,0b1101001110100111,0X01983,0B111111011100101,0b110010001001110,0X0060ca,0x005438,26194,0x001df2,0B01101101111101010,0B1011110111110,0b01000100110111,0X04422,0B00011010100101100,0b00010011100010001,0X0f559,37515,46889,0X0005B85,0B00001100110110111110,33248,25532,0X000461e,63857,0X06e94,38202,137858,59992,0b0000101010011000,0b00001100110001111110,0x000ea1,7008,0x002397,14918,0x0008c80,0X59e5,0X00069b0,6014,0x0e31d,0X0cbc5,0x2501,49843,16260,0B00110100110011101,35451,0B001101110000000,47562,0x0007a0c,9204,0X0F06a,0X0531f,0b0000100110101110,48032,0b0001001011110101010,0b0001101101011011100,0xb16d,0X0008296,0x1154,0B00011011001010001,0x0005ea3,0B01111110010110011,8749,34939,0b0001000011110100011,1808,0x000c767,0x00df95,0X81d9,0b010000000110101110,0B0001011101110100110,0X090a4,9310,0B01000010111001110,29017,0X00E083,37938,18368,46353,0x000429f,0B001100101001011010,0X000df98,0x068d2,43551,50871,0B01011011011011,0X000c7d6,0x00d3dc,32957,0x8B93,0b0001111010110010011,0B0000100010001010100,12959,129114,0B00001111110101110,53915,8886,0B0001100111000011000,62852,0x0005f75,0x005A7d,0b01110101001001001,0B11000101110000,0x0002cb9b,0xd58B,26172,10074,90520,18922,17759,0X6570,0x104FB,0X0b2bb,0b0001001000010101000,0x0006b24,7082,0X0fabb,23914,0x04ED6,0x000e49E,54985,41291,37989,0B00001010001111001,0b00101101111010010,0x029cc,0xb20d,14376,0x6611,0b01110000000010011,63476,0B01000110111110,0X0bFFC,44316,0B100100100010111,0B01111110100010001,6419,0x00bce0,0x001803,0X0108A6,54201,0x00020b1c,0xaf69,10531,0b0101110011100100,0x00edaf,17512,0b000010100000101110,39340,0b0000100001111000100110,0x0cc66,0x1122,0x060e5,29167,0xBf0,3762,61648,0x0676d,0B1110100111000100,0X00253e0,0X00e29e,33838,0X0037a9,0b00001000011101111011,62869,55710,0x0ffb2,0X04513,0b01010111010111101,46693,0X3d1c,0x078fd,0b0001000101000011011,0B000011111111111011,31485,0b0001001000110011111,0x09e2,0X00e8ae,20960,0xCEf9,13371,0X60b2,0X000e228,0x1497},[146090]={"\198\206\198\006KP","\232\219\211,QJ\218]]E\140","\230\205\230","\237\223\212\010iB\196M","\226\209\195\010U","\255\204\206\002XQ\207iNR\150","\233\215\201\011\127J\196J[c\138{\210\231f\199\157\252AqV\172","\255\209\212\006MJ\217W","\219\223\197\003\092","\198\208\212\010KW","\198\208\212\027XM\213\092","\223\209\212\006MJ\217W",((0B1001110110100*0X25)-185935),((0B0000101000101101*258)-0b10100011110101111111)},[2857689]={},[0X00064cf77]={0x1,18}},{[0B0011111110000011010100010]=0X1,[0b000011010000001011100100100]=0b000,[4083840]=0x1,[0X0002997cE]={0X0001141,10138,0X000D826,35383,0B1001011001110,0X001fb1,0b001000011100000011,74944,0X7aeE,29881,0X0820f,0X00641C,0b000100101111011001,0x05440,0x7bf0,44817,0B1101110111000100,32635,17722,0X0138c4,62169,0X06B94,0b101100001010101,0x0004858,0XAB7b,18937,0B0101001101,0X01f7e,0X0be79,0X0107f9,0B110101111011011,0X0aac9,0x00073ea,0X0019526,0b010100101000010,0x15a98,0xFF81,0X000b71a,0xde22,26437,0x000aa25,0b000011100011110100,0X5f93,36128,0X00076b9,0X0142c,0B0001100011000010100,0b0000110000011000011,0x0A3f2,0b000010010010100010101,0X006d25,75362,0b00100011000000100,0Xd502,38607,0B0000100000100110110,0x003955,61923,20621,0b000111110010000010,0X08ef,46425,0x090ac,0x00052A2,0b11101111010001,0x002534,0X0E65b,33234},[0x0023aaa]={"\194\223\211\007","\204\210\198\002I",((-0xa3B*0b1011111)+248805),((-8624*0X0008f)+0b000100101101000101010001),"\201\210\200\000K",((9680*0x0073)-0X10Fb71),"\236\209\203\000K\016","\201\204\200\002kd\244",((-0B100111011011*0x0108)+0XA2a00)},[0b0001010111001101011011001]={},[6606711]={0b001,0X000F}},{[0x0007f06A2]=0x1,[0b011010000001011100100100]=0,[0X0003e5080]=0x0002,[2725838]={0B000011110001,41176,0x000E46F,0X000d68d,0b0111110010011111,49276,0b00001001000010100000,51272,25438,0Xc706,0xCf34,0x05e34,51275,0B10010011100101010,47772,0b001110000110011100,63772,13688,0b0111000110000001,0x0fa52,0X0005C19,53081,0B00001110010100110111,0x125e8,0B0001010011011110101,0X0075aF,0x04ceb,0X000D6A2,16477,52671,22523,33757,0X038aa,0X001daa,0B0010011100111100,0b000111010011110100,0X02c5a,0b101110010111110,0X08fb4,0X001A85,0B0000100111110110,36855,0X00502b,0X00075a7,0x009738,0X0e7ec,0X9fc2,0b110101011010,47415,0X000b61a,64829,56360,0b0001100011100000011,0x0072f6,0b00001011101010101010,62418,65393,22770,0B01111100101000111,0X65Fa,0b01100000100110,0x00c92F,0B10010111111000,0X00C176,0B01001111111100111,0X0001452c,0xa274,57796},[0x00023aaa]={"\236\214\198\029X@\194\092]","\236\248\213\014TF","\193\219\208",((-0X001e87*0b0001000010)+0B00001111110000100011011),((8913*0X54)-0x0b6810)},[0b0001010111001101011011001]={},[0X0064cF77]={0X01,0b011,0B00001,0x011}},{[0X007f06a2]=3,[0b011010000001011100100100]=0B0,[0b0001111100101000010000000]=0X4,[2725838]={0b01111000010111100,167040,0B001101100100,0X000d899,0Xa03c,0x00c04e,39650,63422,0b0001110110100110101,0x07237,0Xc2aa,0b0001010110010111000,0b01000100100010,0b1101111101011011,60651,0X00072cc,0XF03a,0B000011110101001011000,0x010B6,0x005Fa1,0x052ad,0X000fa54,0B01110111110010100,31332,0Xad31,5608,0B01011110100010001,0X224c,0x2814,0b0101011111010000001,0x00b6c5,0X6969,0X0074AB,0x20aa6,0Xd50b,11952,0B0101001000000111,0B101110001000101,62002,0X00bf7D,0x1680,0b01100100100010011,27616,0x0Fb98,0X0203a,0X0003BA,0x000488,0Xac4a,0x0527b,0b0001100111011111100,0x3089,0B001111001101000,0x0001762,0B0001010110001010111,42925,36134,0x9193,21374,0xc82a,0b11010111001111100,20318,0x0050e,0X00831f,0x00644d,0B0001010001110001010,38700,30404,0x005ad8,2804,23089,0x00400B,45156,0X00C8f1,46145,30619,29764,0B01111011000111000,10313,0X3a2f,0X00e942,0B00101101100011100,0B000100010110110000,0B0001100000100100110,0b0001101000111111001,41612,48679,0x006c23,0X006e68,0x00fce,95632,0X004035,0xb30c,0X03b76,26114,45667,16929,0x0003b10,0X1f53,0x00371E,135098,0Xd4e0,0X002Ce9C,0x0043d6,0X8233,19400,0xe6E7,0x6B3F,30955,0X0B478,0b01100110001101001,0X0005ae2,46456,0b000101001001111,0b000101001010100010110,0X0700,0x00028639,0b000011111110010000,8242,0X00073B0,0x00063cd,0X000aABa,0B0001100110000010001,0Xd049,0xbE35,0b0000110010110100111,0X00029f3,0x0050e6,0x004F25,46602,0x2C6DD,3493,43306,0x007715,0b001101000101101011,48757,0x112ae,0x00097a1,0x00a1c7,0X003966,0b00010100000100100,0X0a3db,38486,0b110100001111110,30074,0X0004100,0b011101011100110,46985,0X09300,0X00d00c,0x1dad1,37717,0X0c649,0X09d6e,27081,0x46ED,0x14e29,49511,0b0101000001110101,49711,0B0000110111001000001,18806,0x00203d,0B000011010101101100,0X000246e,0x056fc,0x02e7ae,0b0001001101010111111,0x05e7d,0X0ab02,36564,0x02fD5,205397,0xb7b4,0X10108,0X06D28,0B0101101001111000001,0x00b6f8,24055,63399,0X06Fa8,0x2b9d,0x005677,0B000010010011101100,0x001e4e,0X04d7,0b01110100101000100,0x024E,0X292,0x0004C90,21360,20996,0X500,0b0001110101000110110,0b0001001010001000100,0x00e982,53593,0X000ec34,0b011001110111111000,62309,0B1101010101011000,0B0000100101000011111,0x0Db4D,0B000110111001011110,0b000100101111001000,0X000c8F1,0b001011011010001111,0b00001000101110001000,0x001dc7,23883,0x00023d95,0Xcc0f,0x00feb4,0X32dd,0X000d905,0X4037,0x00013a0,18996,48244,0X00026ef,0x00c82b,45825,0X674a,5333,0Xa87f,3953,0B00001101001000001110,0b0000111000111100110,0b0001111100111011110,0x00041a8,4113,0B00111100001010001,0x0001414,0x000D013,0b1011011001000001,0b0110001111110101,0b011101011110110111,32685,0X0006e00,0x0724c,57882,0X00a573,0x000Eb6,0B0001011010011110110,0X06F1F,0B0000111111101000010,0b0001110100111111111,0X03b1f,50331,0b11101010010101,58012,22204,0B00001110011000011000,0B1111101010100110,17563,53473,0x0006cfa,0x00F93,27508,0B0100100111101110,61343,48848,0b0101110011011110,0b0011110111001101,0X000df7,0x00fe78,64722,0X08C2,0x1c78,0X5119,0B000101001010000011},[0b000100011101010101010]={"\236\214\198\029X@\194\092]","\226\223\192\001PW\195]J",0.1,"\194\223\211\007","\204\219\206\003",((-0X021b0*0x8f)+0B100101101000101010001),"\255\223\213\010WW","\227\219\213\031","\236\248\213\014TF","\193\219\208","\231\219\198\029MA\211X[","\248\223\206\027",((-0x0A38*0b000010111111)+0B0001111010001101010110),((-7926*0X0087)+0x00105974)},[0x02b9ad9]={},[6606711]={0b001,3,1,0b010001,0x01,9,0X01,0b00001}},{[0x7f06a2]=0x0001,[0B000011010000001011100100100]=0B0,[4083840]=5,[0X0002997ce]={0xe064,21108,37785,0b00001111100101100000,0x0fad4,23269,46422,0X00c62,0b01100101010010111,0x00c812,58712,0b101111110001101,0X000e5ed,0b000011101111011010,0X0039f6,0X000A57b,0B00100010010100101,0X0871E,42537,0X09067,0x003718,0x002d0b,0X000a81e,0B01010011100011000,1777,0x023909,0b01111010110100111,0X007628,0X0003717,32380,0B011000011001010,0X02d7c,57030,0B0001111010101110000,34609,3792,0B000101011101010100,0X000f411,40571,32692,26206,56947,0b1011111100111011,0b00110101100101010,0X01818,12361,0X00ccb1,38922,0x9b73,0X7785,0b0001010100010101010,0B0011100010100010,12825,0B0011110111010011,0Xfa42,0B000111011011111101,50614,0x0005a3c,0B0110110110010111,0X00170db,0x0f9a3,0b1000000101110,43397,63059,0B001011010101001111,0X0008b1b,0x000672c,0x000be86,0x8832,0X0009a37,37206,38923,0X366f,0X00D34a,0x0EB39,311,0x0024a4,11175,55807,0X000E164,20057,3130,65418,0B011000001111001100,0B001100010011010110,21844,0x00a83d,0B1101101000101011,0B110100111000101,4569,0X04857,0X000a34b,14708,0b000110001001111,0Xb8a,36420,0x016D,0x000f91c,0b01001101000100011,0x0001A733,0x083b5,49177,0x00959a,0x000c85c,32934,0x0198e8,33931,45763,0B01001101101110011,0x06884,0x08a78,0B011101000111001,0X7Ae7,0X00215d1,0B0000111111101010010,0X52d0,0X0004eB,0B001010011110110101,64844,0X00f62F,0b01101111110,0X06caa,0X00F25c,0B00010010100110010000,0X0c134,41720,0X08360,0Xa737,0xD7f0,0x0115b3,0X000B212,37145,26979,0b00001011111111101100,8178,0XdF43,0X0984D,0x0002a8c,27798,0b0000100000100000110,0x0021dc,1080,0B0000101001011,0b1110010110100010,0x07E46,6295,38455,0B1010010110110110,0xa150,3173,0xeDF3,43691,0Xf849,0X0Df05,424,61030,0X0D915,73001,0b101110100111110,0x253bd,0b0110101100000101,0x0f59,0X1daa,0X0701d,0X083C0,0X007d46,0X004e11,0b01011010000001100,0B01011100011010011,59745,37922,0x00EDaC,6378,43539,57551,48300,40576,8093,20152,65389,0b000010011101001010,0B001000010101100111,34826,33338,0Xe7e8,0X03238,0B10010001110,0b000011100010101000000,0b00110111101110101,0B1100110101111011,0X0CFd5,8026,35596,0B0001010010101010111,59447,0x6660,9356,0x01bd0a,0X0004991,0x000671e,25785,0b001111111101110111,0xe854,40670,0Xa7b5,0b100001101110000,0X000a9b6,0b00101010110011,0X0008c06,53683,55332,0b000011101111100100100,0X06249,0X004638,0b0001110111101111101,64987,0B01100100110010001,0xcA52,0x000c0,0B0111110101001100,0b0100010001110000,56765,60997,0b0101010110000010,0x0003b81,39255},[146090]={"\236\214\198\029X@\194\092]","\255\209\212\006MJ\217W",((-0X00a3B*0X005f)+248805),"\249\219\196\027VQ\133","\193\219\208","\247","\246","\245",((2359*0B11000101)-0X0007174E),((-0X00039d*0x02c)+0b00001001111100000100),((-0x1B77*0X0008f)+0Xf577c),((1644*0X0041)-0x01a162),((0X123e*89)-415597),((-0B011010111010*229)+0b0001100000011010111111)},[2857689]={},[6606711]={0b00001,0x0003,0B00001,17,0x01,9,1,6,1,0X00016}},{[0b11111110000011010100010]=0X1,[0B011010000001011100100100]=0B0,[0x3e5080]=0X002,[0X02997ce]={53272,0b001010001101100000,30688,29157,0X00083d6,0X1001e,0b11111101000,0x0008218,0x000709e,41398,0B00001111011001001000,40768,44678,34544,0B1000000100110100,0B1111101011111001,34217,0x6c92,0x003af7,0b100000001110100,0b0000101001110110100,53197,0xA98d,0B111000011111010,0X001a96,0b1000000111011100,0x000e137,0X004Da9,24470,0B01101101110010000,47593,0B0000111100011011010,57732,0b1001100110010010,0X05b0c,0x19c5,43890,17646,0x006000,0b00010101100110101010,19641,0xfc26,0X00068a9,33932,0x0ce67,37290,27784,0b1011011001010010,3156,0x024EC,19953,0b00001011100111001100,0X02EAA,0x0a9e5,43467,40683,0b00001010001000101010,0xfe95,0X00C409,0X00188d,46753,52803,0B0001001001011110011,0x052B3,8238,0x002ad4,0x05bca,93991,0X000b348,0B000101101001000011,59718,66677,49021,0x00dc39,0x00f3bb,51960,0x000758C,0X00c87c,8962,1088,48125,0B0001100100101110111,46521,72802,0x6ba5,0X007839,0B1000010000001111,0x00068f3,56694,0B010100010100110110,0b0000110101010001111,23349,36555,0X000109a4,39999,34581,9510,18553,16637,0x00030ba,0X04750,0X00A48C,21832,14277,0X000a325,58988,61517,0B01111011011110101,0B010010111101011,62799,32893,0B001010101101001,0XB071,0X66e7,0x02e07,0b00010101111111010001,0X00046Bf,57571,0B0011010110101000,0xd8d2,51664,0X15c32,37677,0x8e9F,0b0001001110011011101,16257,0x011c5,0b00001100110110101111,0X00068f7,0x00eB7,64544,10882,0B00001001010011000000,0X0003B61,0x000176b,42385,0B01100110010001000,0xe47,46767,0X5154,53769,0X000c1ca,34202,53460,15686,0x0DB07,0B0100101111011010,0b1111001010011100,0x0002472,87124,0X0084b6,50491,0x000e55c,0X033b7,0b0001011100110000111,0xAAfB,11898,0x099e1,0X0048f0,33810,0X000c811,0B000111111101110001,0B001011111011100111,0b0001101100100110,0Xba1e,0x0c383,44419,0X0bd1d,17765,0x0B266,0X005367,0x1ee9,0X0093fc,0B00001000011101101010,0x1e0a,0b0001111101101100101,0b00001001111000001001,34242,0X09ec5,0x001750,9766,0x000251a,0x0004f8,0x000CB00,0B0001010101110110101,0X000b040,0B1000101111001100,0b00001000010110111100,0X0eb13,0x0009EaB,0X0058B9,0b01101010010001001,0x0005c83,0b1011000001010100,27429,0Xf345,0B000111000011111101,0b01001000100100000,0x003047,16998,26222,0X0807e,0X00082d1,0B010011100001101101,0x07c6a,0X0545f,0x3274,0b001000110000000010,28736,0x000aa9b,0x0c2,36493,6851,0X000a834,60632,0x11322,0b0001010010,0B00001101111010010111,0b001101001011010000,0x1ce9,0x00d1ff,0x00eed0,0x07961,0B0000111011111100000},[0X023aaa]={"\235\219\212\027KL\207","\219\204\198\012\092Q","\203\209\211","\195\223\197\010U","\206\204\213\000N",((-0X00425*0x0014)+21757),((-3151*0x0044)+0x00034AF0)},[0b0001010111001101011011001]={},[0x0064cf77]={1,0X000b,1,0X0d}},{[0x007f06a2]=0X0000,[6821668]=0b00000,[0X3e5080]=2,[2725838]={0x0bfce,29167,0B0001100101001001000,5825,54349,0X13040,0B0001111001101000100,27171,0xC9d3,4312,53648,11700,0x009D91,0X0004a16,0xb5f6,0x0002f3f,0x14cf,0x089ac,0X0096f,0xFF10,0x0002aeA,0B10100011001001,0B00010111010110111,0B00001011110101111000,0B001000111000011011,0B0010001000000001,0x02363,0x00db78,21276,0X07045,0x036CB,24116,0x0009BE8,0xC5a1,0x01731,47318,13169,0b00100100010010110,33336,0B00100001100100,0B01011110000111011,0b1100101011100110,0b00101101101100001,0X000522f,0XcaD8,0x01DeD8,14918,35656,0x3eea,0X0006468,0x01c87,0X00434a,0B00001011010110010101,0b0001001001100111000,22429,0b1000101010111000,0x265c,0Xf77c,20209,46744,5036,0x7057,0x009F90,0B001111010011111,0X032b7,0x00Fd44,0B00110000000101000,0X00078e9,0x00eF49,0x00cf4c,17939,0X0d98b,0x0009661,64070,0b00001111000100100010,0x002dba,0b0110101100010111,0x00b9a4,0X00e717,0B00100001000000000,24591,47906,0X04f46,0xe33b,0X05bfa,62317,19789,0X0853A,0b01011111011010110,38046,50797,62610,0X000d259,0X00CBDd,0x00fa26,0B011000101101001,0B11011001010101,0X002509,33067,0x000121a6,0x3706,0X000ebFc,0x005ffd,0B001100010011011101},[0X023aaa]={"\255\223\213\010WW","\230\208\212\027XM\213\092","\193\219\208","\252\221\213\010\092M\241LF","\225\223\202\010","\233\209\212\028PO\243J_o\148w\204\239P\214","\253\219\212\010Ml\216j_A\149|","\230\217\201\000KF\241LFi\140a\219\247","\235\215\212\031UB\207v]D\135`",((5514*0b0100001)-0x2c2e3),"\248\223\206\027\127L\196zGI\142v","\255\210\198\022\092Q\241LF",((-0X025b*0x000a4)+99552),((0x001b8f*0xa3)-0x000118663)},[2857689]={},[0b11001001100111101110111]={0b1,0x0C,0B001,0x0003}},{[0x7f06a2]=1,[0b000011010000001011100100100]=0X0000,[4083840]=4,[0X2997Ce]={44939,0xf6aC,2837,0x02fdf,47391,0x002930,0b00001101010100011010,9379,47275,0XFD8,0B00001001101111101,0X00f250,0B00111111010010101,0X001188,0x001Ff9,63491,11952,81228,5605,1260,0x4636,0x009e7e,65214,0x0fc5b,0b00010110101100011,48752,0b01111011001101001,0x000766,0x009C5,0b010100100001001010,0x0419b,121943,0X04631,103692,0b001101000111111000,104055,0X007794,0x03ded,0X74Ac,23455,0Xce33,0B0000100001101100010110,0x000373c,0x0062d9,3082,0b00001101100011001000,0X05108,63021,0X000a211,0B010000000010101101,0XFEb3,62279,0X0002dE5,0b01010111001100010,36253,0X0096e4,0XAd7F,0B01100101001101110,0B01111100011010000,0X006e2d,0x000ddf2,0X6D7d,0X2318,0X1bf99,0x2732,0b00001001000001001000,0b0010101001100011,35686,0B1001010111100111,22616,41895,100164,56149,0B00111000011001100,0x00047dB,0XE8B0,0x7869,110442,11072,0x00969c,0b001111011100001011,0X0074f6,0B0001110111110101000,36232,0X0ba9a,0B01110000010011,0X05cc2,0xe545,58181,42194,7437,0X01Bd42,0X00B139,0X0008330,0x0006ae5,0X0e7f8,0X00ae22,63995,0x93BF,0B00011000010010100010,0b00010101010011100,0B0000111000100000000,0X00d8c7,19108,0X00065a7,0x0154ac,0x06279,47539,0X0006b9f,0x00a838,0b00101100100001110,41903,0b0000110101110000011,0x26e16,0B000010110011000110,0X000AfE7,0x02E79,0B00001111110111101110,0X00140f,38806,0x0007B4D,0b0000101011110000,0x5AbF,0x000B6A6,0B00110011010001000,0x00535,0X0002478,31595,19541,0X005e26,4877,0b01011011101100,0x0002F37,0X011ff4,0x00e2a0,0x3B75,44211,0b0011001111000000010,3861,0X000b963,0X380E,0x6431,37628,0X041af,0B0001001100111111010,0x00016793,34243,0B000010101110111010110,0b0001000000001111011,59822,0B00101110111110010,0x000fb43,0b000111011011101,8546,0b001100111111101010,0X0001ba2,57562,50951,0x00bb68,0B00001001010001001111,0x212d,0b000011000100001010100,0b1100100010011101,0B0100011011101010001,0X0ecc4,0x8c3,0XF0CE,110199,21144,0B0010011100000111,0B00001011010000100,0X01eb14,0X00eCF9,0X0006668,0Xde60,18817,0x00bb19,0b1000011101000010,0B000101110001010000,0B010100101101100011,0B00001101110001001110,0B011010001100111111,0Xe3c1,0b01011000100011001,0xdb93,0X0008d10,60281,0x0010378,0b01101111001010,0B0110110110111111,0xC63e,137375,0x009120,0x8a71,0x8aC0,27107,0x00d24C,0b000111100110011,40316,27699,0x000CD79,0X04a32,35207,0b011000011010000000,7418,106480,11916,0b00010000100101110101,0X003dd5,59134,0b00111100110111100,0x320,0X08358,0X00865d,0X0003e5,0X01f5a3,0B01111011101011011,0xf688,0x7403,0b0001011001111110010,0b0111001001001,87289,0B00011001111100110,124282,0X0006545,0X0007897,20087,0x020931,0x02556,0X00062bd,0b0000111000100100110,1349,17735,0B001011110001000000,0B000111101011011101,0B00110101010000000,26011,62510,0x00d426,65583,0Xcee8,0B001000100101101111,0b00001100001010111111,0xe56C,0b11111011010110,13071,0x001e69,0X00aCA,0b11011100111100,0x063d9,0B0000100011100001011,0X18582,0x000b990,41517,0b1011110100011010,0B00100000111000001,0X00061b0,0x0013b54,15306,0x058f3,0X0a143,0B11011010011001001,0b01110001101110100,46259,0B0001101010011101111,0b00010101100100,0b001010000000000101,43171,0X000B45d,2142,0x0c970,0x00010d3b,0X0464d,47588,0xcdEd,0X00e063,0X0009c87,46464,0X00511a,0x0d91,54244,0b001100111101101111,24871,13236,0X000695b,0B0001111100111010010,0X00F22,34411,0x0697a,0b00010110010010101110,15291,0x000a682,0x0252a,37427,31332,0x00482A,0x029c5,0B1010011001100100,0X005387,0x005406,0b0000100000011100010,0x004083,16108,18403,0B001111101001010010,19349,0Xb259,0B100101000101010111,0B01000011000101111,39110,0x001a51,0X0013099,65403,0B0001000101110011,0XB5A,0X08351,0B1111000010000011,0X01c9d5,9159,0x0D44b,0x02a56,0B001010111000011101,0x7CB9,0x0E416,0b0000100101111011011,0x6f3a,0B001111010011100100,0B01100100110100101,0X00E11d,0X0ac6,13115,0x0006735,39325,0x0010086,0x007969,59808,47518,0x0004CfB,35081,0x1e100,0b0001011110111111111,0x0f3a1,0B0101111011001100,26931,0B00111000010000001,68248,0b01010000101000111,0X12eA4,0B1011010010001101,43968,0x00313c,0x000128e3,12880,0b000100001111000110101,0b0110100111011001,0b00001010000001000010,44931,127268,0x0001d8f,0xadb9,0X007D04,0X0ed0f,0X060e5,0X00c9f0,0x0004b24,0X0012ad,0b001111010000011,0b01010011101111000,41558,0b000100010001110001,0X00012e5,0X011e1e,0B111001101101000,637,0x01e90,0X000edF3,0X006734,0x000659b,0x02fb4,0x3a5b,0x09d02,0B00101000011100101,0X00d7E1,5694,50656,18157,0xafde,0x1806b,23869,0B11010001010110,0x000aCB5,24388,0X000974D,45744,44407,40174,0b0001101001011011101,0b00001110100111101100,0X00d535,21184,15415,0b11111000010111111,22904,0b1101110100101011,54679,0Xff5C,42593,0b1100010100000101,0b00001000011000100110,0X0008f21,0X17b7,27948,0x0D28d,0b1111100111011100,0x00a9a1,60851,61089,0x005Bb2,3963,0b001001101000100111,40398,0b000011001100110001,46461,0x00781a,0B000010111101001101,22696,0x001f,6006,17943,0b000011110011001,0x4871,0x00042fE,0x01911,55544,0X0db11,0b1011000010101011,0x0153B,0x001A4aa,0b0001110101010000001,0x00f758,0Xae74,94459,0b000110101010001101,85108,19363,0X0dab2,0X001ede,0x00175cD,0b10010000010010,0X00b171,0X00B3A5,0X13cf0,0b00001011100110110010,0X0009c2d,27671,0B000011110111111010110,26997,104522,0b00001000111110011001,38158,0X0009709,0x005dbc,65024,70461,0x05F74,0b000101001000111111,50800,0X03797,0B00111011001010001,0xd0a4,0B0000110001100100111,0X03aed,0X0c072,4157,1148,0X0020b30,0x00db60,0X0205F,0xAf79,0x2d62,0x0006203,18458,0x00E578,0B0001001010100110001,0x0a999,0x001411c,7991,0x000EB8E,26347,0b1000110111100110,28764,0X00043D1,10787,0X07CaC,0b0001010101110010100,0x00b115,0x81e0,0b001101010000010001,0X000c406,0Xa0c5,0X00e34A,48369,31943,32328,55713,0X00f47b,0B000110101011001000,0B0001110101000001011,0X0008157,0X00fd0c,0B00011101110111,0b00001111011110110101,0B0000101100010011010,0B0011100011101010110,0B00001010001000111000,51057,8230,0x15526,0x0066d4,0X0007ed9,29337,0b00001011110010100010,0B0001010110010110000,0X00015b43,0b000110101010101111,0X03650,0b0001110100000011101,20819,60131,0B01011110101100011,0b00101111010010110,0x0001a293,0x0e644,7123,0B0000111110010000001,0x0e7ca,0B10111110111111,21273,18156,12371,0b000111110001000001,0b00011000001011010,14829,0b1011100011000100,0x00e6ca,0B11000001010000101,0X00dDf1,0x0136c4,0X000ccB2,64187,17627,0x000977c,0x0c138,38721,0x002337,92854,0X00c85e,43875,0B0010000101,0x002420f,0X00072c1,27134,59812,21345,0x0005ef3,0b0001100001000101110,0b01011101101101010,23123,0b1010110011001011,52202,0b0001000111000111000,36249,16738,0X9941,44218,133543,56838,1809,62662,0b0000111011110000001,0X0b812,51025,0b0100111000101000,0B010100001010011,0X23B3,0b00001001001001010000,0b011100011001111,120159,0B100100000101010,44191,43167,0X00018582,0x008f8,0x0023dee,2723,0B0000100111010101010,12942,0X000918f,0b00101101011110,60513,0Xa3da,9416,0B0001100100111011110,0x00015490,0x1303,0X001E7DC,0X001965,0b0001101110100101000,0b01001100100011101,0X03dc0,0B00100011111101100,18808,0b00001101011001001010,0B1000101000000011,0X000111f,0X5798,0Xa445,0X000bc50},[0b0100011101010101010]={"\198\208\212\027XM\213\092","\230\208\212\027XM\213\092","\193\219\208","\231\215\192\007UJ\209Q[","\233\215\203\003mQ\215W\092P\131`\219\237R\214",((-0X00021b0*0X08f)+1233233),"\224\203\211\003PM\211m]A\140a\206\226C\202\154\252P",((-0xa3B*0X005f)+0x3cbe5),"\224\203\211\003PM\211z@L\141`","\236\209\203\000K\016","\201\204\200\002kd\244",((0x00025D0*0x73)-1112945),((0B1110000001*0X0013)-0X421b),"\235\219\215\027Qn\217]J","\234\208\210\002","\231\215\192\007UJ\209Q[d\135b\202\235|\192\144\250","\238\210\208\014@P\249W{O\146","\238\218\200\029WF\211","\255\223\213\010WW","\233\204\198\002\092","\225\223\202\010","\251\204\198\012\092Q","\237\209\213\011\092Q\229PUE\178{\198\230]","\238\208\196\007VQ\230VFN\150","\249\219\196\027VQ\132",(((-0B010000110110000*143)+0X12d151)/((-0B0001110011101101*139)+1029297)),"\237\223\196\004^Q\217LAD\161}\210\236C\156","\249\215\212\006[O\211","\235\209\211","\252\215\221\010","\250\250\206\002\011",((0X000eD8*108)-0x006431a),"\251\219\223\027uB\212\092C","\227\223\197\010U",((6777*37)-0X3d2dd),((-2074*148)+0x4af28),"\237\223\196\004^Q\217LAD\182`\223\237B\223\149\237LVF\148","\251\219\223\027zL\218V]\019","\251\219\223\027jW\196VDE\182`\223\237B\223\149\237LVF\148","\251\219\223\027jW\196VDE\161}\210\236C\156","\233\209\201\027","\252\209\210\029ZF\229XAS\160}\210\231","\251\219\223\027jJ\204\092",((-0b0110010111111*222)+724400),"\251\219\223\027","\233\209\212\028PO","\238\204\213\000N",((-0b000100111011011*0B000100001000)+0x000a2A00),((-0x000129e*0B0001011101)+443266),"M(\021","\219\204\198\012\092Q","\203\209\211","\195\223\197\010U","\206\204\213\000N"},[0x0002b9ad9]={},[0X64cf77]={1,25,0x1,0x000b,1,12,1,0B0001101}},{[8324770]=0x004,[0x00681724]=0,[0x003e5080]=0B0011,[0b0001010011001011111001110]={0b1001111101000000,0x86d5,0x1818,0b0010011010111101111,0X04AE2,0X2F43E,0B110001111111110,0x006923,0X005c20,0B0000111111000110100000,0X0006262,32995,15334,59011,0x09C77,0b000101010011110011101,0b00111010111101010,75554,0X0666f,0B0000100110011010000111,0x003324,0b00110010110001101101,0X28cf,0X10c3,35688,0B101010011011,0x56c7,0X003d7a,30762,0x000bCDb,37269,13750,0B0101111100,27806,47339,0X0020d1,25825,34350,21563,0x0007bf6,0X000d1b6,0x0044f6,5494,0x6ca0,48376,0X39C4,0X04885,269789,16310,0x0001b4b2,14494,212937,0b10000010011111,0X008aba,0B00100101100001101,47200,0X00cc81,0x0011ff5,618,0x01d39b,45353,180776,0B01101010110010000,0X006189,6537,0B1011101100101110,57716,0x000b139,0X003cCa,0X01c782,0x00d59,45780,0xf2af,0XbCEe,16681,0B0001100001000101111,0b001011111000110110,0b1010111111011101,16511,44380,0b001010101100000000,52489,0Xcb82,0X02cf52,33731,0b0001011010110010010,22492,0x0f94b,0x00E032,0X000333bc,9766,0X000e2F,40178,0X050fd,0b0000110110101111111,0B0000101110011000100110,0x01f86,0X1F598,0b0001100101111111101,0x07e00,0b0000111100010000,30896,0X0001c87,38530,0xf014,0b00001001110001100000,0x007d1f,0x00eBf7,0b01111110111010100,0X0f9a3,0b0000110010000110100,0x0021d29,0B10101110010111,0b0001100000011100000,0B001101100101111110,27855,8115,0x32df,0x2fb6,0b00101101101100001,0X0b5dc,0X7a1d,35395,0x044167,0x0003fb,0x03f71a,0X02DAF,0B000101011001110001,43107,0B000101011000000111001,0x01b9d,0x29B77,0X60ed,0B1100110101100010,4695,3780,0b0001100001111001010,0b000111100010111111,24375,0X01F9fd,0X0021d6,0X5101,3109,0B101011100100001011,55915,200914,4489,0XE464,0x000c419,10140,12368,0B110101000110011010,23279,0x4B86,0x0011f,0x00b606,52362,57819,0b00011011000010111,0B00001000001110111100,5444,0x0002764e,0B110111101000,0x058F5,18264,27195,5363,0B001110111010110000,0b001100001110001001,0b010000000111000,0B000010011101100100,0x0236b6,7474,17234,0X00da94,39333,0X0078B1,53870,0x0ec4A,0xE24B,0X007192,0x00018b2,15015,0x000F852,0X004fc5,0X00aaec,0x9bf3,52877,0X7617,0X5b86,0X098fC,0x00233f2,0x0087f7,0x321ec,50727,0b000110011001010000111,0x3b2d,16086,0B01110001010011110,23398,0B010100110001100,0b00001000001001110100,40673,23671,0x006C5c,2430,0B00110000001000110,277838,44096,0x073b5,0b0010100110011100,0X3cB7,0b01100000011001110,0x1831,0x003898,0b0000100000110011101100,0Xc602,170886,0B0001110111111010011,0B0001011000110100010,0x003312,0B01001011001011111,0X04B79,0X00c7ea,43848,177062,0x00b5e0,0X00FE69,0x005b56,187228,0X021c5,63505,41636,55866,0B0110010110011010,0x002a8d8,0x000f047,213723,0B01100101100101000,0B00001010111101011010,0x006644,152899,0x004843,0X02BC39,15367,9732,0B001110100010001100,0x000dd7D,0x08b4b,25104,0b001010111110001010,0x000862e,35627,28330,23031,0b00001110010100000010,0X6a71,53760,0B00001111001110010100,29357,0X0dbf3,0x0001334,0b1100001000001100,0X0f58b,20479,0X0009d75,0x000c7af,171266,11518,0x038ba2,0b01101000100111000,0X248c2,18930,0b00001000001101000110,1899,51673,60981,0B00001100110110111001,0b000010100010011100,50455,0x2Ec9,0X03cbd6,0X007ae9,0b00001011101001010000,20754,147416,0x4e2a,0x3a59,0x0bd94,0X08816,0x00cc22,12932,0X00bd37,36338,0x00de1e,23679,0x009f9D,0B0001111001101101101,0X062A2,0b001110110000111100,0X01114,0B000111000111001000,0x001E3,0B0000101000011100110111,0b0011000000100110,185662,0x00500c,0B0001010010001110001,0b10111101000101,65218,0x0005B2D,0x00086d8,40455,0B011100110011001111,0x000e24e,0X02Fb6E,3708,192078,0X02853,0x0002b0d3,0xb24c,0x026ff,29558,0X009C80,46807,0B0001111001011110110,0X008438,0X4262,0x007DB1,0X000ffc0,0X0084fC,65749,29833,3165,0B0001101100110111,0x1a64,0b00001000101101111000,245737,0x3437,60993,1347,0x231a,37448,0B00001100101000110101,0x0f491,0B00001000001000101110,0xbe15,15174,0B0000111111010100,0x0e181,60155,28440,42820,6481,0x29a8,0X6d52,0b001010111101001101,0X000f8d8,0x00a11A,0X00f0ef,9800,0b00010101000011,0b1110000001010011,3268,3539,37063,0X0006e6F,0X2F441,0x02003,0x00039316,55486,48143,0X00025F4,0x00f1b2,38564,0X003269,0x00051d4,0x0006697,33878,0x0003C152,6614,0b001000110111010,0X07bc7,45030,13284,0B01010000111110000,0B00110011010010001,0X000d174,0b01011001000110100,0X00017DBe,0b00001000101100011110,0x018e2,0x07C0F,0x002ab37,62009,182769,0b101111000011011,0Xaeaf,64588,60367,0x8338,0b00101000010010001,0x1648,176316,51602,0x00078fd,0B01111001011000010,0x02391,0b1111010001001100,159981,7236,0B10111100100111,0x00E6a2,0X0062ef,0x00CE47,0X03174d,0x000B8d9,148803,0B01001100001101010,0X00b71d,16957,15713,40989,0B0101100110111110,46663,0x4baa,57621,0B001001010011101011,0X0d0f9,112103,0x93b3,0x0CFC8,0x00215b,0B11110100111010,0XDbF1,20142,0b00101001010011011,0xc832,20855,0X010236,4203,0B000101101001000100111,0x0704A,0x00eD23,44584,60591,0B001101011011111111,0X001C7C3,0X05169,0x0002b4a,29880,1581,0X000408a,0b1110111000101,0x3dcA,0b001000010000100011,0b01100101000110111,0B000110101111011011101,0X00eF37,0B000011000010011101010,0x00383a,48314,0x000178b,0XAD39,0x00a8a0,239883,46914,0Xd754,0X0aed8,43108,0X08818,0X000b7b9,0x004b71,0x00c2F6,0x0004f3a,0x0022ff2,0X000D2D3,0b01001111111001110,51522,0B000110100111000111,0xf5f,57260,0B0000100100000011110,3297,41976,65915,0b1011010100001001,0X05ec1,0X000cf77,0x2d3bA,26846,198504,0B0001010010100100,0X0001e69,0X0007750,0b010011010000101111,0X08e40,0x000F81B,0x0021c9,0Xeb62,0b00001110000111111110,0b0111011010000001,0x007a94,0X23458,0X08d4a,40731,0B001101111101010111,0X83f3,35958,0X0dD29,0X008faf,24272,0B00001000110100110010,0x09036,0b000100011100011100,0B000110101001110101,36807,0x080EF,0x082d2,0X0005Fa0,0B001101011001011101,0b01010010111000011,12527,40277,63686,35841,28262,0XEcb1,60418,0x08288,0X00024b2,0x000408a,0b101101110101111,0X080ad,0b1000101000110111,0b010000110010011000,0b0001101101110100,0x01eE1,0X06c68,278543,0X005698,0B0001000011001111111,0B0111001100011100,0x003980c,0B00011000010010110,0X00014c7,35663,0B01111011100010011,45837,0x05766,0XC4A5,0x32c25,0x0795D,0X007092,47456,56092,0X27A2,0X00032a2,0xe55C,0x00fae4,0X00039b9,0b1100101110100,27064,0X16f6a,0x0007788,0B01101101100111,50701,0b00001010011011011110,0X6d0C,196450,0b01101001010011101,0x3367,0b0000100111000010001,38954,0B00001010001010100000,0B001110110010100101,0B00001000000010101111,0x30550,0X03281,0X003f0c,0b01011001011100100,0B111110101001100,17518,189128,0X025A,237337,0b001000000010111001,55461,0B0001101001011011010,0B0000100101111100110011,0x0EA6f,0x0004BCb1,0X009f93,0b00111100110110111,0b01000010100010101,27490,38232,0x025e6,0B0011001001011101,0B0000110010111110111001,0b001011111010001011,0B1011111000000,14015,0X0002b48f,0x0005919,0x00101fd,0b000101100000000100,0x000aB57,0X000bd40,0x9627,21685,54738,0X001915,0x000e7a3,0X000216E,0b0110000111011111011,0Xfb16,12541,61334,0b000110000010010101,32469,0b0001000010100001,0b0001111001101010,0B0011110101111011,0b01010111111010001,244003,59752,0b1100111110100011,0B00001011011100111001,0x000e9e1,0b1111010100011,37520,61925,0x01d431,0b000110001101011010,58361,3255,0X25411,0Xf139,0X001f5c,0X0003b83,0X8e82,0X788e,0b000100110010111110,46495,0x6dC6,0B1100000100110010,42407,0X007018,26259,0x0002eFD,0b00111001010011110,0b00001110000000110011,194701,0B001011110010110011,0X00B7ff,8280,18035,0b0000111001111000001,0x00010508,0x05583,0B010001010110111110,0X002b85,0X084a8,24734,0X059aF,58495,0X00c9C,0x00094c4,0B00110111100011011101,0X00089ce,0x006FB5,0x97F3,45288,0x0009262,0x0395e,55350,0b0100101001001101100,0B1101001010001110,0B00001101111010011110,0x087f0,0x003069,0X00044cb,0b00001101000010000100,0x01c6b,0x002414,479,0x001376,0b00001111110010110,237664,0x679F,38450,0X6878,52929,0X00fbCD,0x000E6BA,0b0110010001110001,65319,0x00f8fe,0x01fc9,0B1001100100111001,0B000010100011101110,51896,125670,1280,61081,991,0B010010110111000100,0x0009a8b,0x000261a1,33283,0x0e783,62397,52980,0x0006Dc1,0X008E40,39186,0XC7D7,19764,61317,0b0001010110001110001,41693,62821,45694,0x000fc5a,25051,0X8473,0x032035,0X04617,32704,0x0007a5d,0B0000100000010100000,0x0e9D8,0X04F18,0xfB70,147012,0x0498e,16103,0B1000011111010,46404,59765,0B011011100101000,23732,0X03bfcB,0X66a2,0x0250A6,20835,0x8da,0x4B74,0b1101100100100011,17319,0x002EE7C,0X7680,146682,0X000f8fd,6452,0B1011001111111101,191062,0X94f5,0X3b90d,0b01000110011000,0X0bc37,0b1010011010000100,180404,0x18A5,0b001101000001011111,27435,21043,0x07b1d,16530,0b00110010101001000,30577,31687,22200,0X0e9ED,0B00111111010111100001,0x49c6,0x00fb69,0x00f3cf,0b00001110001001110111,0B1010111000000100,143768,0x66a,0B0001001101101010,0X0a0FC,0X00742c,0x000e7bb,0B0101101111001010,0X00dAE0,0X0284De,8762,0B00101010111000111,43335,44803,0B01000010111000101,62123,0x064B7,116345,0xDF53,43032,0x009440,0b100111010000000,0x3845,61692,0x008f90,13400,0X9555,134938,0x05a90,0x000260f2,51544,0x0006A58,0B000011010101110,7446,0x000d06,8914,17729,0b001100110011100100,42668,0b1011101001001111,0X00502D,34638,25119,31122,55390,0B0110110001111111,0X000A22c,167420,0x2046,0B01000111110,0x000FD9b,0X033AfB,0X000c3c0,22891,0b0001111110011011101,141175,0B0101000011101011,25027,0B11001100001110,0b01101000001101,0B000011001010001001,0b001110100010111010,7831,0x0008f75,0b00001010000011001111,0b1010011110100,0B01000001100110100,0b111111010110101,0B1101011111100010,0X1912a,0x002221,43036,0X8450,20881,53989,0x006392,0b000110000101001010,0x0003bdb4,0Xfe9b,61966,0B0001110111101010101,131632,0B001001110001000000,14209,0B000101100110000111,0B00001000110010011100,0X7238,0X0c5e5,0x00B515,0X0E83A,0x7F06,0X0a596,0x0C17e,46987,61692,0B00100011111010111,0b0001011100100101,0B0011001110101111100,0Xb696,0b0000101001110001,0x000Eb58,0x22CF4,0B0001001100101010,197916,0x1978,6113,0x0a068,24359,0x1925,30286,0x002f29,64367,0B00101110000010100,0B00110000010010110,24068,0x09456,28931,0x0028465,47342,0x02F01f,0x0E7ab,0x05848,0x0d329,0X00Fb53,0b0001001101001000,0x0C46D,0X086d7,0x00072b8,0X000c716,0b000100100110110001100,0x00611e,0B0001100111110001110},[0x023aaa]={"\198\208\212\027XM\213\092","\255\209\212\006MJ\217W","\223\209\212\006MJ\217W","\226\223\192\001PW\195]J",((-0xa3b*0x0005F)+0X03cbE5),"\224\203\211\003PM\211z@L\141`","\248\209\213\003]w\217oFE\149b\209\241E\255\155\246GL","\245","\206\204\213\000N","\249\215\212\006[O\211","\249\219\196\027VQ\132","\193\219\208","\247",((0X00020b2*0X8F)-0X0012436c),"\246","\194\223\211\007","\220\207\213\027","\203\219\192","\206\202\198\001\011",((0x0015a*0x000102)-0X0015C5A),"\219\204\198\012\092Q","\252\215\221\010","\250\250\206\002\011","\253\209\211\014MJ\217W","\237\223\196\004^Q\217LAD\161}\210\236C\156","\203\209\211","\195\223\197\010U",((-0x0039d*0b101100)+40708),"\251\219\223\027zL\218V]\019","\251\219\223\027","\220\202\213\006WD","\201\209\213\002XW","\138\205\1354\028\013\134_B}","\225\223\202\010","\236\248\213\014TF","\249\219\196\027VQ\226V`B\136w\221\247b\223\149\252L",((4418*0x000b2)-786224),"\194\215\201",((-0b0010011100000111*131)+0b100111111100011010001),"\221\223\195","\204\209\212","\220\215\201","M(\021O\028\013\134_B",((-0x00b5f*0x1e)+0x1554f),((7115*0xB9)-0x001414e2)},[0x002b9ad9]={},[0x64cF77]={0b1,0x000d,0x01,20,0X0001,0B00001011}},{[0X0007f06a2]=0X0000,[6821668]=0x0000,[0X3E5080]=0X0007,[0X2997CE]={36596,0B0111101101110010,0x00f410,0X60f6,55003,0B01011001110111001,0x000845,0xbbc5,48375,0B000100001101000100,1120,0b001001111101011000,42351,0B101001010001100,0x000bb6c,30428,0X00097b5,0b0000101010010111011,14875,0B1001011100000000,58124,33913,11051,27147,14887,0X0005b27,0b0001101011011010000,23855,0x000C7F,53452,31696,0X0c6fb,37248,73739,0b11001100011101,0x0006c25,0x0001bdE,0x18C0,0x0ecf6,0x008a3f,0x3C8,0X00108d0,0xa6b2,0xa92a,0X0B8cC,0x069e0,52562,0xc523,0X009d1b,19919,0X09ed8,0X000230f,0X00ecee,0x03285,0x0F128,43155,0x453,0b0010000101001000100,0B01101101001011111,0x04d11,0X0317c,0b0001011000000010001,0x00fd8a,0X0006e40,0b0001010111001111101,162973,0X00086A,0X0b19D,0Xabbc,0b01001000011011110,0X0f34c,0x027351,0B00001101010101110001,0X4ebd,0x0D41a,0b00001100011000000110,0X077a6,51106,0b11110101100000,0X0c608,0b0110001000011110,0x26d88,682,7080,0x00091c3,0X06DF7,17180,18447,0X0a56b,34354,0X957a,0X0a5ed,0x9109,0x3a4b,38170,0X000ec90,0X069E,0X0Af36,0XD6b5,0b1000011100011111,0b11001100000101,37985,0X00C22d,54805,0b00001011111110101010,0xf419,36544,62114,0x00bc64,48677,0x007ba6,0b001111110110011100,0X0024db,120263,0b100001011111,0X00d07f,0X0D6c8,0xbbb7,0x00100a,32953,0B00101110101111000,0B01101111100010010,45961,0x06eb3,0b001100110000110000,0x00638B,14178,441,0B1101101001100100,0X09e3,42868,11522,0B001000110101000010,0x918F,50279,2027,0b0001110000010000111,0xecb7,0B0000110010011000010,45393,3108,0b00001001010110011011,0X1068,65031,0B00011010010000100,0B01010111111110111,0X03347,0X00407b,39044,35967,6295,5511,0x0b5dB,0x2bbf0,0B0001000101111101011,0X06721,0x01af6,45784,0B001101001111001001,0X00C6Ea,0X0b35d,0X00745f,3281,0x0056ad,0X7c44,0x0005c7a,0x0070f7,0X26a84,0x006F6c,0X005c13,0x0002590,0x1309,0B001001101010000001,0xab8d,0B01000100110101011,0X000AbA2,29849,0B0000100001000111111,0x9178,52983,0Xc3a7,0B000110100110011,0b000111110010011110,0B01101010110000100,0B001101101101100,0X00d979,56090,0B01010101000010000,52758,26975,33137,0x00121a6,0B0001110011110101101,0X00E0e0,0X0370d,9084,41607,0x94d5,37055,55065,0Xd3d1,0x0071f1,0x0e563,46624,0X005bd8,0Xaf37,63768,0X003507,0X04964,10983,62426,5379,39803,0B01100011101010100,0x00d490,0x00bb57,42553,0b0100101011110001,0b00011101101100100,0X001d3f4,32614,0X009727},[0X0023aaa]={"\216\209\213\004JS\215ZJ","\236\203\213\029\092M\194zNM\135`\223","\249\215\194\024IL\196M|I\152w","\198\206\198\006KP","\198\208\212\027XM\213\092","\223\223\206\029J",((0x1d66*0XDF)-1677384),((-0X000171a*0B01110011)+0X0a6548)},[0B01010111001101011011001]={},[0B011001001100111101110111]={0x001,19,1,0x011,0b1,11,0X0001,24,0X01,13,0B0001,0b11010,0B0001,0b0011011}},{[0x0007F06A2]=0B000,[0x0681724]=0X000,[0X3e5080]=0b000101,[0b1010011001011111001110]={32429,32705,0B0001111100010100111,43821,0Xb33a,60699,8422,21617,0b0000111110010110001,0B1100011011111010,0b0110110010111110,0X2ae7,49616,0X0006dec,0x000fe08,0X000d37f,2707,58848,0x001f3,9463,24837,18942,0X0033b1,0b0000100000110010},[0x023aaa]={"\253\219\201\011\092Q\229MJP\146w\218","\236\209\201\001\092@\194"},[0x2b9ad9]={{[0x0007f06a2]=0X00,[0x0681724]=0B0,[0B0001111100101000010000000]=1,[0b001010011001011111001110]={0B000011011001001,0X00048ac,0x009234,0b00011001001110001,0B000011001011000,0xebdb},[0b0100011101010101010]={},[0b01010111001101011011001]={},[0B11001001100111101110111]={0,3}}},[0b11001001100111101110111]={0X0001,0X08,0X001,25,0X01,0x1,0X01,0x01c,0x0001,0xe}},{[0x07f06a2]=0x00,[0b000011010000001011100100100]=0B0000,[0X3e5080]=0B000101,[2725838]={0x0006e61,0b1011000111111011,60888,13658,54316,0B01111000110110101,0x002565,23775,0X005952,0x007861,16736,0B0000101110100111101,32860,63156,8146,0X00cA92,0X50B3,0x000a1c1,60164,0b00001010010010011010,0x00063e8,0B0000110110101100011,0X00cce7,0B000010000111001011000,0X000CEa6,0X007a97,0X83e8,0B000110100110100001,0B01100110000101110,0x00026d4,0B000110011111001101,0X4471,3730,6972,0x00cA02,0X231a,0x0af7,6653,0X0724e,0Xfff9,0b0101010011001,0x007E56,33154,0x000fe20,0b00001000110001011101,13996,15536,0x000310,0X000c315,59786,0x000a79a,117735,0X0088B5,25189,14624,63964,0Xb655,4067,43166,0x000534d,0x0001f0e,0X012e21,0x001349,0x2335,37548,27800,0B01100001111110001,0b101100010001000,0X00087fe,0x008De3,0X186c,0X7DE7,0x0007BE1,34858,0b111011000000110,0x002f14,0x0006c80,0X6828},[0B0000100011101010101010]={"\235\215\212\012VM\216\092LT","\223\223\206\029J","\235\219\212\027KL\207",((0X0317*0X042)-0B0001100101000000010),((0b01000111101100*78)-0x000571c4)},[0b00001010111001101011011001]={},[0X0064Cf77]={1,0X08,0B1,0X00e,0X01,11,1,24,0X001,0b1100}},{[8324770]=0X0,[6821668]=0b00000,[0B001111100101000010000000]=0X0003,[0X02997cE]={24088,0x03ede,0B01110010100100001,26620,0X09e8b,0b000100011001001001,7531,0B00010110011001100,0X4347,0x000b10e,0X0008B5a,0X0003F12,0X009710,0x0093DD,0x0009215,0X00d6e2,0X069e0,0B0001110111111100011},[0X0023aAA]={((-5987*0x0009f)+952690),((988*0X0096)-0X0023f21)},[2857689]={},[0X00064cf77]={1,0X0008,0b0001,0B00011110,1,0X0001D}},{[0B011111110000011010100010]=0b0000,[0X681724]=0X000,[0X003e5080]=6,[0X02997Ce]={0x4DDE,21616,0X006a67,111246,0x000C319,0b010000101101110100,0B0011101010001,0b00001100001001110111,0x059FC,0xd60f,20807,66232,0b00001100111010010001,0X01271d,28765,0x0001085,44727,35332,0X0006876,0X07eb,0X000bb32,0X000b649,64706,0B0011010101011000010,0b100011011101100,0B1101010110100100,0X003a79,0X00e19d,0x0015e4,0b00001010010101101101,13655,26620,3737,0x0cc89,0X4285,13813,0B000011001110001010,0B00001100011000100,0x00FCEc,0B110101010010011,0B0001111110111100001,0b100110010100010,24882,34435,0X001EFd,33957,0B0001101001010101100,0B001000011111111100,0b000011101001100101,57116,0x00d3c0,32473,0x07A0B,0b10101101111011,0X000b5e2,30037,36338,0x00EF62,0X0099a9,0X000A54b,0X08875,6634,0b0001001111010011110,0X000Bf37,62306,13748,0X000Bb37,0xf8A1,0B0110011001101001,0xcb14,0x0002054,0b00001110100011010011,36370,57569,0X58e9,0x000d265,0x00e924,0X0006697,0x0ce54,0b0000111010111000011,0B1101001001100,0b011010010000000,0X000c3c,0B111100111010110,56436,0B00110111101100101,0b000100100011100101,0B011111001111110011,0X0004d88,0b00001111111111000001,0x0005358,0b0000110110111010010,2782,0b1100000011110010,41354,0x0008bb7,0B1110111101011010,0x00f744,0X6177,0b11111011110,55793,38289,8975,0X008cf9,0b0110010011011011,0X33d9,0X0009c84,0B001100100010111010,39492,0x0fda9,62269,0x9199,0X00096Eb,0X000a125,0X48d7,30976,0x000eB97,0B0011010000001011,0B0011011110100100,0Xc2DF,0X000d9e9,1244,26752,0X002924,64204,0x000c121,4401,0b01100100110001101,41887,19776,0x04fcb,56238,0b001000111000100101,0x0003237,31538,0X0004680,17597,54939,0X003402,0x5c39,0b0000110000111101010,0X0568c,0B0001110100111001010,0b00100010011001010110,0x01928,35570,15152,29187,39943,0x0406,3839,58125,0Xf870,0b00010010010111110,0X0009618,0b00001101001011001100,48335,33257,0X000Ea8b,18028,46187,0X005680,0X000B8C9,0b000011001010101111,0b1001011110101011,9676,29350,0xd992,56734,65579,0xe182,0x825c,0X007532,58503,0x0663a,0b001100110110101001,0B00011011010010111,0b00001000111110001100,0X0aD72,0X0C077,0B111011001101,0x007a96,0xa76a,123718,0b001010001001001011,0X0a53a,0x0005a65,0b0000110001110110011,0b0001110110110010001,0x00f5a6,0B0101101100111101,0x0002759,0X072bC,0b10011000010010,57878,0X000149e7,52905,0b010011011101010,0X003925,0b010001110010011,0X0002d9d,0x00C829,0b001011111011100,0B00010000010110011,0x205d,0x000380,0b00111100010111001,0x0002729,0b1010011111000000,23582,0b0000110111111110101,0xecec,0B000011111111010101,91221,16303,0B000011111101111000,0X00da4d,2663,51410,13297,0xbbaf,0X03440,0x461f,113771,15729,0b00001110111110000011,0B000010000110000,0x072ff,0x000ab30,95330,7849,43915,0X20a3,0X0d498,56259,0X00d8a4,0B001011000100000100,0x000f79a,0x086a,0X00762e,0X009c3c,47180,0b1001001101100101,0X00021ab,0x0934b,0X048e9,0x09ea3,0x000F31C,0B000110111001101001,0b1001000000000011,43069,0X0003672,55585,0x0415a,0xb4c7,0X00010291,52530,0x07fd2,4420,55261,0X008011,62031,42565,0b00010101101111011011,34848,0x0014784,14390,0x00ab37,0b1101100101110000,35390,0X000b2f,0X00640a,58862,32598,58948,0x57d5,0X0D008,0b1011101101111101,13082,0b0001010001000010000,58906,0X9A2C,0b111010110001001,0x000dd1e,0X000eeD1,0b0001100000010001010,0B01000011100110010,0X6F97,0xF667,0X73b3,0B0111101110001110,0b001111010110010001,0x000cf0f,30007,0b0000110111001100000,0x007c17,0XFA25,0Xee82,0x07531,32640,0x0077e,58123,0xd373,3152,0b0011000010001100,0X006bf5,9124,0x06B91,0b000111001011011110,62148,0x00c3fc,21166,0x278a,0xc54e,62555,0b001111000101011001},[0B0000100011101010101010]={((-0x00a3b*0b1011111)+0x03Cbe5),"\219\223\197\003\092","\220\209\213\027",((-8624*0x8f)+0b0100101101000101010001),"\223\209\212\006MJ\217W","\198\208\212\027XM\213\092","\233\215\201\011\127J\196J[c\138{\210\231f\199\157\252AqV\172","\255\204\200\023PN\223MVp\144}\211\243E","\201\215\213\010IQ\217AFM\139f\199\243C\192\153\239]","\223\221\198\003U","\216\223\213\001","\201\215\213\010IQ\217AFM\139f\199\243C\192\153\239]\024\245Pg\008\228\015y\024\177\017\209\143b\174\162\166{\015{\238\021\2212\169\011\244H\206>_\141\139\181\187\245\150\248Qb:\2258\005\023\173\031\213\135","\255\223\213\010WW","\219\223\212\004","\216\223\206\027",0.05,(((-0b0010000110110000*0X008f)+0x012D151)/((-0X1cED*139)+1029297)),((-0b10011000100000*0x0026)+0B01011010100011011101),((-7521*76)+0X008BBf8)},[0X002b9AD9]={{[0X7F06A2]=0b00010,[0X681724]=0X0000,[0X0003e5080]=0X001,[2725838]={27994,0x00019A94,0X001e0A,45499,0X0069d2,0X02ba5,0x07125,0x00013abB,0X000cC84,0X000B3cf,9239,0b001010101011100100,50121,0X00010CC5,0B1101110011110011,0X0F04F,0X548,0b001011000010010011,0X00fbc,5137,0X040b,0X0f830,0B0100000110000001,0B11110100001100,0x05AF1,83981,0b00011100110100000,94405,0b00001110010100011101,26408,0b000100010110111111,0B00010110101011101111,0x005b6c,0B0001100111110000110,0B01010000111000110,0X0006253,6522,0b00011101110000111110,0X0a27e,0B00010010011110101111,0X00174E,0B01001011000001},[0X023aAA]={"\255\209\212\006MJ\217W","\223\209\212\006MJ\217W","\226\223\192\001PW\195]J"},[0x2b9ad9]={},[6606711]={1,0}},{[0x07f06a2]=0,[0x681724]=0,[4083840]=0X0001,[0b00001010011001011111001110]={0B000101110100010010,1129,0x0004Cc9,38578,0B001110110010101,0X00dA0A,0x0d619,0b00001100000010100011},[146090]={"\201\215\213\010IQ\217AFM\139f\199\243C\192\153\239]"},[2857689]={},[0B011001001100111101110111]={0B1,3}}},[6606711]={0x001,9,1,0x11,1,19,0x0001,0B010111,1,16,1,0x007}},{[8324770]=0x0000,[0X0681724]=0b0000,[0B01111100101000010000000]=0b10,[0b01010011001011111001110]={15751,0X076ca,10792,53003,0b011101100010111,0B00001010001111011101,0x892A,0b010110000011101,0b1111001010111100,0x000b774,0X1de,0X0ED76,0B00001111010000000100,0x0002d00,0B001111100001101111,0X00e617,0x1375,0X000D2f8,22192,46417,55825,61430,0B0000111111010010010,0x00456a,58375,0xCECd,0X93df,0B0000111100101110001,0xcb99,61137,0b0100001111000111,0b01100111101011100,0b11010101110001,0X0003318,0X006063,0x14a8d,0X00dbf7,0x032B,0B1100011011100101,0b111100010110010},[146090]={"\219\223\212\004","\220\206\198\024W",((0B01100110111111*0X052)-0X83b62),((0x02133*0x4c)-0x009d4c1)},[2857689]={},[0B00011001001100111101110111]={1,9,0B01,0X20}},{[0x07f06a2]=1,[0b11010000001011100100100]=0,[4083840]=4,[0x02997ce]={0X2d3e,0b0001110010001100110,6678,0xa074,0x0007713,61203,0b00001101010100000001,48787,0B1111010100100001,57400,0X000A369,20371,0B1010000010110111,0X003a30,0b0111100001100011,33391,0x000a90f,0x12ef1,0b0001101011011110001,0b01000110100010011,0b000100011011111000,0x0016b04,0X009fa5,79029,0X002526,45681,0X002121,0b101100111111000,0x002aa8,0x1928,0b0001110000011001101,0X7376,32941,0b001000100001001,62543,6907,0X000E3c8,0X007d38,0B00001110010110001,0X4d45,0x0910D,0x006fc0,0B00001110101100110001,0B000010101011011010101,0b0110000000110111,0X00fDA0,45135,0x0015331,0x0cf32,0x04b3c,39570,0X0f16a,0B0001110000000010111,48966,49441,0X0021ef,0X0009999,0x0d055,0x00af51,87523,0b0010110010001000,0b000011101001010011,0x00537A,0X00dc0,0b0000110101101101110,0b000011010111100010100,10770,0Xad1b,1733,85407,0B11101000110,120625,29360,0B01101100011110000,0x000f874,0x7a77,59606,10336,0x0001F16,0x0745F,58444,0X0f7b2,0b01110110100110001,0X00090D4,37879,0x07Fc6,0B00111111110100010,0B00001000001110110011,29307,0b0100111011111000,0X000790e,64555,0X007894,14754,0X000E766,0X00078a8,0X06f41,0x0974f,0B000010100111111001,0B01111111101110111,0x00ade8,29455,0X00da60,17453,0X0B59A,0X0048ce,0b01010000011111111,0B0001111100001100111,0X0d291,28638,6649,0b0111010110011010},[0b000100011101010101010]={"\250\205\194\029pM\198L[t\155b\219","\234\208\210\002","\226\209\210\028\092a\195M[O\140#","\251\209\210\012Q","\255\209\212\006MJ\217W","\236\214\198\001^F\210","\236\209\201\001\092@\194",((-1473*0Xb7)+270192),((-0x11f1*75)+345204)},[0x002b9ad9]={{[8324770]=0,[0X0681724]=0X0,[0b01111100101000010000000]=0b000010,[0x02997ce]={0X070f,0x085bb,50320,25360,0B100101010101101,0b00111100100111100,0X0A40,0X00dd1d,50356,0X20c6,0B01100000111110100,0X00c356,0b1111001010101010,0B1100111110001001,48757,0x00d2cd,0X00C9,0B1000101001001,0X0A54,0X00b4e2,0x6cc1,0x0d1A5,0b00001001000011000011,0b0001001011010111,0X006fc8,41412,0xCE7,34960,0b000110001010000111,21962,0xbf2d,22116,33613,0b001010100010101010,0B001010001000,35813,0X09748,25090,0x00ee40,0x0002E60,33061,0x01903d,1147,0X9A6A,19538,0B01101110010101011},[0x0023aAA]={"\250\205\194\029pM\198L[s\150s\202\230","\234\208\210\002","\234\208\195",((-0X00e2B*151)+0b010000101110111111001),((3782*0b010010010)-551091)},[0x0002b9ad9]={},[0X64cf77]={0X01,0x000,0X0000,0}}},[0X64cf77]={0x01,42,0X1,0X2B,1,0X0023,0X0001,44}},{[0x007f06A2]=0x01,[6821668]=0x00,[0B0001111100101000010000000]=0b00100,[2725838]={7418,0B010101001011111,64503,0b01010000100111011,0b101010010010111,0B100000110111100001,0x0a91a,0Xc7c5,0x00082a6,0b0011110010011101110,0X002702,0X96f6,0x0092c5,0Xff19,0Xd86D,34006,0XDaf6,35208,0B0011011110010000,143982,0x004E34,35378,0b0001110001010100111,0B001011111001011110,0x6c84,68354,0x065bF,0X94a6,36491,0X00065aD,0x4f3e,10801,31713,19654,0X00b3a1,59593,0x0002ad8,0x35Df,3230,46009,0x07ed8,0X8497,0X0001749,0X0cd3a,0x0071e8,63909,0b001011101000010110,0X000fd62,18638,10890,0X00351f,0X0008dfc,26884,0B01100111101001101,59441,0b00001011000001000110,0x0097fa,56226,406,0b11111011100111100,0X000C982,0x8edd,0x041dd,0b010001000110000011,0X9640,0Xae12,0x0004a10,0x05af0,15230,53635,0X0ef25,0x017537,3346,98018,0x789c,0b00010000001101000111,0X933B,0XEDA8,0X00f724,0b0001111011000100110,0x00954F,56430,0x01451,0b0001011110001001111,50809,52581,0x000bcbf,0x00192c7,0B00111000100001000,27971,0x000f5Cf,32484,0X0003368,0b0010000001101100011,0x021f6,0b000010111011011101010,0B01101000111111110,0B01000001010011011,39587,0X007683,64813,0X0CbB9,0b11000001101000,0b1100100110001011,30065,146627,61816,0X0abc5,0x08b24,145520,0x005372,0x0046cA,24552,0X07Be1,65530,36392,576,0X00a795,0X0605E,0x000ffEf,0X00ADB2,0X0003ddc,0x00096d3,0b0001001110111101110,53411,0b001101110000001111,39303,49040,0X005490,0X000e6fa,0B011101110010100,0B01001100010100101,0X0fc15,0b1001100011100001,34210,0X167d,0x00f60e,0x2934,57515,0X214d,0B00001111000010000100,0b01111110110000111,0X0008b77,62388,18297,0X0a334,55400,0x00703B,27055,0B000010001100101010101,0X964c,38501,0x00d1e0,0b00010000100110010010,0b01010101011110110,28884,0X004009,0X0aba6,53581,119605,63635,0X01c2f,0X3429,82483,0b01001111000011110,85166,366,0B11011110100011,0x00a633,26855,0x0020f7,0B00001101111111110000,46396,147120,42639,23473},[0x00023aaa]={"\250\205\194\029pM\198L[t\155b\219","\234\208\210\002","\226\209\210\028\092n\217OJM\135|\202","\251\209\210\012Q","\255\209\212\006MJ\217W","\250\250\206\002\011","\193\219\208","\247","\252\221\198\003\092","\224\216\193\028\092W","\246",((-0x8DC*0xe4)+0X07e491),((0X0001a9F*196)-0X000145dc7)},[0x02b9ad9]={},[0X00064cf77]={0X0001,42,0b00001,0b101011,0X01,0X0002C,0B00001,35}},{[0B011111110000011010100010]=0B000100,[0b0011010000001011100100100]=0b0,[4083840]=0X00,[0x2997ce]={0xcae,0b01101110011000,22516,0b01101111111101110,0X006b98,0X1e9d2,0x0007A41,0X0930c,0b00001110100010001110,93185,0X0001178,0B1011010101111011,0B00001100000000000110,0x60fe,0X002863,72798,59671,0b00001111011000111,0b0111001000001001,0X15144,0x0002db2,0B001101011111110111,50099,107654,2922,0x0a987,0B000010010110011010,0X08155,54268,59092,0b00001110101100010,0X14bb,20700,18579,0b1100001011100001,0x93aA,28189,0Xdd04,52332,118430,0x0004b61,2216,0x06094,10663,0x8591,3114,0b0001100011101111011,0b10001001101101100,0x000d6c4,11053,0X0220f,0X457b,7873,0X8bc2,47738,0B0100000010010011,0X7Ed8,0x0001727,0b10110000000110,34617,0x03DEC,0X21Fd8,0b01110110111000000,0X04E8a,0x008fBc,15397,0b0011111110101010,10145,0X001119,0x11d0c,0X00Ea57,108255,0b00101011000011000,0x0679d,26137,0X00ac82,0x00C8A8,63005,0x8150,0x0006943,0x001e7,0x00030ac,0B0001100110110010011,0B001010110101011000,0x0c3a2,0B000111111001100,54289,0X087B0,0X004907,0X0A8E,0x03d5c,2647,51495,0B110010010011100,0B01101001011000001,0b010000010011000,0X000d8cb,0x001135e,21907,98407,0X000c80e,62561,3610,0Xb629,41907,0X0c69c,0x00e024,21285,0B000100110000110101,0B0011000110101101011,0X9476,0x58ff,39411,0x019891,0X000da8e,27809,0X09391,0X000c3f6,0x0002191,0x00bff8,17679,0X35F9,0x00016c2,0b01110001111010010,0b01110111111100100,47871,21752,0X9d55,30782,0x0001aCe3,0x0056d0,0x00017035,0B00001101010011100111,50998,0X0001b95,57820,52099,0x730e,0XC8eF,45295,0b00001100110000100110,32309,2807,0x002A30,0b01011001100000111,0B0001110110000110010,0b111101000011001,16069,0x06B0D,57771,39518,0x0e739,0x67e6,0B0010111110111101011,0x003bc,0x00018269,0X006e44,276356,40513,0b011001001011100001,0X000ca95,0B001000110010000010,10418,0x00010374,25470,48815,0b00110000000101000,0X0001d1f,0x0943F,0X00cc5c,0x0003F77,0x00023457,36272,0X2103,0b01000100100010101,0x0007a03,20584,0B0001100011000000011,0Xcd6d,15182,0X0096b5,0x0004b18,0x000756b,0b0000111111011011101,0X000a17,0X218a5,0X00494D,0x01988,0b00001010001010111001,0x00348C,1013,0b0001100011011000000,28599,0x045633,48705,0x0a773,0b00110100100000111,0xB976,0b011110111011,0B00010101001010100111,0b0000111100011,57874,13154,0xB043,53419,62744,0b001000101001111,0xd1aa,7441,0x00035DD,58828,0x0a5a0,33151,0x0f552,0x059A0,0b00010000001000000011,0b001101011101110010,60145,14813,27063,12852,0b0001101101000001111,0x00012cc,0b1011010111010101,0x00041d6,87035,0x00c18c,43307,57876,0x04fea0},[0x23aaa]={"\230\208\212\027XM\213\092","\193\219\208","\251\219\223\027{V\194M@N","\252\215\221\010","\250\250\206\002\011",((-0b000010000110110000*0b0010001111)+1233233),((-0B1001001110000*0X02f)+0x362A4),((-0X0A3B*0x005f)+248805),((-0b000100111011011*0X000108)+0b10100010101000000000),"\255\209\212\006MJ\217W","\251\219\223\027","\233\209\201\027","\234\208\210\002","\232\209\211\007XN\244VCD","\251\219\223\027jJ\204\092",((-0X0cbf*222)+0X000B0Db0),"\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((-8343*85)+709205),((0X0880*0b00100010)-0B10010000010111111),"\251\219\223\027zL\218V]\019","\237\209\213\011\092Q\229PUE\178{\198\230]","\237\209\213\011\092Q\245VCO\144!",((-3659*0X63)+362321),((-0x00515*0x0035)+69053),"\255\223\213\010WW","\250\247\228\000KM\211K","\236\209\213\001\092Q\228XKI\151a","\250\250\206\002",((-0X039D*0x02c)+0B01001111100000100),"\226\209\210\028\092f\216MJR","\236\209\201\001\092@\194","\226\209\210\028\092o\211XYE","\226\209\210\028\092a\195M[O\140#\253\239X\204\159"},[0x02b9ad9]={{[0b11111110000011010100010]=0b00000,[0x000681724]=0X000,[0X0003e5080]=0X0001,[0x0002997ce]={0b01010000011001000,60477,0b00001100000111011100,0B000010000100101010101,0Xfbfb,0B1110011000110101,0B01001001100010010,44435,0xBF82,0b000101001000011101,0X00249d,0X0003f4a,0X000d0a9,0b00111101011011000,0b0100001000001101,0x170,24516,0XEb1d,0b000111100010011111,32907,0X000e00d,68966},[146090]={"\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((-0B110010111000*0B001011001)+0X0046c3e),((-0x1218*156)+0xb06f5)},[0X2B9AD9]={},[0x64cf77]={0X001,0x4}},{[0B0011111110000011010100010]=0,[6821668]=0X00,[0x0003E5080]=1,[0b0001010011001011111001110]={0X00907f,47384,0x00874b,0x013508,0X4e2,0X00012778,51545,0X0e6Be,0X0008001,0B001100110010100000,33044,50661,0X0068D8,0X2e5b,0b01001011101100100,0b0001110101101011,0x00b7d3,0Xdee0,0x0c576,0x000B606,0x000Eb9C,0B001110011010111001},[146090]={"\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((-0X0002097*0x00055)+709205),((0x00880*0B00100010)-73919)},[0X02b9ad9]={},[6606711]={1,0x004}}},[0x64cf77]={}},{[8324770]=0x000,[0b0011010000001011100100100]=0,[0x03e5080]=2,[0x2997ce]={0X0FC65,59149,0B01101011011011011,0x000a2Cc,0x000d0e8,0X0b7e5,0B1010010111011101,0B001011110000001010,0B00111100101101011,0Xbc9b,48883,69472,0x0005A0c,0X1b85,55511,40003,0b001111110001101001,21413,0X0061d1,0x00e0D4,0b001010000100011001,0X0007fc6,0X000C4A,0xB736,0x00f997,2366,0x063,0b000111000101101110,0b000110100110001000,0x012053,0b0010111011110001,33636,0b000110100111100100,0b100111000110001,49517,28145,0x000467e,32472,24752,0x0004B8c,0b0001101100110010011,0B0100111010110010,0B01111010110011011,43087,0X008458,0b1000000101100010,0b001001011011000000,0b000011010011100000,0x6da6,0B1100100110110100,0X079A1,0X01405c,0X53A8,40881,0x3A69,66181,0X05f57,0X000f71B,0X0d2e6,0X004fD7,0b00001101011101101010,17121,33897,0X013179,0x00c5d8,5191,0x00a03F,0x00d5ec,0X43Af,0x00050De,0x00FbE0,0x00a2F4,0x0732c,0b000111010010011000,0x0008e7e,0X000c7e1,0x040f0,0B000010110010000,63498,0x000ba7B,0x000eE26,0X00055E5,0X06ee6,0b0001111000010011100,0x0002a71,9432,0x0007771,0b00101101000000011,0B000100101000111101,20580,0xe3e4,0B0001101111111101111,0x4048,7111,0b001101000010101011,11912,39413,0X06ce8,0XCAE6,0x00036c1,0x0005bf6,38780,0X0b5d1,1002,0B001000000000110100,0B0001011011111110000,0x000ab22,15010,0Xe46b,0x0D890,0X003A38,34447,0X0c86e,59273,0x010007,0X0c46f,47873,57469,0x0015f6,0X00086f0,0B00001011011101110110,11332,0b00001001001000101000,0B00001001010101100001,0X000C0c,0B01010111110011,54069,0x00047fe,34446,0x087b7,0x008aD8,0Xe776,0X00B483,0x04edf,0x0561d,101470,0X00e341,0X03ae8,0x943c,11701,4316,0b0001011000011111011,16667,0x6248,0b000010110010111100,25324,0x1389,0B001001101000110111,0X005998,0x0021e3,0X00e76d,0xecce,0X0006329,0b000101100111001001,0X0006eA7,0b0001010100111101101},[146090]={"\202\205\215-MM","\251\219\223\027","_!3\226\025f\229i\021\000\173\092","_!3\226\025f\229i\021\000\173T\248","\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((-0B00101000111011*0x5F)+0B00111100101111100101),((163*0x0005f)-0x03be7),((-0x00515*53)+0b000010000110110111101),((-0x002097*0x055)+709205),((2176*0x022)-0X000120bf),((-0b01111110101110*192)+0X17c416),((1363*200)-0X4236D)},[2857689]={},[0B000011001001100111101110111]={0x001,0X001f,0x0001,0b0001000}},{[8324770]=0X005,[0X00681724]=0b0,[0b1111100101000010000000]=0b0,[2725838]={0XEC1D,0b0000101001101001001,9573,0B00010010010111001010,0X02b4e,0b11001000101111,0X000b412,0x000884d,0X0001a4b,0b00010110010001111,63366,0x006ffd,1059,0b0101011111110011,52963,0b0001111100010101000,24106,51699,0B010011110110101,0X016c44,0x007bD4,0X1f0db,0x00BA66,0B0011100100110110111,0b00011111011010111,50252,0B000010001000110011,77507,0Xdd79,0b001000011100110010,51964,0x000A86b,0X000a5f,0b0001110101100,0X0d97e,0x023651,12426,0x0D501,0x00088f6,0X0007bbd,0x084c3,22166,0x04cb5,0x0002213d,0b0111111000000001,0b001110001011001010,0x1fbe,0Xe58f,0X004c6b,142046,30564,0B00011100001011110010,0X00ace0,56945,14160,57355,0x00aa01,0x003138,55033,0b001100011001011100,44451,0X00094d8,0b0110100101000111,0x00b716,0x00d2D5,0X0002523,0b10011101010111,0B000010011100001111,0B00100001000001001,39170,0b001011011010010000,0x0009ed5,0X0861d,61058,0b000110000101111000,97579,0B01111010001111101,0b0111000000010110,0X5652,0x0c0b6,0b0000111100000011011,2297,0B00001001011110,0X9f6b,0x0002532,0x002020b,38525,0X00d166,63303,0x0001f488,0x04264,0x00014cae,16190,0x00d2d3,9249,0x000702e,57614,0B000100101110100111,0X0005C07,38468,20280,0b00100011001000011010,0b000111110100000011,39602,0x0004684,0x00055bf,0B0100010101101010,0X009a6B,0X0058fe,0Xe051,0X0092A1,0X000736,54010,48091,0x00f98a,11901,0X06C83,0x0A044,36174,26647,0b01001101001101101,0x0003d99,48624,104192,0X00e8Bd,22108,20464,0B00110111111101001,0x00D36D,33450,0b0000110111010010110,34587,0b0011100010,0x1ffee,0x07512,36414,42884,0X00e67d,0b00001000101000111,0B10111000011111110,0B1000011000000100,0X0096d1,0X0008382,0b0000101001111010001,0x5720,0X005baf,52777,0xfc1A,0b0000110011000110110,0x244e8,0B0111111100101100,0x0ceb1,26257,0B001110111011011001,64424,0x01ab65,0b1101000111010001,0B001101101111011010,56708,0B01001000000010000,0b00110101000100001,1555,0X00eb7b,0b1110011100,0x52DA,5286,0X024CA,0X00052aF,0x0338b,46656,0X0c03a,0B000011010000000110000,0x0003dac,0B00011101100011001010,43511,0X001CC5F,33940,25375,0B01010001100111111,0B1001111110011100,0B00101010100100000,0X7bf9,0B0001101000000101010,0x0004c8d,0xD494,0X0001683,25375,0xED17,0X0b6ee,0b00001101001011000101,0x39c5,0x01C198,0X00CBCF,33390,3795,1934,57459,103031,0x000c067,0x9c20,0B000101000010101100,0x0002ee9,0X00050d5,0B0010010010101100000,0x0c06e,0b00011011001010110001,19686,0X87a5,2985,25994,0X0006c3b,0X003f5e,0x06e60,101758,0X00de3f,38158,0Xc79b,0x16b6,0x0006758,443082,17142,4467,0B000011101010011011,30746,5928,0X73D5,0X0779c,31863,0B01101011000110101,0x000a9f2,0b000100001111000110,27511,0b01111111010010011,0X007527,0X0008543,0X0ed4c,0b0000101010110111000,0Xabb0,0b11111000101,26112,0X0523d,0X003790,0B00101111001100,0Xda75,26553,0b00010111011111110111,21601,53022,0X04e9f,0B111000110110,0X009793,46045,0b000101001110100101,160303,54064,0X0016241,0X0001d37,62594,0x00b287,63706,0b001100000101101011,59214,0x602C,16337,0x0003c2,0b01101010100000,47339,42110,64767,33890,0x000ed61,0b0001010101000011010,8119,0x0023B38,11860,10581,0x000381F,5420,0x06a10,69453,15048,0xb9eF,0b000100001100001101,56598,53618,0x000176d1,0b000110111100010110,0x8545,0b001100011000101000,0x0001B7Ac,0X00e752,0b0001011110101101011,0X00494b,33306,34988,0X009781,3609,0x468e,0x000894c,0x4481,22896,0X00548F,0Xf7e0,0B0001110111010000111,0x0F363,0b000010001010111011100,0b0010000100001,73560,0X000f6ad,0X03850,0B0100110100110,0x00011297,0X08970,0X004c37,0x1570,152976,6950,53071,28946,20625,35810,0x8c74,0x1c7D,0b0100000000110011010,0b000100010000110000,0B0010100110000001011,0b11111010111,0B100011111110100010,0X04913,34398,0B0001000010011111101,44843,0X000c847,71444,65394,0x002190d,0X00d976,0b0010001000011100001,0x000b893,0x651c,17062,26847,35445,36158,1213,12460,0x0009076,0B01011111101101011,0B0000100110111011011,0X016FC1,33031,0X02638,0xf668,0x000160e7,0X0394a,0x0af21,0b1101111001100,0xe6BE,11651,0b01111011010110110,0B0110100010001011,0X000886,24949,40548,0x274c,0X001e7d,0B001001110010000001,0x00d38E,3093,0b01001001100010110,0b111100000110110,0x000bc76,64733,0x000e4bf,0X0e800,0X001da99,0b001100010010110101,0b001001001101111010,0x109,109254,38826,0X00c4d7,0X00378A,0X0ac4,43779,0x000236ef,0x0d46c,116053,0xf483,0B10110111110001010,0x0ba5a,0x0B54B,0X02a32,27415,29233,0B001100011001111010,50220,0x07c99,33200,0B1010110111001010,0x78e3,0X01dce8,0B1011100111001000,49216,0Xb87b,98540,0b0010110100111000,138418,32311,0b10011110100010010,0x0e67d,62420,9246,0B100010010011000100,0B100111110010010,0x0570b,0b0111011101110110,0xFbc1,0X14b5,0B11101000110010,0B00001011100110101101,0B0101001100111000,20586,20499,0x00c3da,0b0111101000001,0xfcf,0X00e520,0B000110000100111100,0X0009925,44430,55197,64449,46305},[146090]={"\230\208\212\027XM\213\092","\193\219\208","\233\204\198\002\092","\252\215\221\010","\250\250\206\002\011",((-0x00021b0*143)+1233233),((-0x1270*0X002f)+0X362a4),((-2619*0B00001011111)+248805),((-0b000100110010110*45)+0X1af95),"\255\209\212\006MJ\217W","\237\223\196\004^Q\217LAD\182`\223\237B\223\149\237LVF\148","\237\209\213\011\092Q\229PUE\178{\198\230]","\255\223\213\010WW","\251\219\223\027uB\212\092C",((1598*111)-0b000101011010011010000),"\251\219\223\027zL\218V]\019","\236\209\203\000K\016","\201\204\200\002kd\244",((0B00001000101000010*178)-0x000bff30),((0b00001100111011000*0x090)-0X00E88B8),"\233\209\201\027","\234\208\210\002","\232\209\211\007XN\229\092BI\128}\210\231","\251\219\223\027jJ\204\092",((-0B0001100100010*78)+62568),"\251\219\223\027ab\218PHN\143w\208\247","\227\219\193\027","\251\219\223\027","\251\219\223\027{L\206",((-0B001001010011110*0X0005d)+0x0006c382),((0X0001113*0b00010011101)-0b0010100111100010010001),"\237\223\196\004^Q\217LAD\161}\210\236C\156",((0B01111011011111*0X000d8)-0X1A0c05),((-2911*0X001e)+0X001554f),((0x25d0*0B1110011)-0x010fb71),((0x0a3*95)-15335),"\255\210\198\012\092K\217UKE\144Q\209\239^\221\199",((-0B000010100010101*0X0035)+0X00010DBD),((0b001110000001*19)-0X00421b),"\255\210\198\012\092K\217UKE\144F\219\251E","\127,w\221\233\150f\141\255\152\194\194\009S\140\127DN\174\232\144=\010m\140k\028","\232\209\211\007XN",((-8760*0B00011000110)+0x01A775d),"\237\209\213\011\092Q\245VCO\144!",((-9991*0b000010000011)+1308881),((-3659*99)+0x00058751),"\219\209\212\027KJ\216^","\250\247\228\000KM\211K","\236\209\213\001\092Q\228XKI\151a","\250\250\206\002",((0xed8*108)-0X6431A),"\233\209\196\026Jo\217J[","\236\209\201\001\092@\194"},[2857689]={},[0B011001001100111101110111]={}},{[0B11111110000011010100010]=0,[6821668]=0,[4083840]=1,[0X0002997ce]={56253,59916,0B01100111010010,0x000b2e2,0b0001101010110001011,29573,0x5029,0x0007399,50795,29222,38150,54473,55604,0xe40f,0b1011011011001000,0b100111101111111,0b0000100010111,0X0012a4,48905,0X7a43,0b00001110100101111110,0x11A1,14123,0xD45d,0b0100011100101101,0b001100110011100001,54038,0B00111100010101101,0X00A136,51961,0x08a27,0B0001101010000011111,19435,30152,6238,12147,0X000223f,23860,0b0100100011111001,0X09f6E,56517,23771,812,0X178b,0X0b26b,0X0008E8c,0b01000110010000111,0xd796,0x1531,0X00634f,0x005e5a,0X207e,0x0d9f8,0X001D6E,0b1100011110000,0Xce97,0X83B2,97713,52929,0B00100011010010100,0B0011100001111101,0X000de1e,0x04d45,0B1101111011111100,0X00e3a0,0x000CE40,0X0002189,0B100101000101,0X05DF2,40770,0xe359,0x006F04,0x00f688,0b00011011111010001,0b1010000010010001,16957,0b111110110000,58446,0b01001011101100100,0x0094e4,0B0101110110011010,0X00C94B,0B1110001010100100,0x001B9a6,0X00c01a,0X4B31,0b001011000000001,0B0000110011100000101,0X00c15e,0x27b3,0X097f7,0X0CeBC,51024,0x0e536,52759,0X005398,59463,50493,0X000162f,0x000358E,0x009A66,0b100001110100111,37407,0X0007ec3,56317,0B001001100100101001,0x00a4d0,0X0001056,0b00010101001111101,0x00080b2,0X48bc,70976,53206,0x0640e,3899,7485,41852,0B001100000111100010,20128,36160,0Xe485,58885},[0b0000100011101010101010]={"\219\209\201\026TA\211K","\220\206\194\010]a\217A","\251\219\223\027",((-0B101000111011*95)+248805),"\220\206\194\010]o\215[JL","M$\006O\233\130f\131\255\1583\146n=\224.%\029\248\180\031\205","\143\205\211\026]P\153J","\219\209\212\027KJ\216^",((-3007*0x000D0)+0X0098dD3),((-6164*35)+0x0035028)},[0b1010111001101011011001]={},[0B11001001100111101110111]={1,0x005}},{[0b011111110000011010100010]=0x0000,[6821668]=0X000,[0X003E5080]=0X001,[2725838]={0xCB89,0X000af7a,0x08d25,0X016C25,39645,7169,0x0065ac,53862,26621,0x4fA4,44580,0x00EAA7,0x1f2a,28046,20871,0X0008699,0B000110011011101001,0b011010011100001011,0B1010000101000010,0XF821,0x0b310,0b01100010110110010,0b01000001100110000,28541,0x003f4a,0X0004D13,0B1100001100011,0x0003798,31824,0x2d56,0X1369,0B0001111111011101100,0X005833,0x008b8D,0B00010100000001111,0B00001010111100101010,60921,88385,6766,0x000877f,57786,25151,0b010000100110100,0xfFeF,0x006564,0x1dab,0x5688,55486,0x0007a0d,39396,51811,0b001010110110111010,50631,0x0DE09,0b000101011000101010,0B001100010001100100,0xCF1D,0b000100111101000000,0b011111001001011,53498,18349,0B00001110111000010010,0X00d142,0X00E5B,9588,45945,34990,0B01111000110011010,0B100110001101100,0b00001100011011100100,0b000101001110001100,0xe381},[0x00023aAA]={"\219\209\201\026TA\211K","\199\209\209\010Ka\217A","\251\219\223\027","\194\223\211\007","\194\223\223",((-2619*0B001011111)+0X003cbe5),"\199\209\209\010Ko\215[JL","_!4\226\025\243$\232\164\241c\194\000R\179\127D\165\009","\143\205\211\026]P","\219\209\212\027KJ\216^",((8207*0x0039)-0x00722e7),((6610*0X001a)-171716)},[0X002b9ad9]={},[0x064cf77]={0X001,0B0000110}},{[8324770]=0b0000,[6821668]=0B0000,[0X03e5080]=0x1,[0x02997CE]={0x0bb3d,0b1010000110110110,0x0fed5,0X00689A,33193,65440,0X008234,0b000100001001101011,24824,0B0000101000010100011,0b00100001101001010,0b0000100111110101101,0X00c80d,0X0014f9,29021,0XeEDc,22725,40283,0b0001010101010010100,7524,64323,0x000f6d7,6573,0x0a0a5,55358,77567,0x0455C,0b00001111001111010011,0X0007fd,0b01100100111110001,0X000fcde,0B100100100101101,0B00111001000100110,0x015a5,0x000562a,82463,0b0100100100011100,0xe8d5,0x00f4F4,63863,0X0e330,0B000110101000001011,0B0001011101011110011,0b0001000011001111001,0Xa0d8,0B1101000011010110,0x0f1c3,0b00001001011010011010,18615,0X001642,0X03b95,0B000101010011001,0B01011110101101110,0X09f11,55911,58219,35054,78145,0B001011100001101101,0b010111001010010,32909,37179,0X8496,40537},[0b0000100011101010101010]={"\219\209\201\026TA\211K","\216\223\206\027{L\206","\251\219\223\027","\194\223\211\007","\194\223\223",((-0X000A3b*95)+248805),"\216\223\206\027uB\212\092C","M1\022O\233\180f\137\255\1482\167o\003\225\025$%\249\136\031\205","\220","\219\209\212\027KJ\216^",((-0Xcba*46)+0B000100100110010100010),((0b00001011011110010*159)-0X000e3a8d)},[0B0001010111001101011011001]={},[0B11001001100111101110111]={0X01,0B000111}},{[0B0011111110000011010100010]=0X000,[0x0681724]=0b00000,[0b001111100101000010000000]=0x02,[0X02997CE]={0x0ab01,0X000117cf,0X0035c4,3478,15218,14068,0B01111001111011111,46138,32489,0b0110111101101000,39307,0X000D3AC,0x0DFE2,0b00001101101101110000,0x00045B3,3902,0x009cda,0x000d5a,0b0100100010101100,0X00399D,7301,0b01000001100111010,0b100111111101100,0X0d751,0x000399,0x00657e,0x0029a5,0X030db,0x0025C0,0X069c3,0x070cb,0b1001010010111100,11101,0X00f008,0x00f4Ea,13183,8862,382,0X03C48,55034,37472,64842,0B1100100000110000,0x0009cf1,0X0009ed9,0b00011100011010101,0x006CEa,0x0001aab0,0x360E,0x0D05b,0X09fB3,0x77f7,0X000c061,0X007cF6,13240,0B0101101101101100,0x0002a08,63785,0x0bd,0x0067D9,18100,0B010001010010100,0X0003e36,0XF400,0X7A05,0X12dd2,49802,0x002cbb,43971,66014,0x0765e,0B01000111010000011,0xbd03,0x08e17,0B0001111111000001010,0x0D330,53942,0X000d8fe,0b0111100101001110,0B0001111100110011001,0x07342,0x10069,0B0000101010000110110,65040,0x000d02,0X000c312,0b0101100010000,0B01011111110001,0Xa2bB,0x458b,0X00F44,0X0008346,0x00021e,0x07229,0X2B9C,0x0CCbb,19963,0B001011101101111000,62860,18677,0B0000110110010111001,0x05fda,0B110001000100001,0x0A7A7,0X00058F4,0x00Cf7b,0b000101011000011101,0X000607e,0B11100010011010,14287,0X0f11f,25156,0x00eec0,0b001111111011010000,0xcfdb,0X0078d1,0b1110000010111101,0b0011111101100101,0XA217,0b0010111011011011},[146090]={"\201\223\213\002{W\216","\251\219\223\027","_!\003\249\025e\247kb\026\194]\240","_!\003\249\025e\247kb\026\194]\248\197","\237\223\196\004^Q\217LAD\161}\210\236C\156","\236\209\203\000K\016","\201\204\200\002kd\244",((6616*0X90)-952504),((-3659*99)+0B001011000011101010001),((-0x000a3b*0x05f)+0X3cbe5),((-0X0002097*85)+0x000ad255),((0b00100010000000*0X00022)-0b0010010000010111111),((-0b10000100001111*87)+0X00b3f21),((2354*0x0060)-0B0000110110111001010010)},[2857689]={},[0X64cF77]={0B1,0X0021,0X001,0x0009}},{[0b11111110000011010100010]=0,[0b00011010000001011100100100]=0x0000,[0B01111100101000010000000]=0b000010,[2725838]={0x0009aac,0B0001101100101010101,44053,0b001100101001001110,0x000Fc7,0b0001110100110011000,27152,0b00001111101011110001,0x00f9b0,0b000111001101010011,0x0f58B,1396,0B00001010100101000010,0X39bd,0X0004301,29910,15505,0B110111001110111,0X007c55,49440},[0B0100011101010101010]={"\251\219\223\027","M1\022O\233\189g\184\254\1622\162n8\225\017%\030\248\180\031\205"},[2857689]={},[0X00064Cf77]={0X0001,19,1,0x002B}}},[0x64cf77]={}}
 do
-  local II0Ol11O=0
-  local function ll1101OOO(O01l0O)
-    local l1III10IOl=O01l0O[8188362]
-    for i=1,#l1III10IOl do II0Ol11O=(II0Ol11O*31+l1III10IOl[i])%16777216 end
-    local Il010IOll=O01l0O[7173349]
-    for i=1,#Il010IOll do ll1101OOO(Il010IOll[i]) end
+  local IIO001O0l=0
+  local function lI1OIO01l(I0lIOOOO)
+    local OOIlII0=I0lIOOOO[2725838]
+    for i=1,#OOIlII0 do IIO001O0l=(IIO001O0l*31+OOIlII0[i])%16777216 end
+    local O0IlOI0=I0lIOOOO[2857689]
+    for i=1,#O0IlOI0 do lI1OIO01l(O0IlOI0[i]) end
   end
-  ll1101OOO(O11ll10II)
-  local _s=(l1ll1llI0I-II0Ol11O-(__vm_master_seed))%16777216
-  IlO0l0I=_s%256
-  O1011I1(O11ll10II,_s)
+  lI1OIO01l(O11I100)
+  local _s=(OOllIl-IIO001O0l-(__vm_entropy))%16777216
+  OI1I00=_s%256
+  O110III010(O11I100,_s)
 end
-return lIl1OO0IlI(O11ll10II,{})(...)
+return l1lO1O11ll(O11I100,{})(...)
 
 -- skid detected? no. skid prevented? yes. - xdwdchan
--- 100% skid-proof (results may vary) - xdwdchan
+-- this script has more protection than your roblox account
